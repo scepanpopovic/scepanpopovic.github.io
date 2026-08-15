@@ -2,622 +2,1092 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Šćepan Popović</title>
+<title>Šćepan Popović</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<style>
 
-    html {
-      scroll-behavior: smooth;
-    }
+/* =========================================================
+   BASIC SETTINGS
+========================================================= */
 
-    body {
-      margin: 0;
-      background: #ffffff;
-      color: #111111;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 13px;
-      line-height: 1.25;
-    }
+* {
+    box-sizing: border-box;
+}
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --green: #b6d900;
+    --black: #111111;
+    --grey: #747474;
+    --light-grey: #dedede;
+    --background: #ffffff;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--black);
+    font-family: "Courier New", Courier, monospace;
+    font-size: 12px;
+    line-height: 1.35;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--green);
+}
 
 
-    /* HEADER */
+/* =========================================================
+   HEADER
+========================================================= */
+
+header {
+    height: 86px;
+    padding: 0 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: white;
+}
+
+.logo {
+    color: var(--green);
+    font-size: 20px;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.nav-item {
+    position: relative;
+    white-space: nowrap;
+}
+
+.nav-item::after {
+    content: "/";
+    margin: 0 12px;
+    color: #777;
+}
+
+.nav-item:last-child::after {
+    content: "";
+    margin: 0;
+}
+
+.nav-link {
+    cursor: pointer;
+}
+
+.nav-link:hover {
+    color: var(--green);
+}
+
+
+/* =========================================================
+   DROPDOWNS
+========================================================= */
+
+.dropdown {
+    display: none;
+
+    position: absolute;
+    top: 18px;
+    left: -10px;
+
+    min-width: 165px;
+
+    padding: 10px;
+
+    background: white;
+    border: 1px solid var(--black);
+
+    z-index: 100;
+}
+
+.dropdown a {
+    display: block;
+    padding: 4px 0;
+}
+
+.nav-item:hover .dropdown {
+    display: block;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    margin: 0 36px;
+    height: calc(100vh - 130px);
+    min-height: 580px;
+
+    position: relative;
+    overflow: hidden;
+
+    background: #e5e5e5;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    display: block;
+
+    /* COLOR GRADING CAN BE CHANGED LATER */
+    filter: grayscale(100%);
+}
+
+
+/* POETRY */
+
+.poetry {
+    position: absolute;
+
+    top: 18%;
+    right: 9%;
+
+    width: 260px;
+
+    font-size: 10px;
+    line-height: 1.65;
+
+    color: var(--black);
+}
+
+.poem {
+    margin: 0;
+}
+
+.poem-credit {
+    margin-top: 22px;
+    padding-top: 14px;
+
+    position: relative;
+}
+
+.poem-credit::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 20px;
+    height: 1px;
+
+    background: var(--green);
+}
+
+.poem-credit strong {
+    font-weight: normal;
+}
+
+.photo-credit {
+    margin-top: 4px;
+    color: #555;
+}
+
+
+/* =========================================================
+   HOMEPAGE CONTENT
+========================================================= */
+
+.home-content {
+    padding: 38px 36px 0;
+}
+
+.home-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 2.3fr) minmax(300px, 0.9fr);
+    gap: 50px;
+}
+
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.section-header {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 18px;
+}
+
+.section-title {
+    color: var(--green);
+    font-size: 17px;
+    white-space: nowrap;
+}
+
+.section-line {
+    height: 1px;
+    background: var(--green);
+
+    flex: 1;
+
+    margin: 0 10px;
+}
+
+.section-link {
+    color: var(--green);
+    font-size: 10px;
+    white-space: nowrap;
+}
+
+.section-link:hover {
+    color: var(--black);
+}
+
+
+/* =========================================================
+   SELECTED PROJECTS
+========================================================= */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.project {
+    display: block;
+}
+
+.project-image {
+    width: 100%;
+    aspect-ratio: 1.45 / 1;
+
+    overflow: hidden;
+    background: #e5e5e5;
+
+    position: relative;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    filter: grayscale(100%);
+
+    transition:
+        filter 0.25s ease,
+        transform 0.35s ease;
+}
+
+.project:hover .project-image img {
+    filter: grayscale(0%);
+    transform: scale(1.015);
+}
+
+.project-number {
+    position: absolute;
+
+    top: 7px;
+    left: 7px;
+
+    color: var(--green);
+    font-size: 11px;
+}
+
+.project-title {
+    margin-top: 8px;
+
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.project-category {
+    margin-top: 2px;
+
+    color: var(--grey);
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+
+/* PLACEHOLDERS */
+
+.placeholder {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #999;
+}
+
+
+/* =========================================================
+   NEWS
+========================================================= */
+
+.news-item {
+    display: grid;
+    grid-template-columns: 115px 1fr;
+
+    gap: 15px;
+
+    padding: 13px 0;
+
+    border-bottom: 1px solid #d0d0d0;
+}
+
+.news-item:first-of-type {
+    padding-top: 3px;
+}
+
+.news-date {
+    color: var(--green);
+}
+
+.news-title {
+    line-height: 1.45;
+}
+
+.news-title:hover {
+    color: var(--green);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    margin: 42px 36px 0;
+
+    padding: 18px 0 28px;
+
+    border-top: 1px solid var(--green);
+}
+
+.footer-grid {
+    display: grid;
+
+    grid-template-columns:
+        1.2fr
+        0.8fr
+        1fr
+        0.9fr
+        0.8fr;
+
+    gap: 40px;
+}
+
+.footer-title {
+    color: var(--green);
+
+    margin-bottom: 8px;
+
+    font-size: 13px;
+}
+
+.footer-heading {
+    margin-bottom: 7px;
+
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+.footer-line {
+    margin-bottom: 3px;
+}
+
+.social-link {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.social-link span {
+    margin-left: 5px;
+}
+
+.languages {
+    color: var(--green);
+
+    display: flex;
+    gap: 8px;
+
+    justify-content: flex-end;
+}
+
+.languages a:hover {
+    color: var(--black);
+}
+
+.copyright {
+    margin-top: 28px;
+
+    text-align: right;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 1100px) {
 
     header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: #ffffff;
-      padding: 15px 18px 14px;
-      border-bottom: 1px solid #d8d8d8;
+        height: auto;
+        padding: 22px 24px;
+
+        align-items: flex-start;
+        gap: 25px;
     }
 
     .navigation {
-      display: flex;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      gap: 0;
-    }
-
-    .nav-item {
-      position: relative;
-      white-space: nowrap;
+        line-height: 2;
     }
 
     .nav-item::after {
-      content: " / ";
-      margin: 0 6px;
-      color: #777;
+        margin: 0 7px;
     }
 
-    .nav-item:last-child::after {
-      display: none;
+    .hero {
+        margin: 0 24px;
+        height: 72vh;
     }
 
-    .nav-link {
-      cursor: pointer;
+    .home-content {
+        padding: 30px 24px 0;
     }
 
-    .nav-link:hover {
-      text-decoration: underline;
-      text-underline-offset: 3px;
+    .home-grid {
+        grid-template-columns: 1fr;
     }
 
-    .name {
-      font-weight: 600;
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
-
-
-    /* DROPDOWN */
-
-    .dropdown {
-      display: none;
-      position: absolute;
-      top: 18px;
-      left: 0;
-      min-width: 145px;
-      background: white;
-      border: 1px solid #bdbdbd;
-      padding: 9px 11px;
-      z-index: 200;
-    }
-
-    .dropdown a {
-      display: block;
-      padding: 3px 0;
-    }
-
-    .dropdown a:hover {
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    .nav-item:hover .dropdown {
-      display: block;
-    }
-
-
-    /* MAIN */
-
-    main {
-      padding: 18px;
-    }
-
-
-    /* FILTER / PAGE LABEL */
-
-    .page-info {
-      display: flex;
-      justify-content: space-between;
-      border-bottom: 1px solid #111;
-      padding-bottom: 7px;
-      margin-bottom: 15px;
-    }
-
-    .page-title {
-      text-transform: uppercase;
-    }
-
-    .view-options span {
-      margin-left: 15px;
-      cursor: pointer;
-    }
-
-
-    /* PROJECT GRID */
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      column-gap: 12px;
-      row-gap: 45px;
-    }
-
-    .project {
-      display: block;
-    }
-
-    .project-image {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      background: #e9e9e9;
-      overflow: hidden;
-      margin-bottom: 7px;
-    }
-
-    .project-image img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s ease;
-    }
-
-    .project:hover img {
-      transform: scale(1.015);
-    }
-
-    .project-meta {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 15px;
-    }
-
-    .project-title {
-      margin-bottom: 2px;
-    }
-
-    .project-category,
-    .project-location {
-      color: #777;
-    }
-
-    .project-year {
-      text-align: right;
-    }
-
-
-    /* PLACEHOLDER IMAGES */
-
-    .placeholder {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #888;
-      font-size: 11px;
-      letter-spacing: 0.05em;
-    }
-
-
-    /* FOOTER */
 
     footer {
-      margin-top: 120px;
-      border-top: 1px solid #111;
-      padding: 10px 0 20px;
-      display: flex;
-      justify-content: space-between;
+        margin-left: 24px;
+        margin-right: 24px;
     }
 
-
-    /* MOBILE */
-
-    @media (max-width: 900px) {
-
-      .project-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
+    .footer-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 
-    @media (max-width: 600px) {
+}
 
-      header {
-        position: relative;
-        padding: 12px;
-      }
 
-      main {
-        padding: 12px;
-      }
+@media (max-width: 700px) {
 
-      .navigation {
-        line-height: 1.7;
-      }
+    header {
+        display: block;
+        padding: 18px;
+    }
 
-      .dropdown {
-        position: fixed;
-        top: auto;
-      }
+    .logo {
+        margin-bottom: 18px;
+    }
 
-      .project-grid {
+    .navigation {
+        justify-content: flex-start;
+    }
+
+    .hero {
+        margin: 0 18px;
+
+        height: 75vh;
+        min-height: 520px;
+    }
+
+    .hero img {
+        object-position: 40% center;
+    }
+
+    .poetry {
+        top: 8%;
+        right: 7%;
+
+        width: 200px;
+
+        font-size: 9px;
+    }
+
+    .home-content {
+        padding: 28px 18px 0;
+    }
+
+    .projects-grid {
         grid-template-columns: 1fr;
-        row-gap: 35px;
-      }
-
-      .page-info {
-        flex-direction: column;
-        gap: 5px;
-      }
-
-      .view-options {
-        display: none;
-      }
-
-      footer {
-        flex-direction: column;
-        gap: 5px;
-      }
-
     }
 
-  </style>
+    .news-item {
+        grid-template-columns: 95px 1fr;
+    }
+
+    footer {
+        margin-left: 18px;
+        margin-right: 18px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .languages {
+        justify-content: flex-start;
+    }
+
+    .copyright {
+        text-align: left;
+    }
+
+}
+
+</style>
+
 </head>
 
 
 <body>
 
 
+<!-- ======================================================
+     HEADER
+====================================================== -->
+
 <header>
 
-  <nav class="navigation">
-
-    <div class="nav-item">
-      <a class="nav-link name" href="index.html">
+    <a class="logo" href="index.html">
         ŠĆEPAN POPOVIĆ
-      </a>
-    </div>
+    </a>
 
 
-    <div class="nav-item">
-      <a class="nav-link" href="#">
-        ARCHITECTURE
-      </a>
-    </div>
+    <nav class="navigation">
 
 
-    <div class="nav-item">
-      <a class="nav-link" href="#">
-        URBANISM
-      </a>
-    </div>
+        <div class="nav-item">
+            <a class="nav-link" href="architecture.html">
+                ARCHITECTURE
+            </a>
+        </div>
 
 
-    <div class="nav-item">
-      <a class="nav-link" href="#">
-        RESEARCH
-      </a>
-    </div>
+        <div class="nav-item">
+            <a class="nav-link" href="urbanism.html">
+                URBANISM
+            </a>
+        </div>
 
 
-    <div class="nav-item">
-
-      <span class="nav-link">
-        ARTWORKS
-      </span>
-
-      <div class="dropdown">
-        <a href="#">SPATIAL ART</a>
-        <a href="#">PAINTINGS</a>
-        <a href="#">OBSERVATIONS</a>
-      </div>
-
-    </div>
+        <div class="nav-item">
+            <a class="nav-link" href="research.html">
+                RESEARCH
+            </a>
+        </div>
 
 
-    <div class="nav-item">
-      <a class="nav-link" href="#">
-        FILM
-      </a>
-    </div>
+        <div class="nav-item">
+
+            <span class="nav-link">
+                ARTWORKS
+            </span>
+
+            <div class="dropdown">
+                <a href="spatial-art.html">SPATIAL ART</a>
+                <a href="paintings.html">PAINTINGS</a>
+                <a href="observations.html">OBSERVATIONS</a>
+            </div>
+
+        </div>
 
 
-    <div class="nav-item">
-
-      <span class="nav-link">
-        WRITINGS
-      </span>
-
-      <div class="dropdown">
-        <a href="#">TEXTS</a>
-        <a href="#">POETRY</a>
-      </div>
-
-    </div>
+        <div class="nav-item">
+            <a class="nav-link" href="film.html">
+                FILM
+            </a>
+        </div>
 
 
-    <div class="nav-item">
-      <a class="nav-link" href="#">
-        NEWS
-      </a>
-    </div>
+        <div class="nav-item">
+
+            <span class="nav-link">
+                WRITINGS
+            </span>
+
+            <div class="dropdown">
+                <a href="texts.html">TEXTS</a>
+                <a href="poetry.html">POETRY</a>
+            </div>
+
+        </div>
 
 
-    <div class="nav-item">
-      <a class="nav-link" href="#">
-        CONTACT
-      </a>
-    </div>
+        <div class="nav-item">
+            <a class="nav-link" href="exhibitions.html">
+                EXHIBITIONS
+            </a>
+        </div>
 
 
-    <div class="nav-item">
-      <a class="nav-link" href="#">
-        SOCIALS
-      </a>
-    </div>
+        <div class="nav-item">
+            <a class="nav-link" href="news.html">
+                NEWS
+            </a>
+        </div>
 
-  </nav>
+
+        <div class="nav-item">
+            <a class="nav-link" href="contact.html">
+                CONTACT
+            </a>
+        </div>
+
+
+        <div class="nav-item">
+            <a class="nav-link" href="#socials">
+                SOCIALS
+            </a>
+        </div>
+
+
+    </nav>
 
 </header>
 
 
 
-<main>
+<!-- ======================================================
+     HERO
+====================================================== -->
 
-  <div class="page-info">
+<section class="hero">
 
-    <div class="page-title">
-      Selected Works
+    <img
+        src="images/montenegro-on-film.jpg"
+        alt="Montenegro on Film — photography by Šćepan Popović"
+    >
+
+
+    <div class="poetry">
+
+        <p class="poem">
+            I believe that a person,<br>
+            the one who walks,<br>
+            always arrives in time.<br>
+            From space it is hard to escape.<br>
+            On its plains<br>
+            An entire world<br>
+            Of real decimals.
+        </p>
+
+
+        <div class="poem-credit">
+
+            <strong>Šćepan Popović</strong>
+
+            <div class="photo-credit">
+                Photography, 2025
+            </div>
+
+        </div>
+
     </div>
 
-    <div class="view-options">
-      <span>INDEX</span>
-      <span>GRID</span>
+</section>
+
+
+
+<!-- ======================================================
+     SELECTED PROJECTS + NEWS
+====================================================== -->
+
+<div class="home-content">
+
+    <div class="home-grid">
+
+
+        <!-- SELECTED PROJECTS -->
+
+        <section>
+
+            <div class="section-header">
+
+                <div class="section-title">
+                    SELECTED PROJECTS
+                </div>
+
+                <div class="section-line"></div>
+
+                <a class="section-link" href="architecture.html">
+                    VIEW ALL PROJECTS →
+                </a>
+
+            </div>
+
+
+            <div class="projects-grid">
+
+
+                <!-- PROJECT 01 -->
+
+                <a class="project" href="#">
+
+                    <div class="project-image">
+
+                        <div class="placeholder">
+                            IMAGE
+                        </div>
+
+                        <span class="project-number">
+                            01
+                        </span>
+
+                    </div>
+
+                    <div class="project-title">
+                        PROJECT TITLE
+                    </div>
+
+                    <div class="project-category">
+                        Architecture, 2026
+                    </div>
+
+                </a>
+
+
+
+                <!-- PROJECT 02 -->
+
+                <a class="project" href="#">
+
+                    <div class="project-image">
+
+                        <div class="placeholder">
+                            IMAGE
+                        </div>
+
+                        <span class="project-number">
+                            02
+                        </span>
+
+                    </div>
+
+                    <div class="project-title">
+                        PROJECT TITLE
+                    </div>
+
+                    <div class="project-category">
+                        Research, 2025
+                    </div>
+
+                </a>
+
+
+
+                <!-- PROJECT 03 -->
+
+                <a class="project" href="#">
+
+                    <div class="project-image">
+
+                        <div class="placeholder">
+                            IMAGE
+                        </div>
+
+                        <span class="project-number">
+                            03
+                        </span>
+
+                    </div>
+
+                    <div class="project-title">
+                        PROJECT TITLE
+                    </div>
+
+                    <div class="project-category">
+                        Film, 2025
+                    </div>
+
+                </a>
+
+
+
+                <!-- PROJECT 04 -->
+
+                <a class="project" href="#">
+
+                    <div class="project-image">
+
+                        <div class="placeholder">
+                            IMAGE
+                        </div>
+
+                        <span class="project-number">
+                            04
+                        </span>
+
+                    </div>
+
+                    <div class="project-title">
+                        PROJECT TITLE
+                    </div>
+
+                    <div class="project-category">
+                        Spatial Art, 2025
+                    </div>
+
+                </a>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- NEWS -->
+
+        <section>
+
+            <div class="section-header">
+
+                <div class="section-title">
+                    NEWS
+                </div>
+
+                <div class="section-line"></div>
+
+                <a class="section-link" href="news.html">
+                    VIEW ALL NEWS →
+                </a>
+
+            </div>
+
+
+            <div class="news-item">
+
+                <div class="news-date">
+                    2026
+                </div>
+
+                <a class="news-title" href="#">
+                    News title / exhibition / residency
+                </a>
+
+            </div>
+
+
+            <div class="news-item">
+
+                <div class="news-date">
+                    2026
+                </div>
+
+                <a class="news-title" href="#">
+                    News title / publication / project
+                </a>
+
+            </div>
+
+
+            <div class="news-item">
+
+                <div class="news-date">
+                    2025
+                </div>
+
+                <a class="news-title" href="#">
+                    News title / event
+                </a>
+
+            </div>
+
+
+        </section>
+
+
     </div>
 
-  </div>
+</div>
 
 
 
-  <section class="project-grid">
+<!-- ======================================================
+     FOOTER
+====================================================== -->
+
+<footer id="socials">
+
+    <div class="footer-grid">
 
 
-    <!-- PROJECT 01 -->
-
-    <a class="project" href="#">
-
-      <div class="project-image">
-        <div class="placeholder">
-          IMAGE 01
-        </div>
-      </div>
-
-      <div class="project-meta">
+        <!-- NAME -->
 
         <div>
-          <div class="project-title">
-            Project Title
-          </div>
 
-          <div class="project-category">
-            Architecture
-          </div>
+            <div class="footer-title">
+                ŠĆEPAN POPOVIĆ
+            </div>
 
-          <div class="project-location">
-            Montenegro
-          </div>
+            <div>
+                Architecture / Urbanism / Research / Art
+            </div>
+
         </div>
 
-        <div class="project-year">
-          2026
-        </div>
-
-      </div>
-
-    </a>
 
 
-
-    <!-- PROJECT 02 -->
-
-    <a class="project" href="#">
-
-      <div class="project-image">
-        <div class="placeholder">
-          IMAGE 02
-        </div>
-      </div>
-
-      <div class="project-meta">
+        <!-- LOCATION -->
 
         <div>
-          <div class="project-title">
-            Project Title
-          </div>
 
-          <div class="project-category">
-            Research
-          </div>
+            <div class="footer-heading">
+                LOCATION
+            </div>
 
-          <div class="project-location">
-            Prague
-          </div>
+            <div class="footer-line">
+                Montenegro
+            </div>
+
+            <div class="footer-line">
+                Berlin
+            </div>
+
+            <div class="footer-line">
+                Remote
+            </div>
+
         </div>
 
-        <div class="project-year">
-          2025
-        </div>
-
-      </div>
-
-    </a>
 
 
-
-    <!-- PROJECT 03 -->
-
-    <a class="project" href="#">
-
-      <div class="project-image">
-        <div class="placeholder">
-          IMAGE 03
-        </div>
-      </div>
-
-      <div class="project-meta">
+        <!-- CONTACT -->
 
         <div>
-          <div class="project-title">
-            Project Title
-          </div>
 
-          <div class="project-category">
-            Film
-          </div>
+            <div class="footer-heading">
+                CONTACT
+            </div>
 
-          <div class="project-location">
-            Europe
-          </div>
+            <div class="footer-line">
+                your@email.com
+            </div>
+
+            <div class="footer-line">
+                +382 ...
+            </div>
+
+            <div class="footer-line">
+                +49 ...
+            </div>
+
         </div>
 
-        <div class="project-year">
-          2025
-        </div>
-
-      </div>
-
-    </a>
 
 
-
-    <!-- PROJECT 04 -->
-
-    <a class="project" href="#">
-
-      <div class="project-image">
-        <div class="placeholder">
-          IMAGE 04
-        </div>
-      </div>
-
-      <div class="project-meta">
+        <!-- SOCIALS -->
 
         <div>
-          <div class="project-title">
-            Project Title
-          </div>
 
-          <div class="project-category">
-            Spatial Art
-          </div>
+            <div class="footer-heading">
+                SOCIALS
+            </div>
 
-          <div class="project-location">
-            Montenegro
-          </div>
+            <a
+                class="social-link"
+                href="#"
+                target="_blank"
+            >
+                Instagram <span>↗</span>
+            </a>
+
+            <a
+                class="social-link"
+                href="#"
+                target="_blank"
+            >
+                LinkedIn <span>↗</span>
+            </a>
+
+            <a
+                class="social-link"
+                href="#"
+                target="_blank"
+            >
+                YouTube <span>↗</span>
+            </a>
+
         </div>
 
-        <div class="project-year">
-          2024
-        </div>
-
-      </div>
-
-    </a>
 
 
-
-    <!-- PROJECT 05 -->
-
-    <a class="project" href="#">
-
-      <div class="project-image">
-        <div class="placeholder">
-          IMAGE 05
-        </div>
-      </div>
-
-      <div class="project-meta">
+        <!-- LANGUAGES -->
 
         <div>
-          <div class="project-title">
-            Project Title
-          </div>
 
-          <div class="project-category">
-            Urbanism
-          </div>
+            <div class="languages">
 
-          <div class="project-location">
-            Montenegro
-          </div>
+                <a href="#">
+                    EN
+                </a>
+
+                <span>/</span>
+
+                <a href="#">
+                    MNE
+                </a>
+
+                <span>/</span>
+
+                <a href="#">
+                    IT
+                </a>
+
+                <span>/</span>
+
+                <a href="#">
+                    DE
+                </a>
+
+            </div>
+
         </div>
 
-        <div class="project-year">
-          2024
-        </div>
 
-      </div>
-
-    </a>
-
-
-
-    <!-- PROJECT 06 -->
-
-    <a class="project" href="#">
-
-      <div class="project-image">
-        <div class="placeholder">
-          IMAGE 06
-        </div>
-      </div>
-
-      <div class="project-meta">
-
-        <div>
-          <div class="project-title">
-            Project Title
-          </div>
-
-          <div class="project-category">
-            Observation
-          </div>
-
-          <div class="project-location">
-            Various locations
-          </div>
-        </div>
-
-        <div class="project-year">
-          2023
-        </div>
-
-      </div>
-
-    </a>
-
-
-  </section>
-
-
-
-  <footer>
-
-    <div>
-      © 2026 Šćepan Popović
     </div>
 
-    <div>
-      Architecture / Urbanism / Research / Art
+
+    <div class="copyright">
+        © 2026 Šćepan Popović
     </div>
 
-  </footer>
-
-</main>
+</footer>
 
 
 </body>
-
 </html>
