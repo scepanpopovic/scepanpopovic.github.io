@@ -161,7 +161,8 @@ header {
     opacity: 1;
 }
 
-#heroVideo {
+#heroVideoIntro,
+#heroVideoMain {
     z-index: 1;
     object-fit: contain;
     background: #000;
@@ -733,9 +734,18 @@ footer {
 <section class="hero">
 
     <video
-        id="heroVideo"
+        id="heroVideoIntro"
         class="hero-media active"
         autoplay
+        muted
+        playsinline
+    >
+        <source src="videos/homepage-intro.mp4" type="video/mp4">
+    </video>
+
+    <video
+        id="heroVideoMain"
+        class="hero-media"
         muted
         playsinline
     >
@@ -1132,23 +1142,57 @@ footer {
 
 
 <script>
-const video = document.getElementById("heroVideo");
+
+const introVideo = document.getElementById("heroVideoIntro");
+const mainVideo = document.getElementById("heroVideoMain");
 const image = document.getElementById("heroImage");
 const soundButton = document.getElementById("soundToggle");
 
 let soundOn = false;
 
-/* SOUND ON / OFF */
-
 soundButton.addEventListener("click", function () {
+
     soundOn = !soundOn;
-    video.muted = !soundOn;
+
+    introVideo.muted = !soundOn;
+    mainVideo.muted = !soundOn;
 
     soundButton.textContent = soundOn
         ? "SOUND OFF ↗"
         : "SOUND ON ↗";
+
 });
 
+introVideo.addEventListener("ended", function () {
+
+    introVideo.classList.remove("active");
+    mainVideo.classList.add("active");
+
+    mainVideo.currentTime = 0;
+    mainVideo.play();
+
+});
+
+mainVideo.addEventListener("ended", function () {
+
+    mainVideo.classList.remove("active");
+    image.classList.add("active");
+
+    setTimeout(function () {
+
+        image.classList.remove("active");
+        introVideo.classList.add("active");
+
+        introVideo.currentTime = 0;
+        introVideo.play();
+
+    }, 3000);
+
+});
+
+introVideo.play();
+
+</script>
 
 /* VIDEO → PHOTO → VIDEO */
 
