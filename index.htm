@@ -509,6 +509,26 @@ footer {
     color: #fff;
 }
 
+/* FOOTER INTERACTIVE LINKS */
+
+.footer-link,
+.social-link,
+.language-link {
+    color: #fff;
+    transition: color 0.2s ease;
+}
+
+.footer-link:hover,
+.social-link:hover,
+.language-link:hover {
+    color: var(--green);
+}
+
+.social-link span {
+    color: inherit;
+}
+
+   
 /* =========================================================
    MOBILE
 ========================================================= */
@@ -703,20 +723,6 @@ footer {
         <div class="nav-item">
             <a class="nav-link" href="news.html">
                 NEWS
-            </a>
-        </div>
-
-
-        <div class="nav-item">
-            <a class="nav-link" href="contact.html">
-                CONTACT
-            </a>
-        </div>
-
-
-        <div class="nav-item">
-            <a class="nav-link" href="#socials">
-                SOCIALS
             </a>
         </div>
 
@@ -988,11 +994,9 @@ footer {
 
     <div class="footer-grid">
 
-
         <!-- NAME -->
 
         <div>
-
             <div class="footer-title">
                 ŠĆEPAN POPOVIĆ
             </div>
@@ -1000,15 +1004,12 @@ footer {
             <div>
                 Architecture / Urbanism / Research / Art
             </div>
-
         </div>
-
 
 
         <!-- LOCATION -->
 
         <div>
-
             <div class="footer-heading">
                 LOCATION
             </div>
@@ -1024,45 +1025,39 @@ footer {
             <div class="footer-line">
                 Remote
             </div>
-
         </div>
-
 
 
         <!-- CONTACT -->
 
         <div>
-
             <div class="footer-heading">
                 CONTACT
             </div>
 
             <div class="footer-line">
-                <a href="mailto:scepanpopovic99@gmail.com">
+                <a class="footer-link" href="mailto:scepanpopovic99@gmail.com">
                     scepanpopovic99@gmail.com
                 </a>
             </div>
 
             <div class="footer-line">
-                <a href="mailto:numeruslinkin@gmail.com">
+                <a class="footer-link" href="mailto:numeruslinkin@gmail.com">
                     numeruslinkin@gmail.com
                 </a>
             </div>
 
             <div class="footer-line">
-                <a href="tel:+38269650667">
+                <a class="footer-link" href="tel:+38269650667">
                     +382 69 650 667
                 </a>
             </div>
-
         </div>
-
 
 
         <!-- SOCIALS -->
 
         <div>
-
             <div class="footer-heading">
                 SOCIALS
             </div>
@@ -1093,43 +1088,38 @@ footer {
             >
                 YouTube <span>↗</span>
             </a>
-
         </div>
-
 
 
         <!-- LANGUAGES -->
 
         <div>
-
             <div class="languages">
 
-                <a href="#">
+                <a class="language-link" href="#">
                     EN
                 </a>
 
                 <span>/</span>
 
-                <a href="#">
+                <a class="language-link" href="#">
                     MNE
                 </a>
 
                 <span>/</span>
 
-                <a href="#">
+                <a class="language-link" href="#">
                     IT
                 </a>
 
                 <span>/</span>
 
-                <a href="#">
+                <a class="language-link" href="#">
                     DE
                 </a>
 
             </div>
-
         </div>
-
 
     </div>
 
