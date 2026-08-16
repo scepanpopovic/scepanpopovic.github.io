@@ -142,24 +142,83 @@ header {
     margin: 0 36px;
     height: calc(100vh - 130px);
     min-height: 580px;
-
     position: relative;
     overflow: hidden;
-
-    background: #e5e5e5;
+    background: #000;
 }
 
-.hero img {
+.hero-media {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-
-    display: block;
-
-    /* COLOR GRADING CAN BE CHANGED LATER */
-    filter: grayscale(100%);
+    opacity: 0;
+    transition: opacity 0.8s ease;
 }
 
+.hero-media.active {
+    opacity: 1;
+}
+
+#heroVideo {
+    z-index: 1;
+}
+
+#heroImage {
+    z-index: 2;
+}
+
+.sound-toggle {
+    position: absolute;
+    right: 18px;
+    bottom: 18px;
+    z-index: 10;
+    background: #000;
+    color: #fff;
+    border: 0;
+    padding: 8px 10px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 10px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.sound-toggle:hover {
+    background: var(--green);
+    color: #000;
+}
+
+   
+
+<!-- ======================================================
+     HERO
+====================================================== -->
+
+<section class="hero">
+
+    <video
+        id="heroVideo"
+        class="hero-media active"
+        autoplay
+        muted
+        playsinline
+    >
+        <source src="videos/homepage.mp4" type="video/mp4">
+    </video>
+
+    <img
+        id="heroImage"
+        class="hero-media"
+        src="images/montenegro-on-film.jpg"
+        alt="Montenegro on Film — Šćepan Popović"
+    >
+
+    <button id="soundToggle" class="sound-toggle">
+        SOUND ON ↗
+    </button>
+
+</section>
 
 /* POETRY */
 
@@ -1085,5 +1144,55 @@ footer {
 </footer>
 
 
+<script>
+const video = document.getElementById("heroVideo");
+const image = document.getElementById("heroImage");
+const soundButton = document.getElementById("soundToggle");
+
+let soundOn = false;
+
+/* SOUND ON / OFF */
+
+soundButton.addEventListener("click", function () {
+    soundOn = !soundOn;
+    video.muted = !soundOn;
+
+    soundButton.textContent = soundOn
+        ? "SOUND OFF ↗"
+        : "SOUND ON ↗";
+});
+
+
+/* VIDEO → PHOTO → VIDEO */
+
+function showImage() {
+
+    video.classList.remove("active");
+    image.classList.add("active");
+
+    video.pause();
+
+    setTimeout(function () {
+
+        image.classList.remove("active");
+        video.classList.add("active");
+
+        video.currentTime = 0;
+        video.play();
+
+    }, 3000);
+}
+
+
+/* WHEN VIDEO ENDS, SHOW PHOTO */
+
+video.addEventListener("ended", showImage);
+
+
+/* START VIDEO */
+
+video.play();
+</script>
+   
 </body>
 </html>
