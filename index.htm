@@ -69,6 +69,24 @@ header {
     white-space: nowrap;
 }
 
+.logo-name {
+    display: block;
+}
+
+.logo-about {
+    display: block;
+    margin-top: 3px;
+    font-size: 8px;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    color: #fff;
+}
+
+.logo:hover .logo-name,
+.logo:hover .logo-about {
+    color: var(--green);
+}
+   
 .navigation {
     display: flex;
     align-items: center;
@@ -648,9 +666,10 @@ footer {
 
 <header>
 
-    <a class="logo" href="index.html">
-        ŠĆEPAN POPOVIĆ
-    </a>
+    <a class="logo" href="about.html">
+    <span class="logo-name">ŠĆEPAN POPOVIĆ</span>
+    <span class="logo-about">ABOUT</span>
+</a>
 
 
     <nav class="navigation">
