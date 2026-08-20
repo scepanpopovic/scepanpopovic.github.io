@@ -1,1 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Zemlja Kurtalisana — Šćepan Popović</title>
+
+<style>
+
+/* =========================================
+   GENERAL
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #fff;
+    color: #000;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 12px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+:root {
+    --green: #b6ff00;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+header {
+    width: 100%;
+    background: #000;
+    color: #fff;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    padding: 22px 30px 20px;
+}
+
+.site-name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.about-link {
+    display: block;
+    margin-top: 7px;
+    font-size: 8px;
+}
+
+.site-name:hover,
+.about-link:hover {
+    color: var(--green);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    font-size: 10px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: var(--green);
+}
+
+.separator {
+    color: #fff;
+}
+
+
+/* =========================================
+   PAGE
+========================================= */
+
+.collection-page {
+    padding: 55px 30px 120px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 55px;
+
+    font-size: 9px;
+    font-weight: bold;
+}
+
+.back-link:hover {
+    color: var(--green);
+}
+
+
+/* =========================================
+   COLLECTION INTRO
+========================================= */
+
+.collection-intro {
+    border-top: 1px solid #000;
+    padding-top: 18px;
+
+    display: grid;
+    grid-template-columns: 65px 1.1fr 0.8fr;
+    gap: 35px;
+
+    margin-bottom: 65px;
+}
+
+.collection-number {
+    font-size: 10px;
+}
+
+.collection-title {
+    margin: 0;
+
+    font-size: 34px;
+    line-height: 1;
+    font-weight: bold;
+
+    text-transform: uppercase;
+}
+
+.collection-type {
+    margin-top: 12px;
+
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+.collection-meta {
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+.meta-heading {
+    margin-top: 16px;
+    font-weight: bold;
+}
+
+.meta-heading:first-child {
+    margin-top: 0;
+}
+
+
+/* =========================================
+   COVER
+========================================= */
+
+.cover {
+    width: 100%;
+    margin-bottom: 110px;
+}
+
+.cover img {
+    display: block;
+
+    width: 100%;
+    max-height: 78vh;
+
+    object-fit: cover;
+
+    filter: grayscale(100%);
+}
+
+
+/* =========================================
+   POEMS
+========================================= */
+
+.poems-section {
+    border-top: 1px solid #000;
+    padding-top: 18px;
+}
+
+.poems-label {
+    margin-bottom: 80px;
+
+    font-size: 9px;
+    font-weight: bold;
+}
+
+.poems {
+    width: min(100%, 650px);
+    margin-left: 14%;
+}
+
+.poem {
+    margin-bottom: 65px;
+}
+
+.poem-title {
+    margin-bottom: 28px;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    text-transform: uppercase;
+}
+
+.poem-text {
+    white-space: pre-line;
+
+    font-size: 12px;
+    line-height: 1.85;
+}
+
+.poem-divider {
+    margin: 65px 0;
+
+    font-size: 10px;
+    letter-spacing: 5px;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    background: #000;
+    color: #fff;
+
+    padding: 28px 30px 24px;
+}
+
+.footer-grid {
+    display: grid;
+
+    grid-template-columns:
+        1.4fr
+        0.9fr
+        1.2fr
+        1fr
+        auto;
+
+    gap: 40px;
+}
+
+.footer-heading {
+    margin-bottom: 9px;
+
+    font-size: 8px;
+    font-weight: bold;
+}
+
+.footer-name {
+    margin-bottom: 8px;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.footer-line {
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+footer a:hover {
+    color: var(--green);
+}
+
+.social-link {
+    display: block;
+}
+
+.languages {
+    text-align: right;
+}
+
+.copyright {
+    margin-top: 30px;
+    text-align: right;
+
+    font-size: 8px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 850px) {
+
+    header {
+        display: block;
+    }
+
+    nav {
+        margin-top: 25px;
+        flex-wrap: wrap;
+    }
+
+    .collection-page {
+        padding: 40px 18px 80px;
+    }
+
+    .collection-intro {
+        grid-template-columns: 40px 1fr;
+    }
+
+    .collection-meta {
+        grid-column: 2;
+    }
+
+    .collection-title {
+        font-size: 25px;
+    }
+
+    .poems {
+        margin-left: 0;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .languages,
+    .copyright {
+        text-align: left;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     HEADER
+========================================= -->
+
+<header>
+
+    <div>
+
+        <a href="index.html" class="site-name">
+            ŠĆEPAN POPOVIĆ
+        </a>
+
+        <a href="about.html" class="about-link">
+            ABOUT
+        </a>
+
+    </div>
+
+
+    <nav>
+
+        <a href="#">ARCHITECTURE</a>
+        <span class="separator">/</span>
+
+        <a href="#">URBANISM</a>
+        <span class="separator">/</span>
+
+        <a href="research.html">RESEARCH</a>
+        <span class="separator">/</span>
+
+        <a href="#">ARTWORKS</a>
+        <span class="separator">/</span>
+
+        <a href="film.html">FILM</a>
+        <span class="separator">/</span>
+
+        <a href="#">WRITINGS</a>
+        <span class="separator">/</span>
+
+        <a href="#">EXHIBITIONS</a>
+        <span class="separator">/</span>
+
+        <a href="#">NEWS</a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================================
+     COLLECTION
+========================================= -->
+
+<main class="collection-page">
+
+
+    <a href="poetry.html" class="back-link">
+        ← BACK TO POETRY
+    </a>
+
+
+
+    <!-- INTRO -->
+
+    <section class="collection-intro">
+
+
+        <div class="collection-number">
+            01
+        </div>
+
+
+        <div>
+
+            <h1 class="collection-title">
+                ZEMLJA KURTALISANA
+            </h1>
+
+            <div class="collection-type">
+                Poetry Collection
+            </div>
+
+        </div>
+
+
+        <div class="collection-meta">
+
+            <div class="meta-heading">
+                YEAR
+            </div>
+
+            2024
+
+
+            <div class="meta-heading">
+                PUBLISHER
+            </div>
+
+            JU Narodna biblioteka „Njegoš“, Nikšić
+
+
+            <div class="meta-heading">
+                AWARD
+            </div>
+
+            Second Prize<br>
+            XXVI Nikšićki književni susreti<br>
+            Competition for an Unpublished Poetry Collection
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- COVER -->
+
+    <div class="cover">
+
+        <img
+            src="images/zemlja-kurtalisana.jpg"
+            alt="Zemlja Kurtalisana"
+        >
+
+    </div>
+
+
+
+    <!-- =====================================
+         SELECTED POEMS
+    ====================================== -->
+
+    <section class="poems-section">
+
+
+        <div class="poems-label">
+            SELECTED POEMS
+        </div>
+
+
+        <div class="poems">
+
+
+            <!-- PRESECI BLISKOSTI -->
+
+            <div class="poem">
+
+                <div class="poem-title">
+                    PRESECI BLISKOSTI
+                </div>
+
+                <div class="poem-text">
+Nebo se podiglo
+Isuviše visoko
+Da ne bih primetio
+Forme.
+Na tragovima tokova
+Naslućujem reku.
+Prečesto
+Povlačim obale
+Kako bi mogla pobeći.
+Svet je prljavo mesto.
+U presecima bliskosti
+Zaobljenost formi
+Iščezava u tvojim udovima.
+Na granici pritiska
+Trpiš ljubav.
+Prija nam potraga.
+
+Jednom bi se trebalo i sastaviti,
+Obalama obećati mostove.
+
+Tražimo se u
+mediteranskom predvorju;
+Ja sam na ivici
+Ti si na trgovima smeha
+Blizina vode
+Mi ometa pravac
+Iako
+Naše Reke napuštaju obale
+Stabla su nam ruke
+I više ne možemo
+Odohvatiti ljubav.
+                </div>
+
+            </div>
+
+
+            <div class="poem-divider">
+                * * *
+            </div>
+
+
+
+            <!-- ISPOVEST -->
+
+            <div class="poem">
+
+                <div class="poem-title">
+                    ISPOVEST
+                </div>
+
+                <div class="poem-text">
+Došao sam da Ti se ispovedim.
+Jednom.
+Dvaput.
+Okrenuću se po osećaju,
+izleteti u svet;
+Razglasiću da sam lep
+Jer sam video kako Vam se Čovek ume
+Lepo prikloniti.
+
+Došao sam da Ti se ispovedim.
+Retko.
+Nežno.
+Umeću da se zanesem
+Kad sledeći put budem govorio
+O Vama.
+Proglasiću se tromim
+I pustiti.
+Svet ionako ne valja.
+Trebalo bi ga menjati.
+
+Došao sam da Ti se ispovedim.
+Treći put.
+Parolama ću trčati za njima.
+Dovešću Vam ih.
+Neka se otmu.
+Ražaloste.
+Neka me puste na miru.
+Kad drugi put budem govorio
+O vama,
+umeću da se setim
+Kako smo umetni
+Koliko umemo voleti.
+
+Došao sam da Ti se ispovedim.
+Ovo je kraj puta.
+O počecima bi valjalo ćutati.
+
+Žena.
+Jednom.
+Dvaput.
+Retko.
+Nežno.
+Neka te voli.
+Neka te vrati.
+                </div>
+
+            </div>
+
+
+            <div class="poem-divider">
+                * * *
+            </div>
+
+
+
+            <!-- MOJA CRVENA REVOLUCIJA -->
+
+            <div class="poem">
+
+                <div class="poem-title">
+                    MOJA CRVENA REVOLUCIJA
+                </div>
+
+                <div class="poem-text">
+Stene su padale
+Naniže od svojih senki.
+Rastopljeni motivi
+Tvoje borbe
+Činili su te ženom.
+Hteo sam dočarati
+Temu mesta
+U Tvom pripadanju.
+Hteo sam ukrstiti puteve,
+Rečne obale i
+Stajališta
+Kako bi prišla
+Ti, komunisto,
+Moja crvena Revolucijo.
+U svetlu
+Tuđeg trbuha
+Hteo sam zdrobiti
+Osamu pesnika
+I prići lepoti.
+Ne mogu čuvati
+Tvoje padove.
+Meni se svetlost
+Činila senkom —
+Zato sam kamen
+Pokušao pretvoriti
+U čoveka.
+Zato sam čoveka
+Pretvorio u kamen.
+
+U sebi
+Još
+Negujem prošlost.
+Reke su sa obalama
+Srasle
+I činilo se nemoguće
+Rastopiti nestajanja.
+U poslednjim traženjima
+Čeličnih zaprega
+Pritiskam vetar —
+On ne sme odneti reči.
+Tako bi kamen pao na čoveka.
+                </div>
+
+            </div>
+
+
+            <div class="poem-divider">
+                * * *
+            </div>
+
+
+
+            <!-- MORE -->
+
+            <div class="poem">
+
+                <div class="poem-title">
+                    MORE
+                </div>
+
+                <div class="poem-text">
+Način na koji se mešaš
+u vrtoglavicu ozloglašenosti
+kazuje da
+pesnik ne sme dozvoliti
+da ne bude poražen.
+Utroba
+Pesak
+Zrenevlje sveta
+vri.
+Naprasno se radujem
+trgovima.
+Kako sam lepo
+pokušao da objasnim
+more;
+taj juli 2021.
+                </div>
+
+            </div>
+
+
+            <div class="poem-divider">
+                * * *
+            </div>
+
+
+
+            <!-- OBALE -->
+
+            <div class="poem">
+
+                <div class="poem-title">
+                    OBALE
+                </div>
+
+                <div class="poem-text">
+Prvi put
+Obesno
+Udaram tišinu,
+povlačim reku
+I prolazim.
+Kao čovek,
+kao ubica —
+Dete što voli čoveka.
+Goleme mreže grafike
+putuju svetom
+a ti me još pitaš
+zašto te ne mogu opcrtati.
+Beslovesne padine
+u umeocima naših stvari.
+Budim se retko
+Tek
+U prvom jutru naše obale
+umem raspametiti okuku —
+odavno postajem čovekom.
+Zato
+Nemoj da me pitaš
+Kako gradim svetove.
+Mogu se podsmehnuti na ovaj tvoj.
+                </div>
+
+            </div>
+
+
+            <div class="poem-divider">
+                * * *
+            </div>
+
+
+
+            <!-- RASPAMEĆENE OKUKE -->
+
+            <div class="poem">
+
+                <div class="poem-title">
+                    RASPAMEĆENE OKUKE
+                </div>
+
+                <div class="poem-text">
+Kako da raspametim ljude u vašim okukama?
+
+— postanak teze: Obale u nama sudaraju se na suprotnim stranama.
+
+Sva večita slova betonskog sveta
+bivaju lepša kad naše okuke
+odumirući nestaju.
+Čak i u mirisu grehova
+betonske ploče popuštaju
+a sklopljena tela
+u prvom spajanju
+ostaju nepomerena.
+Više od ovog bića
+Više od ove misli
+okamenjene tišine
+budeći se plaču.
+Uzdrhtale dečje ruke
+Učvrsle muške grudi
+mog malog nestalog deteta.
+Voleći da živim
+dešavam se svetu bez bola.
+Ukrojena visinska trenja
+Udvojbene konstrukcije u meni
+utrunulim peskom iz njegove suvišne ruke,
+paviljonska žena u meni
+ružom se hrani,
+tera se zapadno.
+Otrgla se okuka seća
+ukrajinskih silovanja.
+U betonu se čuje njegov glas.
+I ruke koje nosim,
+nosim da bih njega voleo.
+                </div>
+
+            </div>
+
+
+            <div class="poem-divider">
+                * * *
+            </div>
+
+
+
+            <!-- KAMENI GRAD -->
+
+            <div class="poem">
+
+                <div class="poem-title">
+                    KAMENI GRAD
+                </div>
+
+                <div class="poem-text">
+Stojim
+Kao pred kamenom.
+Govori da plače.
+Nije odavde.
+Reke se suza
+U njemu razbistriše.
+Ja sam mu povratio svet
+A sebe sam krenuo
+Da spasem.
+
+Sad sedim
+U ogoljenoj simetriji
+Drveta
+Njegove krošnje
+I svojih strepnji
+Čoveče
+Ja moram biti slobodan.
+
+...
+
+Kamen je biće
+Kamen je svet
+Vreme u njemu
+Vri
+U vetrovima Tvojim
+                </div>
+
+            </div>
+
+
+            <div class="poem-divider">
+                * * *
+            </div>
+
+
+
+            <!-- SINESTEZIJA -->
+
+            <div class="poem">
+
+                <div class="poem-title">
+                    SINESTEZIJA
+                </div>
+
+                <div class="poem-text">
+Neobaveštenost prostora
+Trguje instancama.
+Na severnom delu
+Trbušnosti njenog smeha
+Celosti misli
+Utapaju se u mene.
+Osećam da raste
+Dete u meni
+Iako bi ga Ti
+Trebala nositi.
+O ljubavi
+Uobičavam da ćutim.
+Tišina svetlosti
+Objašnjava mi mrak.
+Ne umem umirati na miru.
+Senkama trpim lepotu,
+Smehom je tražim.
+Potezna rukavica
+Tvoje devičantnosti
+Ne ume
+Raštimovati hod.
+I dalje sam prisutan.
+Moram Te osetiti
+Telom jezika
+Da bih Te umeo
+Pretvoriti u prostor.
+Kameni udovi
+Tvoje nestabilnosti,
+Osmešena skulpturalnost
+Nepoznatih reči..
+Trebalo bi izmisliti
+Svetove,
+Nove praznine
+Ne bi li utopili
+Lepotu senki
+U drhtaj
+Ubijene stvarnosti.
+                </div>
+
+            </div>
+
+
+            <div class="poem-divider">
+                * * *
+            </div>
+
+
+
+            <!-- NEOBAVEŠTENOST PROSTORA -->
+
+            <div class="poem">
+
+                <div class="poem-title">
+                    NEOBAVEŠTENOST PROSTORA
+                </div>
+
+                <div class="poem-text">
+Gradim svet praznine u kojem si postavljen na tlu.
+Leđima okrenut ništavnosti svog postojanja,
+otvara se novi svet Neba.
+Pozorište na plafonu
+Ukida simultanost percepcije
+Moja umetnost
+Se davi
+Na trbuhu koji
+Leđima okrenut
+Svetli u zemlji.
+Gradim svet
+Praznine,
+Prostor,
+Neobavešten
+Da slučajnosti
+Na zidu moje iskrivljenosti —
+Poništava trbušnost
+Njenog smeha.
+                </div>
+
+            </div>
+
+
+            <div class="poem-divider">
+                * * *
+            </div>
+
+
+
+            <!-- O VREDNOSTIMA -->
+
+            <div class="poem">
+
+                <div class="poem-title">
+                    O VREDNOSTIMA
+                </div>
+
+                <div class="poem-text">
+Hoću da kriknem
+Da bih vriskom
+Mogao da te sateram.
+To je jedini način
+Na koji mogu izvesti smrt
+A da posle nje
+Ostanem živ.
+Ne znam koliko je to vredno.
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer>
+
+    <div class="footer-grid">
+
+
+        <div>
+
+            <div class="footer-name">
+                ŠĆEPAN POPOVIĆ
+            </div>
+
+            <div class="footer-line">
+                Architecture / Urbanism / Research / Art
+            </div>
+
+        </div>
+
+
+        <div>
+
+            <div class="footer-heading">
+                LOCATION
+            </div>
+
+            <div class="footer-line">
+                Montenegro<br>
+                Berlin<br>
+                Remote
+            </div>
+
+        </div>
+
+
+        <div>
+
+            <div class="footer-heading">
+                CONTACT
+            </div>
+
+            <div class="footer-line">
+
+                <a href="mailto:scepanpopovic99@gmail.com">
+                    scepanpopovic99@gmail.com
+                </a>
+
+                <br>
+
+                <a href="mailto:numeruslinkin@gmail.com">
+                    numeruslinkin@gmail.com
+                </a>
+
+                <br>
+
+                <a href="tel:+38269650667">
+                    +382 69 650 667
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div>
+
+            <div class="footer-heading">
+                SOCIALS
+            </div>
+
+            <a
+                class="social-link"
+                href="https://www.instagram.com/landscapes.of.memory_prague/"
+                target="_blank"
+            >
+                Instagram ↗
+            </a>
+
+            <a
+                class="social-link"
+                href="https://www.linkedin.com/in/%C5%A1%C4%87epan-popovi%C4%87-384896328/"
+                target="_blank"
+            >
+                LinkedIn ↗
+            </a>
+
+            <a
+                class="social-link"
+                href="https://www.youtube.com/@scepanpopovic2201"
+                target="_blank"
+            >
+                YouTube ↗
+            </a>
+
+        </div>
+
+
+        <div class="languages">
+
+            <a href="#">EN</a>
+            /
+            <a href="#">MNE</a>
+            /
+            <a href="#">IT</a>
+            /
+            <a href="#">DE</a>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="copyright">
+        © 2026 Šćepan Popović
+    </div>
+
+
+</footer>
+
+
+</body>
+
+</html>
