@@ -2,12 +2,17 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Film — Šćepan Popović</title>
+<title>Landscapes of Memory — Šćepan Popović</title>
 
 <style>
+
+/* =========================================================
+   BASIC SETTINGS
+========================================================= */
 
 * {
     box-sizing: border-box;
@@ -24,6 +29,7 @@ body {
     margin: 0;
     background: #fff;
     color: #000;
+
     font-family: "Courier New", Courier, monospace;
     font-size: 12px;
     line-height: 1.5;
@@ -34,11 +40,15 @@ a {
     text-decoration: none;
 }
 
-/* HEADER */
+
+/* =========================================================
+   HEADER
+========================================================= */
 
 header {
     min-height: 86px;
     padding: 18px 36px;
+
     background: #000;
     color: #fff;
 
@@ -59,15 +69,21 @@ header {
 
 .logo-about {
     display: block;
+
     margin-top: 3px;
+
     font-size: 8px;
     font-weight: normal;
+    letter-spacing: 0.5px;
 }
 
 .logo:hover .logo-name,
 .logo:hover .logo-about {
     color: var(--green);
 }
+
+
+/* NAVIGATION */
 
 .navigation {
     display: flex;
@@ -100,23 +116,33 @@ header {
     color: var(--green);
 }
 
-/* DROPDOWN */
+
+/* DROPDOWNS */
 
 .dropdown {
     display: none;
+
     position: absolute;
+
     top: 20px;
     left: -10px;
+
     z-index: 100;
+
     min-width: 150px;
+
     padding: 8px 10px;
+
     background: #000;
 }
 
 .dropdown a {
     display: block;
+
     padding: 4px 0;
+
     color: #fff;
+
     font-size: 10px;
 }
 
@@ -128,7 +154,10 @@ header {
     display: block;
 }
 
-/* FILM PAGE */
+
+/* =========================================================
+   FILM PAGE
+========================================================= */
 
 .film-page {
     padding: 50px 36px 100px;
@@ -136,34 +165,45 @@ header {
 
 .page-title {
     margin-bottom: 30px;
+
     font-size: 12px;
     font-weight: 700;
 }
+
 
 /* VIDEO */
 
 .film-video {
     width: 100%;
     max-width: 1400px;
+
     aspect-ratio: 16 / 9;
+
     background: #000;
 }
 
 .film-video iframe {
     width: 100%;
     height: 100%;
-    border: 0;
+
     display: block;
+
+    border: 0;
 }
 
-/* FILM INFO */
+
+/* FILM INFORMATION */
 
 .film-info {
     max-width: 1400px;
+
     display: grid;
+
     grid-template-columns: 2fr 1fr;
+
     gap: 80px;
-    padding-top: 15px;
+
+    padding-top: 18px;
 }
 
 .film-title {
@@ -173,9 +213,19 @@ header {
 }
 
 .film-description {
-    margin-top: 15px;
     max-width: 720px;
+
+    margin-top: 18px;
+
     color: #222;
+
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.film-description p {
+    margin-top: 0;
+    margin-bottom: 18px;
 }
 
 .film-meta {
@@ -187,31 +237,50 @@ header {
     font-weight: 700;
 }
 
-/* FOOTER */
+
+/* =========================================================
+   FOOTER
+========================================================= */
 
 footer {
     margin: 0;
+
     padding: 28px 36px 24px;
+
     background: #000;
     color: #fff;
 }
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr 1fr 0.9fr 0.8fr;
+
+    grid-template-columns:
+        1.2fr
+        0.8fr
+        1fr
+        0.9fr
+        0.8fr;
+
     gap: 40px;
 }
 
 .footer-title {
     margin-bottom: 8px;
+
+    color: #fff;
+
     font-size: 13px;
     font-weight: 700;
 }
 
 .footer-heading {
     margin-bottom: 7px;
+
+    color: #fff;
+
     font-size: 10px;
     font-weight: 700;
+
     text-transform: uppercase;
 }
 
@@ -223,6 +292,7 @@ footer {
 .social-link,
 .language-link {
     color: #fff;
+
     transition: color 0.2s ease;
 }
 
@@ -237,30 +307,45 @@ footer {
     margin-bottom: 4px;
 }
 
+.social-link span {
+    color: inherit;
+    margin-left: 5px;
+}
+
 .languages {
     display: flex;
+
     gap: 8px;
+
     justify-content: flex-end;
 }
 
 .copyright {
     margin-top: 28px;
+
     text-align: right;
+
     font-size: 10px;
 }
 
-/* MOBILE */
+
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media (max-width: 800px) {
 
     header {
         display: block;
+
         padding: 18px;
     }
 
     .navigation {
         margin-top: 18px;
+
         justify-content: flex-start;
+
         line-height: 2;
     }
 
@@ -270,6 +355,7 @@ footer {
 
     .film-info {
         grid-template-columns: 1fr;
+
         gap: 30px;
     }
 
@@ -279,6 +365,7 @@ footer {
 
     .footer-grid {
         grid-template-columns: 1fr 1fr;
+
         gap: 30px 20px;
     }
 
@@ -289,89 +376,163 @@ footer {
     .copyright {
         text-align: left;
     }
+
 }
 
 </style>
 
 </head>
 
+
 <body>
 
 
+<!-- ======================================================
+     HEADER
+====================================================== -->
+
 <header>
 
-    <a class="logo" href="index.html">
-        <span class="logo-name">ŠĆEPAN POPOVIĆ</span>
-        <span class="logo-about">ABOUT</span>
+    <a class="logo" href="about.html">
+
+        <span class="logo-name">
+            ŠĆEPAN POPOVIĆ
+        </span>
+
+        <span class="logo-about">
+            ABOUT
+        </span>
+
     </a>
 
 
     <nav class="navigation">
 
+
         <div class="nav-item">
-            <a class="nav-link" href="architecture.html">ARCHITECTURE</a>
+
+            <a class="nav-link" href="architecture.html">
+                ARCHITECTURE
+            </a>
+
         </div>
 
+
         <div class="nav-item">
-            <a class="nav-link" href="urbanism.html">URBANISM</a>
+
+            <a class="nav-link" href="urbanism.html">
+                URBANISM
+            </a>
+
         </div>
 
+
         <div class="nav-item">
-            <a class="nav-link" href="research.html">RESEARCH</a>
+
+            <a class="nav-link" href="research.html">
+                RESEARCH
+            </a>
+
         </div>
 
+
         <div class="nav-item">
 
-            <span class="nav-link">ARTWORKS</span>
+            <span class="nav-link">
+                ARTWORKS
+            </span>
 
             <div class="dropdown">
-                <a href="spatial-art.html">SPATIAL ART</a>
-                <a href="paintings.html">PAINTINGS</a>
-                <a href="observations.html">OBSERVATIONS</a>
+
+                <a href="spatial-art.html">
+                    SPATIAL ART
+                </a>
+
+                <a href="paintings.html">
+                    PAINTINGS
+                </a>
+
+                <a href="observations.html">
+                    OBSERVATIONS
+                </a>
+
             </div>
 
         </div>
 
+
         <div class="nav-item">
-            <a class="nav-link" href="film.html">FILM</a>
+
+            <a class="nav-link" href="film.html">
+                FILM
+            </a>
+
         </div>
 
+
         <div class="nav-item">
 
-            <span class="nav-link">WRITINGS</span>
+            <span class="nav-link">
+                WRITINGS
+            </span>
 
             <div class="dropdown">
-                <a href="texts.html">TEXTS</a>
-                <a href="poetry.html">POETRY</a>
+
+                <a href="texts.html">
+                    TEXTS
+                </a>
+
+                <a href="poetry.html">
+                    POETRY
+                </a>
+
             </div>
 
         </div>
 
-        <div class="nav-item">
-            <a class="nav-link" href="exhibitions.html">EXHIBITIONS</a>
-        </div>
 
         <div class="nav-item">
-            <a class="nav-link" href="news.html">NEWS</a>
+
+            <a class="nav-link" href="exhibitions.html">
+                EXHIBITIONS
+            </a>
+
         </div>
+
+
+        <div class="nav-item">
+
+            <a class="nav-link" href="news.html">
+                NEWS
+            </a>
+
+        </div>
+
 
     </nav>
 
 </header>
 
 
+<!-- ======================================================
+     FILM
+====================================================== -->
+
 <main class="film-page">
+
 
     <div class="page-title">
         FILM
     </div>
 
 
+    <!-- LANDSCAPES OF MEMORY -->
+
     <div class="film-video">
 
         <iframe
             src="https://www.youtube.com/embed/6oUwtDYQfhM?start=6"
-            title="Film by Šćepan Popović"
+            title="Landscapes of Memory — Šćepan Popović"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen>
         </iframe>
@@ -381,45 +542,137 @@ footer {
 
     <div class="film-info">
 
+
+        <!-- DESCRIPTION -->
+
         <div>
 
             <div class="film-title">
-                FILM TITLE
+                LANDSCAPES OF MEMORY
             </div>
 
+
             <div class="film-description">
-                Film description goes here.
+
+                <p>
+                    Landscapes of Memory is a video essay developed during a research residency at the Faculty of Architecture, ČVUT in Prague. Through film, spatial narration, archival material, and sound composition, the work explores landscape as a space of memory, ideological transformation, and historical continuity within socialist and post-socialist contexts.
+                </p>
+
+                <p>
+                    This project is supported by UNESCO through the Culture and Creativity for the Western Balkans (CC4WBs) project, funded by the European Union. The project focuses on fostering dialogue in the Western Balkans by enhancing the cultural and creative sectors for increased socio-economic impact.
+                </p>
+
             </div>
 
         </div>
 
+
+        <!-- META -->
 
         <div class="film-meta">
 
             <div>
-                <span class="meta-heading">YEAR</span><br>
-                2025
+
+                <span class="meta-heading">
+                    TITLE
+                </span>
+
+                <br>
+
+                Landscapes of Memory
+
             </div>
+
 
             <br>
 
+
             <div>
-                <span class="meta-heading">FILM</span><br>
-                Šćepan Popović
+
+                <span class="meta-heading">
+                    TYPE
+                </span>
+
+                <br>
+
+                Video Essay
+
             </div>
+
+
+            <br>
+
+
+            <div>
+
+                <span class="meta-heading">
+                    YEAR
+                </span>
+
+                <br>
+
+                2025
+
+            </div>
+
+
+            <br>
+
+
+            <div>
+
+                <span class="meta-heading">
+                    AUTHOR
+                </span>
+
+                <br>
+
+                Šćepan Popović
+
+            </div>
+
+
+            <br>
+
+
+            <div>
+
+                <span class="meta-heading">
+                    CONTEXT
+                </span>
+
+                <br>
+
+                Research Residency<br>
+                Faculty of Architecture<br>
+                ČVUT, Prague
+
+            </div>
+
 
         </div>
 
+
     </div>
+
 
 </main>
 
 
-<footer>
+<!-- ======================================================
+     FOOTER
+====================================================== -->
+
+<footer id="socials">
+
 
     <div class="footer-grid">
 
+
+        <!-- NAME -->
+
         <div>
+
             <div class="footer-title">
                 ŠĆEPAN POPOVIĆ
             </div>
@@ -427,8 +680,11 @@ footer {
             <div>
                 Architecture / Urbanism / Research / Art
             </div>
+
         </div>
 
+
+        <!-- LOCATION -->
 
         <div>
 
@@ -436,12 +692,22 @@ footer {
                 LOCATION
             </div>
 
-            <div class="footer-line">Montenegro</div>
-            <div class="footer-line">Berlin</div>
-            <div class="footer-line">Remote</div>
+            <div class="footer-line">
+                Montenegro
+            </div>
+
+            <div class="footer-line">
+                Berlin
+            </div>
+
+            <div class="footer-line">
+                Remote
+            </div>
 
         </div>
 
+
+        <!-- CONTACT -->
 
         <div>
 
@@ -449,26 +715,47 @@ footer {
                 CONTACT
             </div>
 
+
             <div class="footer-line">
-                <a class="footer-link" href="mailto:scepanpopovic99@gmail.com">
+
+                <a
+                    class="footer-link"
+                    href="mailto:scepanpopovic99@gmail.com"
+                >
                     scepanpopovic99@gmail.com
                 </a>
+
             </div>
 
+
             <div class="footer-line">
-                <a class="footer-link" href="mailto:numeruslinkin@gmail.com">
+
+                <a
+                    class="footer-link"
+                    href="mailto:numeruslinkin@gmail.com"
+                >
                     numeruslinkin@gmail.com
                 </a>
+
             </div>
 
+
             <div class="footer-line">
-                <a class="footer-link" href="tel:+38269650667">
+
+                <a
+                    class="footer-link"
+                    href="tel:+38269650667"
+                >
                     +382 69 650 667
                 </a>
+
             </div>
+
 
         </div>
 
+
+        <!-- SOCIALS -->
 
         <div>
 
@@ -476,45 +763,72 @@ footer {
                 SOCIALS
             </div>
 
+
             <a
                 class="social-link"
                 href="https://www.instagram.com/landscapes.of.memory_prague/"
-                target="_blank">
-                Instagram ↗
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Instagram <span>↗</span>
             </a>
+
 
             <a
                 class="social-link"
                 href="https://www.linkedin.com/in/%C5%A1%C4%87epan-popovi%C4%87-384896328/"
-                target="_blank">
-                LinkedIn ↗
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                LinkedIn <span>↗</span>
             </a>
+
 
             <a
                 class="social-link"
                 href="https://www.youtube.com/@scepanpopovic2201"
-                target="_blank">
-                YouTube ↗
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                YouTube <span>↗</span>
             </a>
+
 
         </div>
 
+
+        <!-- LANGUAGES -->
 
         <div>
 
             <div class="languages">
 
-                <a class="language-link" href="#">EN</a>
+                <a class="language-link" href="#">
+                    EN
+                </a>
+
                 <span>/</span>
-                <a class="language-link" href="#">MNE</a>
+
+                <a class="language-link" href="#">
+                    MNE
+                </a>
+
                 <span>/</span>
-                <a class="language-link" href="#">IT</a>
+
+                <a class="language-link" href="#">
+                    IT
+                </a>
+
                 <span>/</span>
-                <a class="language-link" href="#">DE</a>
+
+                <a class="language-link" href="#">
+                    DE
+                </a>
 
             </div>
 
         </div>
+
 
     </div>
 
@@ -523,8 +837,10 @@ footer {
         © 2026 Šćepan Popović
     </div>
 
+
 </footer>
 
 
 </body>
+
 </html>
