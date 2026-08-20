@@ -6,12 +6,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Landscapes of Memory — Šćepan Popović</title>
+<title>Film — Šćepan Popović</title>
 
 <style>
 
 /* =========================================================
-   BASIC SETTINGS
+   BASIC
 ========================================================= */
 
 * {
@@ -123,7 +123,6 @@ header {
     display: none;
 
     position: absolute;
-
     top: 20px;
     left: -10px;
 
@@ -156,7 +155,7 @@ header {
 
 
 /* =========================================================
-   FILM PAGE
+   FILM ARCHIVE
 ========================================================= */
 
 .film-page {
@@ -171,70 +170,122 @@ header {
 }
 
 
-/* VIDEO */
+/* GRID */
 
-.film-video {
-    width: 100%;
+.film-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 60px 18px;
+
     max-width: 1400px;
+}
 
+
+/* FILM CARD */
+
+.film-card {
+    display: block;
+}
+
+
+/* IMAGE */
+
+.film-image {
+    position: relative;
+
+    width: 100%;
     aspect-ratio: 16 / 9;
+
+    overflow: hidden;
 
     background: #000;
 }
 
-.film-video iframe {
+.film-image img {
     width: 100%;
     height: 100%;
 
     display: block;
 
-    border: 0;
+    object-fit: cover;
+
+    filter: grayscale(100%);
+
+    transition:
+        filter 0.3s ease,
+        transform 0.4s ease;
+}
+
+.film-card:hover .film-image img {
+    filter: grayscale(0%);
+    transform: scale(1.01);
+}
+
+
+/* NUMBER */
+
+.film-number {
+    position: absolute;
+
+    top: 8px;
+    left: 8px;
+
+    z-index: 5;
+
+    padding: 3px 6px;
+
+    background: #000;
+    color: #fff;
+
+    font-size: 10px;
+}
+
+.film-card:hover .film-number {
+    color: var(--green);
 }
 
 
 /* FILM INFORMATION */
 
-.film-info {
-    max-width: 1400px;
-
+.film-card-info {
     display: grid;
 
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr auto;
 
-    gap: 80px;
+    gap: 30px;
 
-    padding-top: 18px;
+    padding-top: 9px;
 }
 
 .film-title {
-    font-size: 15px;
+    font-size: 12px;
     font-weight: 700;
+
     text-transform: uppercase;
 }
 
-.film-description {
-    max-width: 720px;
+.film-type {
+    margin-top: 2px;
 
-    margin-top: 18px;
+    color: var(--grey);
 
-    color: #222;
-
-    font-size: 12px;
-    line-height: 1.6;
-}
-
-.film-description p {
-    margin-top: 0;
-    margin-bottom: 18px;
-}
-
-.film-meta {
     font-size: 10px;
-    line-height: 1.7;
+    text-transform: uppercase;
 }
 
-.meta-heading {
-    font-weight: 700;
+.film-location {
+    text-align: right;
+
+    color: var(--grey);
+
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+.film-card:hover .film-title {
+    color: var(--green);
 }
 
 
@@ -267,16 +318,12 @@ footer {
 .footer-title {
     margin-bottom: 8px;
 
-    color: #fff;
-
     font-size: 13px;
     font-weight: 700;
 }
 
 .footer-heading {
     margin-bottom: 7px;
-
-    color: #fff;
 
     font-size: 10px;
     font-weight: 700;
@@ -353,10 +400,10 @@ footer {
         padding: 35px 18px 70px;
     }
 
-    .film-info {
+    .film-grid {
         grid-template-columns: 1fr;
 
-        gap: 30px;
+        gap: 45px;
     }
 
     footer {
@@ -410,29 +457,23 @@ footer {
 
 
         <div class="nav-item">
-
             <a class="nav-link" href="architecture.html">
                 ARCHITECTURE
             </a>
-
         </div>
 
 
         <div class="nav-item">
-
             <a class="nav-link" href="urbanism.html">
                 URBANISM
             </a>
-
         </div>
 
 
         <div class="nav-item">
-
             <a class="nav-link" href="research.html">
                 RESEARCH
             </a>
-
         </div>
 
 
@@ -443,30 +484,18 @@ footer {
             </span>
 
             <div class="dropdown">
-
-                <a href="spatial-art.html">
-                    SPATIAL ART
-                </a>
-
-                <a href="paintings.html">
-                    PAINTINGS
-                </a>
-
-                <a href="observations.html">
-                    OBSERVATIONS
-                </a>
-
+                <a href="spatial-art.html">SPATIAL ART</a>
+                <a href="paintings.html">PAINTINGS</a>
+                <a href="observations.html">OBSERVATIONS</a>
             </div>
 
         </div>
 
 
         <div class="nav-item">
-
             <a class="nav-link" href="film.html">
                 FILM
             </a>
-
         </div>
 
 
@@ -477,35 +506,24 @@ footer {
             </span>
 
             <div class="dropdown">
-
-                <a href="texts.html">
-                    TEXTS
-                </a>
-
-                <a href="poetry.html">
-                    POETRY
-                </a>
-
+                <a href="texts.html">TEXTS</a>
+                <a href="poetry.html">POETRY</a>
             </div>
 
         </div>
 
 
         <div class="nav-item">
-
             <a class="nav-link" href="exhibitions.html">
                 EXHIBITIONS
             </a>
-
         </div>
 
 
         <div class="nav-item">
-
             <a class="nav-link" href="news.html">
                 NEWS
             </a>
-
         </div>
 
 
@@ -515,7 +533,7 @@ footer {
 
 
 <!-- ======================================================
-     FILM
+     FILM ARCHIVE
 ====================================================== -->
 
 <main class="film-page">
@@ -526,131 +544,57 @@ footer {
     </div>
 
 
-    <!-- LANDSCAPES OF MEMORY -->
-
-    <div class="film-video">
-
-        <iframe
-            src="https://www.youtube.com/embed/6oUwtDYQfhM?start=6"
-            title="Landscapes of Memory — Šćepan Popović"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-        </iframe>
-
-    </div>
+    <div class="film-grid">
 
 
-    <div class="film-info">
+        <!-- FILM 01 — LANDSCAPES OF MEMORY -->
+
+        <a
+            class="film-card"
+            href="landscapes-of-memory.html"
+        >
 
 
-        <!-- DESCRIPTION -->
+            <div class="film-image">
 
-        <div>
+                <img
+                    src="images/landscapes-of-memory.jpg"
+                    alt="Landscapes of Memory"
+                >
 
-            <div class="film-title">
-                LANDSCAPES OF MEMORY
-            </div>
-
-
-            <div class="film-description">
-
-                <p>
-                    Landscapes of Memory is a video essay developed during a research residency at the Faculty of Architecture, ČVUT in Prague. Through film, spatial narration, archival material, and sound composition, the work explores landscape as a space of memory, ideological transformation, and historical continuity within socialist and post-socialist contexts.
-                </p>
-
-                <p>
-                    This project is supported by UNESCO through the Culture and Creativity for the Western Balkans (CC4WBs) project, funded by the European Union. The project focuses on fostering dialogue in the Western Balkans by enhancing the cultural and creative sectors for increased socio-economic impact.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <!-- META -->
-
-        <div class="film-meta">
-
-            <div>
-
-                <span class="meta-heading">
-                    TITLE
+                <span class="film-number">
+                    01
                 </span>
 
-                <br>
+            </div>
 
-                Landscapes of Memory
+
+            <div class="film-card-info">
+
+
+                <div>
+
+                    <div class="film-title">
+                        LANDSCAPES OF MEMORY
+                    </div>
+
+                    <div class="film-type">
+                        VIDEO ESSAY / 2026
+                    </div>
+
+                </div>
+
+
+                <div class="film-location">
+                    PRAGUE<br>
+                    CZECH REPUBLIC
+                </div>
+
 
             </div>
 
 
-            <br>
-
-
-            <div>
-
-                <span class="meta-heading">
-                    TYPE
-                </span>
-
-                <br>
-
-                Video Essay
-
-            </div>
-
-
-            <br>
-
-
-            <div>
-
-                <span class="meta-heading">
-                    YEAR
-                </span>
-
-                <br>
-
-                2026
-
-            </div>
-
-
-            <br>
-
-
-            <div>
-
-                <span class="meta-heading">
-                    AUTHOR
-                </span>
-
-                <br>
-
-                Šćepan Popović
-
-            </div>
-
-
-            <br>
-
-
-            <div>
-
-                <span class="meta-heading">
-                    CONTEXT
-                </span>
-
-                <br>
-
-                Research Residency<br>
-                Faculty of Architecture<br>
-                ČVUT, Prague
-
-            </div>
-
-
-        </div>
+        </a>
 
 
     </div>
@@ -669,8 +613,6 @@ footer {
     <div class="footer-grid">
 
 
-        <!-- NAME -->
-
         <div>
 
             <div class="footer-title">
@@ -683,8 +625,6 @@ footer {
 
         </div>
 
-
-        <!-- LOCATION -->
 
         <div>
 
@@ -707,14 +647,11 @@ footer {
         </div>
 
 
-        <!-- CONTACT -->
-
         <div>
 
             <div class="footer-heading">
                 CONTACT
             </div>
-
 
             <div class="footer-line">
 
@@ -727,7 +664,6 @@ footer {
 
             </div>
 
-
             <div class="footer-line">
 
                 <a
@@ -738,7 +674,6 @@ footer {
                 </a>
 
             </div>
-
 
             <div class="footer-line">
 
@@ -751,18 +686,14 @@ footer {
 
             </div>
 
-
         </div>
 
-
-        <!-- SOCIALS -->
 
         <div>
 
             <div class="footer-heading">
                 SOCIALS
             </div>
-
 
             <a
                 class="social-link"
@@ -773,7 +704,6 @@ footer {
                 Instagram <span>↗</span>
             </a>
 
-
             <a
                 class="social-link"
                 href="https://www.linkedin.com/in/%C5%A1%C4%87epan-popovi%C4%87-384896328/"
@@ -782,7 +712,6 @@ footer {
             >
                 LinkedIn <span>↗</span>
             </a>
-
 
             <a
                 class="social-link"
@@ -793,37 +722,26 @@ footer {
                 YouTube <span>↗</span>
             </a>
 
-
         </div>
 
-
-        <!-- LANGUAGES -->
 
         <div>
 
             <div class="languages">
 
-                <a class="language-link" href="#">
-                    EN
-                </a>
+                <a class="language-link" href="#">EN</a>
 
                 <span>/</span>
 
-                <a class="language-link" href="#">
-                    MNE
-                </a>
+                <a class="language-link" href="#">MNE</a>
 
                 <span>/</span>
 
-                <a class="language-link" href="#">
-                    IT
-                </a>
+                <a class="language-link" href="#">IT</a>
 
                 <span>/</span>
 
-                <a class="language-link" href="#">
-                    DE
-                </a>
+                <a class="language-link" href="#">DE</a>
 
             </div>
 
