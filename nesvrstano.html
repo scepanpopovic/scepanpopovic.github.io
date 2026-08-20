@@ -1,1 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nesvrstano — Šćepan Popović</title>
+
+<style>
+
+/* =========================================
+   GENERAL
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #fff;
+    color: #000;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 12px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+:root {
+    --green: #b6ff00;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+header {
+    width: 100%;
+    background: #000;
+    color: #fff;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    padding: 22px 30px 20px;
+}
+
+.site-name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.about-link {
+    display: block;
+    margin-top: 7px;
+    font-size: 8px;
+}
+
+.site-name:hover,
+.about-link:hover {
+    color: var(--green);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    font-size: 10px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: var(--green);
+}
+
+.separator {
+    color: #fff;
+}
+
+
+/* =========================================
+   PAGE
+========================================= */
+
+.collection-page {
+    padding: 55px 30px 120px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 55px;
+
+    font-size: 9px;
+    font-weight: bold;
+}
+
+.back-link:hover {
+    color: var(--green);
+}
+
+
+/* =========================================
+   INTRO
+========================================= */
+
+.collection-intro {
+    border-top: 1px solid #000;
+    padding-top: 18px;
+
+    display: grid;
+    grid-template-columns: 65px 1.1fr 0.8fr;
+    gap: 35px;
+
+    margin-bottom: 65px;
+}
+
+.collection-number {
+    font-size: 10px;
+}
+
+.collection-title {
+    margin: 0;
+
+    font-size: 34px;
+    line-height: 1;
+    font-weight: bold;
+
+    text-transform: uppercase;
+}
+
+.collection-type {
+    margin-top: 12px;
+
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+.collection-meta {
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.cover {
+    width: 100%;
+    margin-bottom: 110px;
+}
+
+.cover img {
+    display: block;
+
+    width: 100%;
+    max-height: 78vh;
+
+    object-fit: cover;
+
+    filter: grayscale(100%);
+}
+
+
+/* =========================================
+   POEMS
+========================================= */
+
+.poems-section {
+    border-top: 1px solid #000;
+    padding-top: 18px;
+}
+
+.poems-label {
+    margin-bottom: 80px;
+
+    font-size: 9px;
+    font-weight: bold;
+}
+
+.poems {
+    width: min(100%, 650px);
+    margin-left: 14%;
+}
+
+.poem {
+    margin-bottom: 65px;
+}
+
+.poem-title {
+    margin-bottom: 28px;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.poem-text {
+    white-space: pre-line;
+
+    font-size: 12px;
+    line-height: 1.85;
+}
+
+.poem-divider {
+    margin: 65px 0;
+
+    font-size: 10px;
+    letter-spacing: 5px;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    background: #000;
+    color: #fff;
+
+    padding: 28px 30px 24px;
+}
+
+.footer-grid {
+    display: grid;
+
+    grid-template-columns:
+        1.4fr
+        0.9fr
+        1.2fr
+        1fr
+        auto;
+
+    gap: 40px;
+}
+
+.footer-heading {
+    margin-bottom: 9px;
+
+    font-size: 8px;
+    font-weight: bold;
+}
+
+.footer-name {
+    margin-bottom: 8px;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.footer-line {
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+footer a:hover {
+    color: var(--green);
+}
+
+.social-link {
+    display: block;
+}
+
+.languages {
+    text-align: right;
+}
+
+.copyright {
+    margin-top: 30px;
+    text-align: right;
+
+    font-size: 8px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 850px) {
+
+    header {
+        display: block;
+    }
+
+    nav {
+        margin-top: 25px;
+        flex-wrap: wrap;
+    }
+
+    .collection-page {
+        padding: 40px 18px 80px;
+    }
+
+    .collection-intro {
+        grid-template-columns: 40px 1fr;
+    }
+
+    .collection-meta {
+        grid-column: 2;
+    }
+
+    .collection-title {
+        font-size: 25px;
+    }
+
+    .poems {
+        margin-left: 0;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .languages,
+    .copyright {
+        text-align: left;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     HEADER
+========================================= -->
+
+<header>
+
+    <div>
+
+        <a href="index.html" class="site-name">
+            ŠĆEPAN POPOVIĆ
+        </a>
+
+        <a href="about.html" class="about-link">
+            ABOUT
+        </a>
+
+    </div>
+
+
+    <nav>
+
+        <a href="#">ARCHITECTURE</a>
+        <span class="separator">/</span>
+
+        <a href="#">URBANISM</a>
+        <span class="separator">/</span>
+
+        <a href="research.html">RESEARCH</a>
+        <span class="separator">/</span>
+
+        <a href="#">ARTWORKS</a>
+        <span class="separator">/</span>
+
+        <a href="film.html">FILM</a>
+        <span class="separator">/</span>
+
+        <a href="#">WRITINGS</a>
+        <span class="separator">/</span>
+
+        <a href="#">EXHIBITIONS</a>
+        <span class="separator">/</span>
+
+        <a href="#">NEWS</a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================================
+     NESVRSTANO
+========================================= -->
+
+<main class="collection-page">
+
+
+    <a href="poetry.html" class="back-link">
+        ← BACK TO POETRY
+    </a>
+
+
+    <section class="collection-intro">
+
+
+        <div class="collection-number">
+            02
+        </div>
+
+
+        <div>
+
+            <h1 class="collection-title">
+                NESVRSTANO
+            </h1>
+
+            <div class="collection-type">
+                Uncollected Poems
+            </div>
+
+        </div>
+
+
+        <div class="collection-meta">
+            Selected Poems
+        </div>
+
+
+    </section>
+
+
+
+    <!-- IMAGE -->
+
+    <div class="cover">
+
+        <img
+            src="images/nesvrstano.jpg"
+            alt="Nesvrstano"
+        >
+
+    </div>
+
+
+
+    <!-- =====================================
+         SELECTED POEMS
+    ====================================== -->
+
+    <section class="poems-section">
+
+
+        <div class="poems-label">
+            SELECTED POEMS
+        </div>
+
+
+        <div class="poems">
+
+
+            <!-- 01 -->
+
+            <div class="poem">
+
+                <div class="poem-text">
+Izgleda kao da
+Neki vozovi odlaze
+U nepovrat.
+Vreme preskace prostor.
+U njihovom među
+Ceo jedan svet
+Ljubavi.
+Verujem da čovek,
+onaj koji hoda,
+uvek stiže u vreme.
+Iz prostora je teško pobeći.
+Na njegovim ravnima
+Ceo jedan svet
+Pravih decimala.
+Deca se igraju rata.
+Psenicna polja 
+Nad popodnevnim suncem severa
+Dele se na nepokretne vlati.
+Sa prozora voza
+Sve staje
+Samo se vreme
+U medjuprostoru gubi.
+Tako, covek 
+Onaj koji hoda
+Uvek je i samo
+Onaj koji gleda.
+                </div>
+
+            </div>
+
+
+            <div class="poem-divider">
+                * * *
+            </div>
+
+
+
+            <!-- 02 -->
+
+            <div class="poem">
+
+                <div class="poem-text">
+I tako sam jednog kišnog dana
+u Bratislavi 
+shvatio 
+da su svi fakulteti arhitekture
+prepuni arhitekata.
+Čini mi se neizbježnim biti ovdje.
+Ne pripadati.
+I biti srećan zbog toga.
+Valjda.
+Vreme se pojavljuje
+i beži.
+Grabim ga i razmišljam.
+Na okukama svesti
+pronalazim 
+sisteme mreža
+preoblikovane u strasti.
+Države zapinju u ponorima.
+Priče o Istoku
+dopiru do nas.
+Kako bi bilo lepo voleti
+obešenjački
+Pruge u južnim gradovima.
+Na njima se osećam
+manje usamljeno
+Na severnim je hladno
+I tuđe.
+Istine koje dopiru
+Dopiru sa smešnih ekrana
+i verujemo u neke tuđe mesečine
+Sve sam vam ovo napisao 
+Sa namerom
+Da dokažem
+Da sistemske promene
+Vode do 
+Čoveka
+Njegovog raspleta
+I lepote.
+U prostornim sekvencama gradova
+ne viđam decu
+već uplakane male ljude.
+Sva se mesečina zapada
+meša sa lepotom istoka.
+Previše dugo smo crtali tuđe gradove.
+Nismo razmišljali o svojima.
+Tako sam shvatio
+Jednog ranog popodneva
+U kišnoj Bratislavi
+Da su svi fakulteti arhitekture
+Prepuni crtača.
+Nije ostao niko da misli.
+                </div>
+
+            </div>
+
+
+            <div class="poem-divider">
+                * * *
+            </div>
+
+
+
+            <!-- 03 -->
+
+            <div class="poem">
+
+                <div class="poem-text">
+Ovu bi prazninu mogla poneti sa sobom. 
+Sa vrhova međunarodne železnice 
+ne vidim obrise kamenih gradova. 
+Oni se gube u presecima senki. 
+Naše su ruke, 
+na pesku vetra
+ostajale neme 
+i onda kad nisu bile prazne.
+Ruke grade,
+Ruke umeju.
+Spratove.
+Vrhove.
+Stubove.
+Čekanje.
+Kako se gradi čekanje?
+Na pokretnim mestima
+Čovek sedi.
+Arhitektura se kreće.
+On ne ulazi u nju.
+Žena je nema.
+Žena je prazna.
+Sama je
+Na peronu međunarodne železnice
+U nečijem gradu.
+Visoko gore
+Dignuti glavu
+I vrisnuti
+Da sa vrhova
+Ne vidimo ostatke.
+Ja se bojim
+Spustiti se dole
+U preseke vaših 
+Novih gradova.
+                </div>
+
+            </div>
+
+
+            <div class="poem-divider">
+                * * *
+            </div>
+
+
+
+            <!-- 04 -->
+
+            <div class="poem">
+
+                <div class="poem-text">
+Povedi računa o vetru.
+Ne u smislu budi obazriv.
+Pobrini se o vetru.
+Ovo je ciklus Zemlje.
+U njemu se tvoja 
+Bosa stopala
+Smeše lepom pločniku.
+Kamen se zvukom zahvaljuje.
+Povedi računa o vetru.
+Unesi ga kroz vrata
+I zaključaj.
+Vetar se uvek dogovara
+Zvukom,
+Odbija se od susednih stvari
+I ulazi u tvoje prazne udove.
+Uši se smeše prvi put
+Uvek
+I iznova
+Smeštajući vetar u glavi.
+Na visokom pesku
+Ove godine
+Gomila nerazumljivih reči
+Vetar isteruje viškove
+Hladan je
+Naši prostori
+Prostori su vetra
+Naše su ruke
+Ruke od stabala.
+                </div>
+
+            </div>
+
+
+            <div class="poem-divider">
+                * * *
+            </div>
+
+
+
+            <!-- 05 -->
+
+            <div class="poem">
+
+                <div class="poem-text">
+hajde da se zaljubimo u Beograd
+u velicinu grada
+niske
+i visoke
+manire ogromnih dama
+sa mamama crnogorskog porekla
+hajde da ih nasmejemo
+da im promenimo vlast
+hajde da zavrnemo avetinje
+da im poispadaju zubi
+neka se smeju ruzni
+ili neka se uopste ne smeju
+hajde da mu pripadamo
+njemu
+gradu muskog roda
+hajde da postanemo beogradjanke
+nositeljke grada muskog roda
+zeleo bih da se pretvorimo
+u solitere na vodi
+one koji stoje
+tuzni i pod senkama
+onda bi valjalo popadati
+poljubiti travu
+i reci kako je lepa ova reka
+koja nam donosi i odnosi
+Evropu
+kojim smerom tece
+da li ga menja
+i ko se u njoj davi
+hajde da potopimo 
+penzione fondove
+i pohapsimo drzavnu imovinu
+kako bi mogli
+na miru dati
+svu ovu ravnicu
+nekom novom
+panonskom moru
+hajde da porušimo Beograd 
+kako bi mogli stvoriti novi
+i lepsi
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer>
+
+    <div class="footer-grid">
+
+
+        <div>
+
+            <div class="footer-name">
+                ŠĆEPAN POPOVIĆ
+            </div>
+
+            <div class="footer-line">
+                Architecture / Urbanism / Research / Art
+            </div>
+
+        </div>
+
+
+        <div>
+
+            <div class="footer-heading">
+                LOCATION
+            </div>
+
+            <div class="footer-line">
+                Montenegro<br>
+                Berlin<br>
+                Remote
+            </div>
+
+        </div>
+
+
+        <div>
+
+            <div class="footer-heading">
+                CONTACT
+            </div>
+
+            <div class="footer-line">
+
+                <a href="mailto:scepanpopovic99@gmail.com">
+                    scepanpopovic99@gmail.com
+                </a>
+
+                <br>
+
+                <a href="mailto:numeruslinkin@gmail.com">
+                    numeruslinkin@gmail.com
+                </a>
+
+                <br>
+
+                <a href="tel:+38269650667">
+                    +382 69 650 667
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div>
+
+            <div class="footer-heading">
+                SOCIALS
+            </div>
+
+            <a
+                class="social-link"
+                href="https://www.instagram.com/landscapes.of.memory_prague/"
+                target="_blank"
+            >
+                Instagram ↗
+            </a>
+
+            <a
+                class="social-link"
+                href="https://www.linkedin.com/in/%C5%A1%C4%87epan-popovi%C4%87-384896328/"
+                target="_blank"
+            >
+                LinkedIn ↗
+            </a>
+
+            <a
+                class="social-link"
+                href="https://www.youtube.com/@scepanpopovic2201"
+                target="_blank"
+            >
+                YouTube ↗
+            </a>
+
+        </div>
+
+
+        <div class="languages">
+
+            <a href="#">EN</a>
+            /
+            <a href="#">MNE</a>
+            /
+            <a href="#">IT</a>
+            /
+            <a href="#">DE</a>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="copyright">
+        © 2026 Šćepan Popović
+    </div>
+
+
+</footer>
+
+
+</body>
+
+</html>
