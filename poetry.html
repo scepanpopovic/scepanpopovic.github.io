@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,24 +10,25 @@
 
 <style>
 
+/* =========================================
+   GENERAL
+========================================= */
+
 * {
     box-sizing: border-box;
 }
 
-:root {
-    --green: #BDFF00;
-    --black: #000;
-    --white: #fff;
-    --grey: #777;
+html,
+body {
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    margin: 0;
-    background: #fff;
-    color: #000;
+    background: #ffffff;
+    color: #000000;
     font-family: "Courier New", Courier, monospace;
     font-size: 12px;
-    line-height: 1.5;
 }
 
 a {
@@ -34,1158 +36,565 @@ a {
     text-decoration: none;
 }
 
-/* HEADER */
+
+/* =========================================
+   HEADER
+========================================= */
 
 header {
-    min-height: 86px;
-    padding: 18px 36px;
+    width: 100%;
     background: #000;
     color: #fff;
 
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+
+    padding: 22px 30px 20px 30px;
 }
 
-.logo {
-    color: #fff;
-    font-weight: 700;
+.site-name {
+    font-size: 16px;
+    font-weight: bold;
 }
 
-.logo-name {
+.home-link {
     display: block;
-    font-size: 20px;
-}
+    margin-top: 7px;
 
-.logo-about {
-    display: block;
-    margin-top: 3px;
     font-size: 8px;
-    font-weight: normal;
+    text-transform: uppercase;
 }
 
-.logo:hover .logo-name,
-.logo:hover .logo-about {
-    color: var(--green);
-}
-
-.navigation {
+nav {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-}
+    align-items: center;
+    gap: 13px;
 
-.nav-item {
-    position: relative;
-    white-space: nowrap;
-}
-
-.nav-item::after {
-    content: "/";
-    margin: 0 10px;
-    color: #fff;
-}
-
-.nav-item:last-child::after {
-    content: "";
-    margin: 0;
-}
-
-.nav-link {
-    color: #fff;
-    font-weight: 700;
-}
-
-.nav-link:hover {
-    color: var(--green);
-}
-
-/* DROPDOWN */
-
-.dropdown {
-    display: none;
-    position: absolute;
-    top: 20px;
-    left: -10px;
-    z-index: 100;
-    min-width: 150px;
-    padding: 8px 10px;
-    background: #000;
-}
-
-.dropdown a {
-    display: block;
-    padding: 4px 0;
-    color: #fff;
     font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
-.dropdown a:hover {
-    color: var(--green);
+nav a:hover {
+    color: #b6ff00;
 }
 
-.nav-item:hover .dropdown {
-    display: block;
+.separator {
+    color: #fff;
 }
 
-/* PAGE */
+
+/* =========================================
+   PAGE
+========================================= */
 
 .poetry-page {
-    padding: 55px 36px 110px;
+    padding: 55px 30px 100px 30px;
 }
 
 .back-link {
     display: inline-block;
-    margin-bottom: 45px;
-    font-size: 10px;
-    font-weight: 700;
+
+    margin-bottom: 55px;
+
+    font-size: 9px;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .back-link:hover {
-    color: var(--green);
+    color: #b6ff00;
 }
 
-.page-title {
-    margin-bottom: 55px;
-    font-size: 12px;
-    font-weight: 700;
+
+/* =========================================
+   TITLE
+========================================= */
+
+.page-heading {
+    margin-bottom: 45px;
 }
 
-/* COLLECTION */
-
-.collection {
-    border-top: 1px solid #000;
-    padding-top: 18px;
-    margin-bottom: 100px;
-}
-
-.collection-header {
-    display: grid;
-    grid-template-columns: 70px 1fr 320px;
-    gap: 30px;
-    margin-bottom: 70px;
-}
-
-.collection-number {
-    font-size: 10px;
-}
-
-.collection-title {
-    font-size: 24px;
-    font-weight: 700;
+.page-label {
+    font-size: 9px;
+    font-weight: bold;
     text-transform: uppercase;
+
+    margin-bottom: 12px;
 }
 
-.collection-subtitle {
-    margin-top: 8px;
-    font-size: 11px;
-}
-
-.collection-meta {
-    font-size: 10px;
-    line-height: 1.7;
-}
-
-/* POEMS */
-
-.poems {
-    max-width: 700px;
-    margin-left: 100px;
-}
-
-.poem {
-    margin-bottom: 65px;
-}
-
-.poem-title {
-    margin-bottom: 22px;
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-.poem-text {
-    white-space: pre-line;
-    font-size: 12px;
-    line-height: 1.8;
-}
-
-.poem-divider {
-    margin: 55px 0;
-    letter-spacing: 6px;
-}
-
-/* FOOTER */
-
-footer {
+.page-heading h1 {
     margin: 0;
-    padding: 28px 36px 24px;
+
+    font-size: 32px;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+
+/* =========================================
+   POETRY GRID
+========================================= */
+
+.poetry-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 14px;
+}
+
+
+/* =========================================
+   CATEGORY
+========================================= */
+
+.poetry-category {
+    display: block;
+}
+
+
+/* IMAGE */
+
+.poetry-image {
+    width: 100%;
+    aspect-ratio: 1 / 1.25;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: #eeeeee;
+}
+
+.poetry-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    filter: grayscale(100%);
+
+    transition:
+        filter 0.3s ease,
+        transform 0.4s ease;
+}
+
+.poetry-category:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.015);
+}
+
+
+/* NUMBER */
+
+.poetry-number {
+    position: absolute;
+
+    top: 12px;
+    left: 12px;
+
     background: #000;
     color: #fff;
+
+    padding: 5px 7px;
+
+    font-size: 9px;
+    font-weight: bold;
+}
+
+
+/* TEXT */
+
+.poetry-title {
+    margin-top: 12px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    text-transform: uppercase;
+}
+
+.poetry-meta {
+    margin-top: 5px;
+
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.poetry-category:hover .poetry-title {
+    color: #b6ff00;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    background: #000;
+    color: #fff;
+
+    padding: 28px 30px 24px 30px;
 }
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr 1fr 0.9fr 0.8fr;
+
+    grid-template-columns:
+        1.4fr
+        0.9fr
+        1.2fr
+        1fr
+        auto;
+
     gap: 40px;
 }
 
-.footer-title {
-    margin-bottom: 8px;
-    font-size: 13px;
-    font-weight: 700;
-}
-
 .footer-heading {
-    margin-bottom: 7px;
-    font-size: 10px;
-    font-weight: 700;
+    font-size: 8px;
+    font-weight: bold;
+
+    text-transform: uppercase;
+
+    margin-bottom: 9px;
 }
 
 .footer-line {
-    margin-bottom: 3px;
+    font-size: 10px;
+    line-height: 1.7;
 }
 
-.footer-link,
-.social-link,
-.language-link {
-    color: #fff;
+footer a:hover {
+    color: #b6ff00;
 }
 
-.footer-link:hover,
-.social-link:hover,
-.language-link:hover {
-    color: var(--green);
-}
-
-.social-link {
-    display: block;
-    margin-bottom: 4px;
-}
-
-.languages {
-    display: flex;
-    gap: 8px;
-    justify-content: flex-end;
+.footer-right {
+    text-align: right;
 }
 
 .copyright {
-    margin-top: 28px;
-    text-align: right;
-    font-size: 10px;
+    margin-top: 30px;
+
+    font-size: 8px;
 }
 
-/* MOBILE */
 
-@media (max-width: 800px) {
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 900px) {
 
     header {
         display: block;
-        padding: 18px;
     }
 
-    .navigation {
-        margin-top: 18px;
-        justify-content: flex-start;
-        line-height: 2;
+    nav {
+        margin-top: 25px;
+
+        flex-wrap: wrap;
     }
 
-    .poetry-page {
-        padding: 40px 18px 70px;
+    .poetry-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
     }
 
-    .collection-header {
-        grid-template-columns: 40px 1fr;
-    }
-
-    .collection-meta {
-        grid-column: 2;
-    }
-
-    .poems {
-        margin-left: 0;
-    }
-
-    footer {
-        padding: 28px 18px 24px;
+    .poetry-image {
+        aspect-ratio: 1.4 / 1;
     }
 
     .footer-grid {
         grid-template-columns: 1fr 1fr;
     }
 
-    .languages {
-        justify-content: flex-start;
-    }
-
-    .copyright {
-        text-align: left;
-    }
 }
 
 </style>
+
 </head>
 
 
 <body>
 
 
+<!-- =========================================
+     HEADER
+========================================= -->
+
 <header>
 
-    <a class="logo" href="about.html">
-        <span class="logo-name">ŠĆEPAN POPOVIĆ</span>
-        <span class="logo-about">ABOUT</span>
-    </a>
+    <div>
+
+        <a href="index.html" class="site-name">
+            ŠĆEPAN POPOVIĆ
+        </a>
+
+        <a href="about.html" class="home-link">
+            ABOUT
+        </a>
+
+    </div>
 
 
-    <nav class="navigation">
+    <nav>
 
-        <div class="nav-item">
-            <a class="nav-link" href="architecture.html">ARCHITECTURE</a>
-        </div>
+        <a href="#">ARCHITECTURE</a>
+        <span class="separator">/</span>
 
-        <div class="nav-item">
-            <a class="nav-link" href="urbanism.html">URBANISM</a>
-        </div>
+        <a href="#">URBANISM</a>
+        <span class="separator">/</span>
 
-        <div class="nav-item">
-            <a class="nav-link" href="research.html">RESEARCH</a>
-        </div>
+        <a href="research.html">RESEARCH</a>
+        <span class="separator">/</span>
 
-        <div class="nav-item">
+        <a href="#">ARTWORKS</a>
+        <span class="separator">/</span>
 
-            <span class="nav-link">ARTWORKS</span>
+        <a href="film.html">FILM</a>
+        <span class="separator">/</span>
 
-            <div class="dropdown">
-                <a href="spatial-art.html">SPATIAL ART</a>
-                <a href="paintings.html">PAINTINGS</a>
-                <a href="observations.html">OBSERVATIONS</a>
-            </div>
+        <a href="#">WRITINGS</a>
+        <span class="separator">/</span>
 
-        </div>
+        <a href="#">EXHIBITIONS</a>
+        <span class="separator">/</span>
 
-        <div class="nav-item">
-            <a class="nav-link" href="film.html">FILM</a>
-        </div>
-
-        <div class="nav-item">
-
-            <span class="nav-link">WRITINGS</span>
-
-            <div class="dropdown">
-                <a href="texts.html">TEXTS</a>
-                <a href="poetry.html">POETRY</a>
-            </div>
-
-        </div>
-
-        <div class="nav-item">
-            <a class="nav-link" href="exhibitions.html">EXHIBITIONS</a>
-        </div>
-
-        <div class="nav-item">
-            <a class="nav-link" href="news.html">NEWS</a>
-        </div>
+        <a href="#">NEWS</a>
 
     </nav>
 
 </header>
 
 
+
+<!-- =========================================
+     POETRY
+========================================= -->
+
 <main class="poetry-page">
 
-    <a class="back-link" href="index.html">
+
+    <a href="index.html" class="back-link">
         ← BACK
     </a>
 
-    <div class="page-title">
-        POETRY
-    </div>
 
+    <div class="page-heading">
 
-    <!-- 01 -->
-
-    <section class="collection">
-
-        <div class="collection-header">
-
-            <div class="collection-number">
-                01
-            </div>
-
-            <div>
-
-                <div class="collection-title">
-                    ZEMLJA KURTALISANA
-                </div>
-
-                <div class="collection-subtitle">
-                    Poetry Collection
-                </div>
-
-            </div>
-
-            <div class="collection-meta">
-                2024<br>
-                JU Narodna biblioteka „Njegoš“, Nikšić<br><br>
-                Second Prize<br>
-                XXVI Nikšić Literary Meetings<br>
-                Competition for an Unpublished Poetry Collection
-            </div>
-
+        <div class="page-label">
+            WRITINGS / POETRY
         </div>
 
-
-        <div class="poems">
-
-
-    <!-- 01 — PRESECI BLISKOSTI -->
-
-    <div class="poem">
-
-        <div class="poem-title">
-            PRESECI BLISKOSTI
-        </div>
-
-        <div class="poem-text">
-Nebo se podiglo
-Isuviše visoko
-Da ne bih primetio
-Forme.
-Na tragovima tokova
-Naslućujem reku.
-Prečesto
-Povlačim obale
-Kako bi mogla pobeći.
-Svet je prljavo mesto.
-U presecima bliskosti
-Zaobljenost formi
-Iščezava u tvojim udovima.
-Na granici pritiska
-Trpiš ljubav.
-Prija nam potraga.
-
-Jednom bi se trebalo i sastaviti,
-Obalama obećati mostove.
-
-Tražimo se u
-mediteranskom predvorju;
-Ja sam na ivici
-Ti si na trgovima smeha
-Blizina vode
-Mi ometa pravac
-Iako
-Naše Reke napuštaju obale
-Stabla su nam ruke
-I više ne možemo
-Odohvatiti ljubav.
-        </div>
+        <h1>
+            POETRY
+        </h1>
 
     </div>
 
 
-    <div class="poem-divider">
-        * * *
-    </div>
 
+    <div class="poetry-grid">
 
 
-    <!-- 02 — ISPOVEST -->
+        <!-- =================================
+             01 — ZEMLJA KURTALISANA
+        ================================== -->
 
-    <div class="poem">
+        <a
+            class="poetry-category"
+            href="zemlja-kurtalisana.html"
+        >
 
-        <div class="poem-title">
-            ISPOVEST
-        </div>
+            <div class="poetry-image">
 
-        <div class="poem-text">
-Došao sam da Ti se ispovedim.
-Jednom.
-Dvaput.
-Okrenuću se po osećaju,
-izleteti u svet;
-Razglasiću da sam lep
-Jer sam video kako Vam se Čovek ume
-Lepo prikloniti.
+                <img
+                    src="images/zemlja-kurtalisana.jpg"
+                    alt="Zemlja Kurtalisana"
+                >
 
-Došao sam da Ti se ispovedim.
-Retko.
-Nežno.
-Umeću da se zanesem
-Kad sledeći put budem govorio
-O Vama.
-Proglasiću se tromim
-I pustiti.
-Svet ionako ne valja.
-Trebalo bi ga menjati.
-
-Došao sam da Ti se ispovedim.
-Treći put.
-Parolama ću trčati za njima.
-Dovešću Vam ih.
-Neka se otmu.
-Ražaloste.
-Neka me puste na miru.
-Kad drugi put budem govorio
-O vama,
-umeću da se setim
-Kako smo umetni
-Koliko umemo voleti.
-
-Došao sam da Ti se ispovedim.
-Ovo je kraj puta.
-O počecima bi valjalo ćutati.
-
-Žena.
-Jednom.
-Dvaput.
-Retko.
-Nežno.
-Neka te voli.
-Neka te vrati.
-        </div>
-
-    </div>
-
-
-    <div class="poem-divider">
-        * * *
-    </div>
-
-
-
-    <!-- 03 — MOJA CRVENA REVOLUCIJA -->
-
-    <div class="poem">
-
-        <div class="poem-title">
-            MOJA CRVENA REVOLUCIJA
-        </div>
-
-        <div class="poem-text">
-Stene su padale
-Naniže od svojih senki.
-Rastopljeni motivi
-Tvoje borbe
-Činili su te ženom.
-Hteo sam dočarati
-Temu mesta
-U Tvom pripadanju.
-Hteo sam ukrstiti puteve,
-Rečne obale i
-Stajališta
-Kako bi prišla
-Ti, komunisto,
-Moja crvena Revolucijo.
-U svetlu
-Tuđeg trbuha
-Hteo sam zdrobiti
-Osamu pesnika
-I prići lepoti.
-Ne mogu čuvati
-Tvoje padove.
-Meni se svetlost
-Činila senkom —
-Zato sam kamen
-Pokušao pretvoriti
-U čoveka.
-Zato sam čoveka
-Pretvorio u kamen.
-
-U sebi
-Još
-Negujem prošlost.
-Reke su sa obalama
-Srasle
-I činilo se nemoguće
-Rastopiti nestajanja.
-U poslednjim traženjima
-Čeličnih zaprega
-Pritiskam vetar —
-On ne sme odneti reči.
-Tako bi kamen pao na čoveka.
-        </div>
-
-    </div>
-
-
-    <div class="poem-divider">
-        * * *
-    </div>
-
-
-
-    <!-- 04 — MORE -->
-
-    <div class="poem">
-
-        <div class="poem-title">
-            MORE
-        </div>
-
-        <div class="poem-text">
-Način na koji se mešaš
-u vrtoglavicu ozloglašenosti
-kazuje da
-pesnik ne sme dozvoliti
-da ne bude poražen.
-Utroba
-Pesak
-Zrenevlje sveta
-vri.
-Naprasno se radujem
-trgovima.
-Kako sam lepo
-pokušao da objasnim
-more;
-taj juli 2021.
-        </div>
-
-    </div>
-
-
-    <div class="poem-divider">
-        * * *
-    </div>
-
-
-
-    <!-- 05 — OBALE -->
-
-    <div class="poem">
-
-        <div class="poem-title">
-            OBALE
-        </div>
-
-        <div class="poem-text">
-Prvi put
-Obesno
-Udaram tišinu,
-povlačim reku
-I prolazim.
-Kao čovek,
-kao ubica —
-Dete što voli čoveka.
-
-Goleme mreže grafike
-putuju svetom
-a ti me još pitaš
-zašto te ne mogu opcrtati.
-Beslovesne padine
-u umeocima naših stvari.
-
-Budim se retko
-Tek
-U prvom jutru naše obale
-umem raspametiti okuku —
-odavno postajem čovekom.
-
-Zato
-Nemoj da me pitaš
-Kako gradim svetove.
-Mogu se podsmehnuti na ovaj tvoj.
-        </div>
-
-    </div>
-
-
-    <div class="poem-divider">
-        * * *
-    </div>
-
-
-
-    <!-- 06 — POVRATAK -->
-
-    <div class="poem">
-
-        <div class="poem-title">
-            POVRATAK
-        </div>
-
-        <div class="poem-text">
-Delimo vetar
-Istih pravaca lepote.
-Podsmevamo se
-Beretkama
-Iza uškopljenih misli.
-
-Ne, ja nisam hteo ovakvom svetu
-Da govorim
-Hteo sam
-Godine plave
-Nakon stoleća sive.
-
-Imam.
-U sebi
-More
-Preseke talasa
-I njihovu penu.
-
-Ovo je vreme
-Nakon
-Stoleća sive
-Dobro veče.
-Vi ste me ohrabrili
-Vama ću se vratiti.
-        </div>
-
-    </div>
-
-
-    <div class="poem-divider">
-        * * *
-    </div>
-
-
-
-    <!-- 07 — RASPAMEĆENE OKUKE -->
-
-    <div class="poem">
-
-        <div class="poem-title">
-            RASPAMEĆENE OKUKE
-        </div>
-
-        <div class="poem-text">
-Kako da raspametim ljude u vašim okukama?
-
-— postanak teze: Obale u nama sudaraju se na suprotnim stranama.
-
-Sva večita slova betonskog sveta
-bivaju lepša kad naše okuke
-odumirući nestaju.
-Čak i u mirisu grehova
-betonske ploče popuštaju
-a sklopljena tela
-u prvom spajanju
-ostaju nepomerena.
-
-Više od ovog bića
-Više od ove misli
-okamenjene tišine
-budeći se plaču.
-Uzdrhtale dečje ruke
-Učvrsle muške grudi
-mog malog nestalog deteta.
-
-Voleći da živim
-dešavam se svetu bez bola.
-Ukrojena visinska trenja
-Udvojbene konstrukcije u meni
-utrunulim peskom iz njegove suvišne ruke,
-paviljonska žena u meni
-ružom se hrani,
-tera se zapadno.
-
-Otrgla se okuka seća
-ukrajinskih silovanja.
-U betonu se čuje njegov glas.
-I ruke koje nosim,
-nosim da bih njega voleo.
-        </div>
-
-    </div>
-
-
-    <div class="poem-divider">
-        * * *
-    </div>
-
-
-
-    <!-- 08 — KAMENI GRAD -->
-
-    <div class="poem">
-
-        <div class="poem-title">
-            KAMENI GRAD
-        </div>
-
-        <div class="poem-text">
-Stojim
-Kao pred kamenom.
-Govori da plače.
-Nije odavde.
-Reke se suza
-U njemu razbistriše.
-Ja sam mu povratio svet
-A sebe sam krenuo
-Da spasem.
-
-Sad sedim
-U ogoljenoj simetriji
-Drveta
-Njegove krošnje
-I svojih strepnji
-Čoveče
-Ja moram biti slobodan.
-
-...
-
-Kamen je biće
-Kamen je svet
-Vreme u njemu
-Vri
-U vetrovima Tvojim
-        </div>
-
-    </div>
-
-
-    <div class="poem-divider">
-        * * *
-    </div>
-
-
-
-    <!-- 09 — SINESTEZIJA -->
-
-    <div class="poem">
-
-        <div class="poem-title">
-            SINESTEZIJA
-        </div>
-
-        <div class="poem-text">
-Neobaveštenost prostora
-Trguje instancama.
-Na severnom delu
-Trbušnosti njenog smeha
-Celosti misli
-Utapaju se u mene.
-
-Osećam da raste
-Dete u meni
-Iako bi ga Ti
-Trebala nositi.
-
-O ljubavi
-Uobičavam da ćutim.
-Tišina svetlosti
-Objašnjava mi mrak.
-Ne umem umirati na miru.
-
-Senkama trpim lepotu,
-Smehom je tražim.
-Potezna rukavica
-Tvoje devičantnosti
-Ne ume
-Raštimovati hod.
-
-I dalje sam prisutan.
-Moram Te osetiti
-Telom jezika
-Da bih Te umeo
-Pretvoriti u prostor.
-
-Kameni udovi
-Tvoje nestabilnosti,
-Osmešena skulpturalnost
-Nepoznatih reči..
-
-Trebalo bi izmisliti
-Svetove,
-Nove praznine
-Ne bi li utopili
-Lepotu senki
-U drhtaj
-Ubijene stvarnosti.
-        </div>
-
-    </div>
-
-
-    <div class="poem-divider">
-        * * *
-    </div>
-
-
-
-    <!-- 10 — NEOBAVEŠTENOST PROSTORA -->
-
-    <div class="poem">
-
-        <div class="poem-title">
-            NEOBAVEŠTENOST PROSTORA
-        </div>
-
-        <div class="poem-text">
-Gradim svet praznine u kojem si postavljen na tlu.
-Leđima okrenut ništavnosti svog postojanja,
-otvara se novi svet Neba.
-Pozorište na plafonu
-Ukida simultanost percepcije
-Moja umetnost
-Se davi
-Na trbuhu koji
-Leđima okrenut
-Svetli u zemlji.
-
-Gradim svet
-Praznine,
-Prostor,
-Neobavešten
-Da slučajnosti
-Na zidu moje iskrivljenosti —
-Poništava trbušnost
-Njenog smeha.
-        </div>
-
-    </div>
-
-
-    <div class="poem-divider">
-        * * *
-    </div>
-
-
-
-    <!-- 11 — O VREDNOSTIMA -->
-
-    <div class="poem">
-
-        <div class="poem-title">
-            O VREDNOSTIMA
-        </div>
-
-        <div class="poem-text">
-Hoću da kriknem
-Da bih vriskom
-Mogao da te sateram.
-To je jedini način
-Na koji mogu izvesti smrt
-A da posle nje
-Ostanem živ.
-Ne znam koliko je to vredno.
-        </div>
-
-    </div>
-
-
-    <div class="poem-divider">
-        * * *
-    </div>
-
-
-
-    <!-- 12 — VETAR -->
-
-    <div class="poem">
-
-        <div class="poem-title">
-            VETAR
-        </div>
-
-        <div class="poem-text">
-Želim zauvek
-Ove dve breze
-Gledati
-Otvoreno.
-Rukama.
-Zajedno.
-        </div>
-
-    </div>
-
-
-</div>
-
-    </section>
-
-
-    <!-- 02 -->
-
-    <section class="collection">
-
-        <div class="collection-header">
-
-            <div class="collection-number">
-                02
-            </div>
-
-            <div>
-
-                <div class="collection-title">
-                    NESVRSTANO
-                </div>
-
-                <div class="collection-subtitle">
-                    Uncollected Poems
-                </div>
+                <span class="poetry-number">
+                    01
+                </span>
 
             </div>
 
-            <div class="collection-meta">
-                Ongoing
+
+            <div class="poetry-title">
+                ZEMLJA KURTALISANA
             </div>
 
-        </div>
-
-
-        <div class="poems">
-
-            <div class="poem">
-
-                <div class="poem-title">
-                    POEM TITLE
-                </div>
-
-                <div class="poem-text">
-                    poem text
-                    poem text
-                    poem text
-                </div>
-
+            <div class="poetry-meta">
+                Poetry Collection<br>
+                2024
             </div>
 
-            <div class="poem-divider">
-                * * *
-            </div>
-
-        </div>
-
-    </section>
+        </a>
 
 
-    <!-- 03 -->
 
-    <section class="collection">
+        <!-- =================================
+             02 — NESVRSTANO
+        ================================== -->
 
-        <div class="collection-header">
+        <a
+            class="poetry-category"
+            href="nesvrstano.html"
+        >
 
-            <div class="collection-number">
-                03
-            </div>
+            <div class="poetry-image">
 
-            <div>
+                <img
+                    src="images/nesvrstano.jpg"
+                    alt="Nesvrstano"
+                >
 
-                <div class="collection-title">
-                    MAĐIONIČAR
-                </div>
-
-                <div class="collection-subtitle">
-                    Poetry Collection
-                </div>
+                <span class="poetry-number">
+                    02
+                </span>
 
             </div>
 
-            <div class="collection-meta">
+
+            <div class="poetry-title">
+                NESVRSTANO
+            </div>
+
+            <div class="poetry-meta">
+                Uncollected Poems
+            </div>
+
+        </a>
+
+
+
+        <!-- =================================
+             03 — MAĐIONIČAR
+        ================================== -->
+
+        <a
+            class="poetry-category"
+            href="madjionicar.html"
+        >
+
+            <div class="poetry-image">
+
+                <img
+                    src="images/madjionicar.jpg"
+                    alt="Mađioničar"
+                >
+
+                <span class="poetry-number">
+                    03
+                </span>
+
+            </div>
+
+
+            <div class="poetry-title">
+                MAĐIONIČAR
+            </div>
+
+            <div class="poetry-meta">
+                Poetry Collection<br>
                 2015
             </div>
 
-        </div>
+        </a>
 
 
-        <div class="poems">
-
-            <div class="poem">
-
-                <div class="poem-title">
-                    POEM TITLE
-                </div>
-
-                <div class="poem-text">
-                    poem text
-                    poem text
-                    poem text
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
+    </div>
 
 </main>
 
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
 
 <footer>
 
     <div class="footer-grid">
 
-        <div>
-            <div class="footer-title">ŠĆEPAN POPOVIĆ</div>
-            <div>Architecture / Urbanism / Research / Art</div>
-        </div>
 
         <div>
-            <div class="footer-heading">LOCATION</div>
-            <div class="footer-line">Montenegro</div>
-            <div class="footer-line">Berlin</div>
-            <div class="footer-line">Remote</div>
-        </div>
 
-        <div>
-            <div class="footer-heading">CONTACT</div>
-
-            <div class="footer-line">
-                <a class="footer-link" href="mailto:scepanpopovic99@gmail.com">
-                    scepanpopovic99@gmail.com
-                </a>
+            <div class="footer-heading">
+                ŠĆEPAN POPOVIĆ
             </div>
 
             <div class="footer-line">
-                <a class="footer-link" href="mailto:numeruslinkin@gmail.com">
-                    numeruslinkin@gmail.com
-                </a>
-            </div>
-
-            <div class="footer-line">
-                <a class="footer-link" href="tel:+38269650667">
-                    +382 69 650 667
-                </a>
+                Architecture / Urbanism / Research / Art
             </div>
 
         </div>
 
+
         <div>
 
-            <div class="footer-heading">SOCIALS</div>
+            <div class="footer-heading">
+                LOCATION
+            </div>
 
-            <a class="social-link"
-               href="https://www.instagram.com/landscapes.of.memory_prague/"
-               target="_blank">
-                Instagram ↗
-            </a>
+            <div class="footer-line">
+                Montenegro<br>
+                Berlin<br>
+                Remote
+            </div>
 
-            <a class="social-link"
-               href="https://www.linkedin.com/in/%C5%A1%C4%87epan-popovi%C4%87-384896328/"
-               target="_blank">
-                LinkedIn ↗
-            </a>
+        </div>
 
-            <a class="social-link"
-               href="https://www.youtube.com/@scepanpopovic2201"
-               target="_blank">
+
+        <div>
+
+            <div class="footer-heading">
+                CONTACT
+            </div>
+
+            <div class="footer-line">
+                scepanpopovic99@gmail.com<br>
+                numeruslinkin@gmail.com<br>
+                +382 69 650 667
+            </div>
+
+        </div>
+
+
+        <div>
+
+            <div class="footer-heading">
+                SOCIALS
+            </div>
+
+            <div class="footer-line">
+                Instagram ↗<br>
+                LinkedIn ↗<br>
                 YouTube ↗
-            </a>
-
-        </div>
-
-        <div>
-
-            <div class="languages">
-                <a class="language-link" href="#">EN</a>
-                <span>/</span>
-                <a class="language-link" href="#">MNE</a>
-                <span>/</span>
-                <a class="language-link" href="#">IT</a>
-                <span>/</span>
-                <a class="language-link" href="#">DE</a>
             </div>
 
         </div>
 
-    </div>
 
-    <div class="copyright">
-        © 2026 Šćepan Popović
+        <div class="footer-right">
+
+            <div class="footer-line">
+                EN / MNE / IT / DE
+            </div>
+
+            <div class="copyright">
+                © 2026 Šćepan Popović
+            </div>
+
+        </div>
+
+
     </div>
 
 </footer>
 
 
 </body>
+
 </html>
