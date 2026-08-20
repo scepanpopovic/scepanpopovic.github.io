@@ -1,1 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Film — Šćepan Popović</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --green: #BDFF00;
+    --black: #000;
+    --white: #fff;
+    --grey: #777;
+}
+
+body {
+    margin: 0;
+    background: #fff;
+    color: #000;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* HEADER */
+
+header {
+    min-height: 86px;
+    padding: 18px 36px;
+    background: #000;
+    color: #fff;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.logo {
+    color: #fff;
+    font-weight: 700;
+}
+
+.logo-name {
+    display: block;
+    font-size: 20px;
+}
+
+.logo-about {
+    display: block;
+    margin-top: 3px;
+    font-size: 8px;
+    font-weight: normal;
+}
+
+.logo:hover .logo-name,
+.logo:hover .logo-about {
+    color: var(--green);
+}
+
+.navigation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.nav-item {
+    position: relative;
+    white-space: nowrap;
+}
+
+.nav-item::after {
+    content: "/";
+    margin: 0 10px;
+    color: #fff;
+}
+
+.nav-item:last-child::after {
+    content: "";
+    margin: 0;
+}
+
+.nav-link {
+    color: #fff;
+    font-weight: 700;
+}
+
+.nav-link:hover {
+    color: var(--green);
+}
+
+/* DROPDOWN */
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 20px;
+    left: -10px;
+    z-index: 100;
+    min-width: 150px;
+    padding: 8px 10px;
+    background: #000;
+}
+
+.dropdown a {
+    display: block;
+    padding: 4px 0;
+    color: #fff;
+    font-size: 10px;
+}
+
+.dropdown a:hover {
+    color: var(--green);
+}
+
+.nav-item:hover .dropdown {
+    display: block;
+}
+
+/* FILM PAGE */
+
+.film-page {
+    padding: 50px 36px 100px;
+}
+
+.page-title {
+    margin-bottom: 30px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* VIDEO */
+
+.film-video {
+    width: 100%;
+    max-width: 1400px;
+    aspect-ratio: 16 / 9;
+    background: #000;
+}
+
+.film-video iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+/* FILM INFO */
+
+.film-info {
+    max-width: 1400px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 80px;
+    padding-top: 15px;
+}
+
+.film-title {
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.film-description {
+    margin-top: 15px;
+    max-width: 720px;
+    color: #222;
+}
+
+.film-meta {
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+.meta-heading {
+    font-weight: 700;
+}
+
+/* FOOTER */
+
+footer {
+    margin: 0;
+    padding: 28px 36px 24px;
+    background: #000;
+    color: #fff;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr 1fr 0.9fr 0.8fr;
+    gap: 40px;
+}
+
+.footer-title {
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.footer-heading {
+    margin-bottom: 7px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.footer-line {
+    margin-bottom: 3px;
+}
+
+.footer-link,
+.social-link,
+.language-link {
+    color: #fff;
+    transition: color 0.2s ease;
+}
+
+.footer-link:hover,
+.social-link:hover,
+.language-link:hover {
+    color: var(--green);
+}
+
+.social-link {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.languages {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.copyright {
+    margin-top: 28px;
+    text-align: right;
+    font-size: 10px;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    header {
+        display: block;
+        padding: 18px;
+    }
+
+    .navigation {
+        margin-top: 18px;
+        justify-content: flex-start;
+        line-height: 2;
+    }
+
+    .film-page {
+        padding: 35px 18px 70px;
+    }
+
+    .film-info {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    footer {
+        padding: 28px 18px 24px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 20px;
+    }
+
+    .languages {
+        justify-content: flex-start;
+    }
+
+    .copyright {
+        text-align: left;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<header>
+
+    <a class="logo" href="index.html">
+        <span class="logo-name">ŠĆEPAN POPOVIĆ</span>
+        <span class="logo-about">ABOUT</span>
+    </a>
+
+
+    <nav class="navigation">
+
+        <div class="nav-item">
+            <a class="nav-link" href="architecture.html">ARCHITECTURE</a>
+        </div>
+
+        <div class="nav-item">
+            <a class="nav-link" href="urbanism.html">URBANISM</a>
+        </div>
+
+        <div class="nav-item">
+            <a class="nav-link" href="research.html">RESEARCH</a>
+        </div>
+
+        <div class="nav-item">
+
+            <span class="nav-link">ARTWORKS</span>
+
+            <div class="dropdown">
+                <a href="spatial-art.html">SPATIAL ART</a>
+                <a href="paintings.html">PAINTINGS</a>
+                <a href="observations.html">OBSERVATIONS</a>
+            </div>
+
+        </div>
+
+        <div class="nav-item">
+            <a class="nav-link" href="film.html">FILM</a>
+        </div>
+
+        <div class="nav-item">
+
+            <span class="nav-link">WRITINGS</span>
+
+            <div class="dropdown">
+                <a href="texts.html">TEXTS</a>
+                <a href="poetry.html">POETRY</a>
+            </div>
+
+        </div>
+
+        <div class="nav-item">
+            <a class="nav-link" href="exhibitions.html">EXHIBITIONS</a>
+        </div>
+
+        <div class="nav-item">
+            <a class="nav-link" href="news.html">NEWS</a>
+        </div>
+
+    </nav>
+
+</header>
+
+
+<main class="film-page">
+
+    <div class="page-title">
+        FILM
+    </div>
+
+
+    <div class="film-video">
+
+        <iframe
+            src="https://www.youtube.com/embed/6oUwtDYQfhM?start=6"
+            title="Film by Šćepan Popović"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+        </iframe>
+
+    </div>
+
+
+    <div class="film-info">
+
+        <div>
+
+            <div class="film-title">
+                FILM TITLE
+            </div>
+
+            <div class="film-description">
+                Film description goes here.
+            </div>
+
+        </div>
+
+
+        <div class="film-meta">
+
+            <div>
+                <span class="meta-heading">YEAR</span><br>
+                2025
+            </div>
+
+            <br>
+
+            <div>
+                <span class="meta-heading">FILM</span><br>
+                Šćepan Popović
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div>
+            <div class="footer-title">
+                ŠĆEPAN POPOVIĆ
+            </div>
+
+            <div>
+                Architecture / Urbanism / Research / Art
+            </div>
+        </div>
+
+
+        <div>
+
+            <div class="footer-heading">
+                LOCATION
+            </div>
+
+            <div class="footer-line">Montenegro</div>
+            <div class="footer-line">Berlin</div>
+            <div class="footer-line">Remote</div>
+
+        </div>
+
+
+        <div>
+
+            <div class="footer-heading">
+                CONTACT
+            </div>
+
+            <div class="footer-line">
+                <a class="footer-link" href="mailto:scepanpopovic99@gmail.com">
+                    scepanpopovic99@gmail.com
+                </a>
+            </div>
+
+            <div class="footer-line">
+                <a class="footer-link" href="mailto:numeruslinkin@gmail.com">
+                    numeruslinkin@gmail.com
+                </a>
+            </div>
+
+            <div class="footer-line">
+                <a class="footer-link" href="tel:+38269650667">
+                    +382 69 650 667
+                </a>
+            </div>
+
+        </div>
+
+
+        <div>
+
+            <div class="footer-heading">
+                SOCIALS
+            </div>
+
+            <a
+                class="social-link"
+                href="https://www.instagram.com/landscapes.of.memory_prague/"
+                target="_blank">
+                Instagram ↗
+            </a>
+
+            <a
+                class="social-link"
+                href="https://www.linkedin.com/in/%C5%A1%C4%87epan-popovi%C4%87-384896328/"
+                target="_blank">
+                LinkedIn ↗
+            </a>
+
+            <a
+                class="social-link"
+                href="https://www.youtube.com/@scepanpopovic2201"
+                target="_blank">
+                YouTube ↗
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <div class="languages">
+
+                <a class="language-link" href="#">EN</a>
+                <span>/</span>
+                <a class="language-link" href="#">MNE</a>
+                <span>/</span>
+                <a class="language-link" href="#">IT</a>
+                <span>/</span>
+                <a class="language-link" href="#">DE</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+        © 2026 Šćepan Popović
+    </div>
+
+</footer>
+
+
+</body>
+</html>
