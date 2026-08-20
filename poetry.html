@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Poetry — Šćepan Popović</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --green: #BDFF00;
+    --black: #000;
+    --white: #fff;
+    --grey: #777;
+}
+
+body {
+    margin: 0;
+    background: #fff;
+    color: #000;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* HEADER */
+
+header {
+    min-height: 86px;
+    padding: 18px 36px;
+    background: #000;
+    color: #fff;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.logo {
+    color: #fff;
+    font-weight: 700;
+}
+
+.logo-name {
+    display: block;
+    font-size: 20px;
+}
+
+.logo-about {
+    display: block;
+    margin-top: 3px;
+    font-size: 8px;
+    font-weight: normal;
+}
+
+.logo:hover .logo-name,
+.logo:hover .logo-about {
+    color: var(--green);
+}
+
+.navigation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.nav-item {
+    position: relative;
+    white-space: nowrap;
+}
+
+.nav-item::after {
+    content: "/";
+    margin: 0 10px;
+    color: #fff;
+}
+
+.nav-item:last-child::after {
+    content: "";
+    margin: 0;
+}
+
+.nav-link {
+    color: #fff;
+    font-weight: 700;
+}
+
+.nav-link:hover {
+    color: var(--green);
+}
+
+/* DROPDOWN */
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 20px;
+    left: -10px;
+    z-index: 100;
+    min-width: 150px;
+    padding: 8px 10px;
+    background: #000;
+}
+
+.dropdown a {
+    display: block;
+    padding: 4px 0;
+    color: #fff;
+    font-size: 10px;
+}
+
+.dropdown a:hover {
+    color: var(--green);
+}
+
+.nav-item:hover .dropdown {
+    display: block;
+}
+
+/* PAGE */
+
+.poetry-page {
+    padding: 55px 36px 110px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 45px;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.back-link:hover {
+    color: var(--green);
+}
+
+.page-title {
+    margin-bottom: 55px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* COLLECTION */
+
+.collection {
+    border-top: 1px solid #000;
+    padding-top: 18px;
+    margin-bottom: 100px;
+}
+
+.collection-header {
+    display: grid;
+    grid-template-columns: 70px 1fr 320px;
+    gap: 30px;
+    margin-bottom: 70px;
+}
+
+.collection-number {
+    font-size: 10px;
+}
+
+.collection-title {
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.collection-subtitle {
+    margin-top: 8px;
+    font-size: 11px;
+}
+
+.collection-meta {
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+/* POEMS */
+
+.poems {
+    max-width: 700px;
+    margin-left: 100px;
+}
+
+.poem {
+    margin-bottom: 65px;
+}
+
+.poem-title {
+    margin-bottom: 22px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.poem-text {
+    white-space: pre-line;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.poem-divider {
+    margin: 55px 0;
+    letter-spacing: 6px;
+}
+
+/* FOOTER */
+
+footer {
+    margin: 0;
+    padding: 28px 36px 24px;
+    background: #000;
+    color: #fff;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr 1fr 0.9fr 0.8fr;
+    gap: 40px;
+}
+
+.footer-title {
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.footer-heading {
+    margin-bottom: 7px;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.footer-line {
+    margin-bottom: 3px;
+}
+
+.footer-link,
+.social-link,
+.language-link {
+    color: #fff;
+}
+
+.footer-link:hover,
+.social-link:hover,
+.language-link:hover {
+    color: var(--green);
+}
+
+.social-link {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.languages {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.copyright {
+    margin-top: 28px;
+    text-align: right;
+    font-size: 10px;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    header {
+        display: block;
+        padding: 18px;
+    }
+
+    .navigation {
+        margin-top: 18px;
+        justify-content: flex-start;
+        line-height: 2;
+    }
+
+    .poetry-page {
+        padding: 40px 18px 70px;
+    }
+
+    .collection-header {
+        grid-template-columns: 40px 1fr;
+    }
+
+    .collection-meta {
+        grid-column: 2;
+    }
+
+    .poems {
+        margin-left: 0;
+    }
+
+    footer {
+        padding: 28px 18px 24px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .languages {
+        justify-content: flex-start;
+    }
+
+    .copyright {
+        text-align: left;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<header>
+
+    <a class="logo" href="about.html">
+        <span class="logo-name">ŠĆEPAN POPOVIĆ</span>
+        <span class="logo-about">ABOUT</span>
+    </a>
+
+
+    <nav class="navigation">
+
+        <div class="nav-item">
+            <a class="nav-link" href="architecture.html">ARCHITECTURE</a>
+        </div>
+
+        <div class="nav-item">
+            <a class="nav-link" href="urbanism.html">URBANISM</a>
+        </div>
+
+        <div class="nav-item">
+            <a class="nav-link" href="research.html">RESEARCH</a>
+        </div>
+
+        <div class="nav-item">
+
+            <span class="nav-link">ARTWORKS</span>
+
+            <div class="dropdown">
+                <a href="spatial-art.html">SPATIAL ART</a>
+                <a href="paintings.html">PAINTINGS</a>
+                <a href="observations.html">OBSERVATIONS</a>
+            </div>
+
+        </div>
+
+        <div class="nav-item">
+            <a class="nav-link" href="film.html">FILM</a>
+        </div>
+
+        <div class="nav-item">
+
+            <span class="nav-link">WRITINGS</span>
+
+            <div class="dropdown">
+                <a href="texts.html">TEXTS</a>
+                <a href="poetry.html">POETRY</a>
+            </div>
+
+        </div>
+
+        <div class="nav-item">
+            <a class="nav-link" href="exhibitions.html">EXHIBITIONS</a>
+        </div>
+
+        <div class="nav-item">
+            <a class="nav-link" href="news.html">NEWS</a>
+        </div>
+
+    </nav>
+
+</header>
+
+
+<main class="poetry-page">
+
+    <a class="back-link" href="index.html">
+        ← BACK
+    </a>
+
+    <div class="page-title">
+        POETRY
+    </div>
+
+
+    <!-- 01 -->
+
+    <section class="collection">
+
+        <div class="collection-header">
+
+            <div class="collection-number">
+                01
+            </div>
+
+            <div>
+
+                <div class="collection-title">
+                    ZEMLJA KURTALISANA
+                </div>
+
+                <div class="collection-subtitle">
+                    Poetry Collection
+                </div>
+
+            </div>
+
+            <div class="collection-meta">
+                2024<br>
+                JU Narodna biblioteka „Njegoš“, Nikšić<br><br>
+                Second Prize<br>
+                XXVI Nikšić Literary Meetings<br>
+                Competition for an Unpublished Poetry Collection
+            </div>
+
+        </div>
+
+
+        <div class="poems">
+
+            <div class="poem">
+
+                <div class="poem-title">
+                    POEM TITLE
+                </div>
+
+                <div class="poem-text">
+                    poem text
+                    poem text
+                    poem text
+                </div>
+
+            </div>
+
+            <div class="poem-divider">
+                * * *
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- 02 -->
+
+    <section class="collection">
+
+        <div class="collection-header">
+
+            <div class="collection-number">
+                02
+            </div>
+
+            <div>
+
+                <div class="collection-title">
+                    NESVRSTANO
+                </div>
+
+                <div class="collection-subtitle">
+                    Uncollected Poems
+                </div>
+
+            </div>
+
+            <div class="collection-meta">
+                Ongoing
+            </div>
+
+        </div>
+
+
+        <div class="poems">
+
+            <div class="poem">
+
+                <div class="poem-title">
+                    POEM TITLE
+                </div>
+
+                <div class="poem-text">
+                    poem text
+                    poem text
+                    poem text
+                </div>
+
+            </div>
+
+            <div class="poem-divider">
+                * * *
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- 03 -->
+
+    <section class="collection">
+
+        <div class="collection-header">
+
+            <div class="collection-number">
+                03
+            </div>
+
+            <div>
+
+                <div class="collection-title">
+                    MAĐIONIČAR
+                </div>
+
+                <div class="collection-subtitle">
+                    Poetry Collection
+                </div>
+
+            </div>
+
+            <div class="collection-meta">
+                2015
+            </div>
+
+        </div>
+
+
+        <div class="poems">
+
+            <div class="poem">
+
+                <div class="poem-title">
+                    POEM TITLE
+                </div>
+
+                <div class="poem-text">
+                    poem text
+                    poem text
+                    poem text
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div>
+            <div class="footer-title">ŠĆEPAN POPOVIĆ</div>
+            <div>Architecture / Urbanism / Research / Art</div>
+        </div>
+
+        <div>
+            <div class="footer-heading">LOCATION</div>
+            <div class="footer-line">Montenegro</div>
+            <div class="footer-line">Berlin</div>
+            <div class="footer-line">Remote</div>
+        </div>
+
+        <div>
+            <div class="footer-heading">CONTACT</div>
+
+            <div class="footer-line">
+                <a class="footer-link" href="mailto:scepanpopovic99@gmail.com">
+                    scepanpopovic99@gmail.com
+                </a>
+            </div>
+
+            <div class="footer-line">
+                <a class="footer-link" href="mailto:numeruslinkin@gmail.com">
+                    numeruslinkin@gmail.com
+                </a>
+            </div>
+
+            <div class="footer-line">
+                <a class="footer-link" href="tel:+38269650667">
+                    +382 69 650 667
+                </a>
+            </div>
+
+        </div>
+
+        <div>
+
+            <div class="footer-heading">SOCIALS</div>
+
+            <a class="social-link"
+               href="https://www.instagram.com/landscapes.of.memory_prague/"
+               target="_blank">
+                Instagram ↗
+            </a>
+
+            <a class="social-link"
+               href="https://www.linkedin.com/in/%C5%A1%C4%87epan-popovi%C4%87-384896328/"
+               target="_blank">
+                LinkedIn ↗
+            </a>
+
+            <a class="social-link"
+               href="https://www.youtube.com/@scepanpopovic2201"
+               target="_blank">
+                YouTube ↗
+            </a>
+
+        </div>
+
+        <div>
+
+            <div class="languages">
+                <a class="language-link" href="#">EN</a>
+                <span>/</span>
+                <a class="language-link" href="#">MNE</a>
+                <span>/</span>
+                <a class="language-link" href="#">IT</a>
+                <span>/</span>
+                <a class="language-link" href="#">DE</a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 Šćepan Popović
+    </div>
+
+</footer>
+
+
+</body>
+</html>
