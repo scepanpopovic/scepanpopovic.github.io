@@ -170,6 +170,45 @@ main {
 
 
 /* =========================
+   PROJECT INFO
+========================= */
+
+.project-info {
+    border-top: 1px solid #111;
+
+    display: grid;
+    grid-template-columns: 70px 1fr 1.25fr;
+    gap: 25px;
+
+    padding-top: 18px;
+    margin-bottom: 65px;
+}
+
+.info-label {
+    grid-column: 2;
+
+    font-size: 9px;
+    font-weight: bold;
+}
+
+.info-meta {
+    grid-column: 3;
+
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+.info-heading {
+    margin-top: 14px;
+    font-weight: bold;
+}
+
+.info-heading:first-child {
+    margin-top: 0;
+}
+
+
+/* =========================
    DESCRIPTION
 ========================= */
 
@@ -196,9 +235,8 @@ main {
 
     max-width: 500px;
 
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
-    line-height: 1.55;
+    font-size: 11px;
+    line-height: 1.6;
 }
 
 .intro-text p {
@@ -213,7 +251,6 @@ main {
 .visual {
     margin-left: auto;
     margin-right: auto;
-
     margin-bottom: 70px;
 }
 
@@ -291,29 +328,6 @@ main {
 
 
 /* =========================
-   TEXT BETWEEN IMAGES
-========================= */
-
-.project-text {
-    width: 44%;
-    max-width: 500px;
-
-    margin-left: auto;
-    margin-right: calc((100% - 1180px) / 2);
-
-    margin-bottom: 50px;
-
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
-    line-height: 1.55;
-}
-
-.project-text p {
-    margin: 0;
-}
-
-
-/* =========================
    FOOTER
 ========================= */
 
@@ -346,14 +360,6 @@ main {
    MOBILE
 ========================= */
 
-@media (max-width: 1250px) {
-
-    .project-text {
-        margin-right: 0;
-    }
-
-}
-
 @media (max-width: 800px) {
 
     header {
@@ -382,14 +388,17 @@ main {
         font-size: 18px;
     }
 
+    .project-info,
     .project-intro {
         display: block;
     }
 
+    .info-label,
     .intro-label {
         margin-bottom: 20px;
     }
 
+    .info-meta,
     .intro-text {
         max-width: none;
     }
@@ -397,14 +406,6 @@ main {
     .visual.render,
     .visual.drawing {
         max-width: 100%;
-    }
-
-    .project-text {
-        width: 100%;
-        max-width: none;
-
-        margin-left: 0;
-        margin-right: 0;
     }
 
     .section-title {
@@ -517,6 +518,40 @@ main {
         <div class="project-subtitle">
             BERANE, MONTENEGRO / URBAN DESIGN / 2025
         </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PROJECT INFO
+========================= -->
+
+<section class="project-info">
+
+    <div class="info-label">
+        PROJECT INFO
+    </div>
+
+
+    <div class="info-meta">
+
+        <div class="info-heading">
+            AWARD
+        </div>
+
+        Purchase Prize / Open Competition
+
+
+        <div class="info-heading">
+            TEAM
+        </div>
+
+        Šćepan Popović<br>
+        Sofija Poleksić<br>
+        Nikolija Pešić
 
     </div>
 
@@ -653,19 +688,6 @@ main {
 </div>
 
 
-<div class="project-text">
-
-    <p>
-        The proposal develops a continuous pedestrian network in which
-        existing passages, active ground floors and public spaces operate
-        as parts of a single urban system. The intervention reinforces
-        existing movement patterns while introducing new spatial connections
-        between the main civic areas.
-    </p>
-
-</div>
-
-
 <div class="visual drawing">
 
     <img
@@ -703,18 +725,6 @@ main {
     <span class="name">
         21 JULY SQUARE
     </span>
-
-</div>
-
-
-<div class="project-text">
-
-    <p>
-        The central square is conceived as a large, open civic surface.
-        Smaller programmed zones are positioned along its edges, allowing
-        different forms of everyday occupation while preserving the central
-        plateau for gatherings, events and collective use.
-    </p>
 
 </div>
 
@@ -760,18 +770,6 @@ main {
 </div>
 
 
-<div class="project-text">
-
-    <p>
-        The existing promenade is retained as the main linear public
-        connection. Existing trees and movement axes are preserved while
-        passages through the surrounding urban fabric are opened and
-        integrated into the pedestrian network.
-    </p>
-
-</div>
-
-
 <div class="visual drawing">
 
     <img
@@ -809,18 +807,6 @@ main {
     <span class="name">
         PARK + TEMPLE
     </span>
-
-</div>
-
-
-<div class="project-text">
-
-    <p>
-        The park retains its existing landscape character through minimal
-        intervention. Around the church, the public realm is reorganised
-        as a calm civic and ceremonial space connected directly to the
-        surrounding pedestrian system.
-    </p>
 
 </div>
 
@@ -903,18 +889,6 @@ main {
     <span class="name">
         ACTIVE GROUND FLOOR
     </span>
-
-</div>
-
-
-<div class="project-text">
-
-    <p>
-        Active frontages, entrances, passages and public programmes are
-        understood as generators of urban activity. Their relationship
-        with the redesigned public realm establishes a sequence of smaller
-        environments operating throughout the day.
-    </p>
 
 </div>
 
