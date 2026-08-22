@@ -6,13 +6,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Urban Regeneration of the Square in Berane — Šćepan Popović</title>
+<title>Urban Regeneration of 21 July Square — Šćepan Popović</title>
 
 <style>
-
-/* =========================================================
-   BASIC SETTINGS
-========================================================= */
 
 * {
     box-sizing: border-box;
@@ -22,503 +18,340 @@ html {
     scroll-behavior: smooth;
 }
 
-:root {
-    --green: #BDFF00;
-    --black: #111111;
-    --grey: #747474;
-    --background: #ffffff;
-}
-
 body {
     margin: 0;
-    background: var(--background);
-    color: var(--black);
+    background: #fff;
+    color: #111;
 
     font-family: "Courier New", Courier, monospace;
-    font-size: 12px;
-    line-height: 1.35;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-a:hover {
-    color: var(--green);
+    font-size: 11px;
 }
 
 
-/* =========================================================
+/* =========================
    HEADER
-========================================================= */
+========================= */
 
 header {
-    height: 86px;
-    padding: 0 36px;
+    height: 72px;
+    background: #000;
+    color: white;
 
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
 
-    background: #000;
+    padding: 0 30px;
 }
 
 .logo {
-    color: #fff;
-    font-size: 20px;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    white-space: nowrap;
+    text-decoration: none;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
 }
 
 .logo-name {
-    display: block;
-    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
 }
 
-.logo-about {
-    display: block;
-    margin-top: 3px;
-
-    font-size: 8px;
-    font-weight: normal;
-    letter-spacing: 0.5px;
-
-    color: #fff;
+.logo-home {
+    color: #bfff00;
+    font-size: 7px;
+    margin-top: 5px;
 }
 
-.logo-name:hover,
-.logo-about:hover {
-    color: var(--green);
-}
-
-
-.navigation {
+nav {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
-    justify-content: flex-end;
+    gap: 14px;
 }
 
-.nav-item {
-    position: relative;
-    white-space: nowrap;
-}
-
-.nav-item::after {
-    content: "/";
-    margin: 0 12px;
-    color: #fff;
-}
-
-.nav-item:last-child::after {
-    content: "";
-    margin: 0;
-}
-
-.nav-link {
-    color: #fff;
-    font-weight: 700;
-}
-
-.nav-link:hover {
-    color: var(--green);
-}
-
-
-/* DROPDOWN */
-
-.dropdown {
-    display: none;
-
-    position: absolute;
-    top: 18px;
-    left: -10px;
-
-    min-width: 165px;
-
-    padding: 10px;
-
-    background: #fff;
-    border: 1px solid var(--black);
-
-    z-index: 100;
-}
-
-.dropdown a {
-    display: block;
-    padding: 4px 0;
-}
-
-.nav-item:hover .dropdown {
-    display: block;
-}
-
-
-/* =========================================================
-   PROJECT
-========================================================= */
-
-.project-page {
-    width: 100%;
-}
-
-
-/* PROJECT HEADER */
-
-.project-header {
-    padding: 48px 36px 32px;
-}
-
-.back-link {
-    display: inline-block;
-
-    margin-bottom: 55px;
-
+nav a {
+    color: white;
+    text-decoration: none;
     font-size: 10px;
-    font-weight: 700;
+    font-weight: bold;
 }
 
-.project-info {
+nav a:hover,
+nav a.active {
+    color: #bfff00;
+}
+
+.separator {
+    color: white;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+main {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 45px 40px 120px;
+}
+
+
+/* =========================
+   BACK
+========================= */
+
+.back {
+    display: inline-block;
+    margin-bottom: 65px;
+
+    color: #111;
+    text-decoration: none;
+
+    font-size: 9px;
+}
+
+.back:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   PROJECT HEADER
+========================= */
+
+.project-heading {
     display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 25px;
 
-    grid-template-columns:
-        60px
-        minmax(300px, 1.5fr)
-        1fr;
-
-    gap: 35px;
-
-    padding-top: 16px;
-
-    border-top: 1px solid #000;
+    margin-bottom: 45px;
 }
 
 .project-number {
-    font-size: 10px;
+    font-size: 11px;
 }
 
 .project-title h1 {
     margin: 0;
 
+    font-size: 22px;
+    line-height: 1.15;
+    font-weight: normal;
+
     max-width: 650px;
-
-    font-size: 27px;
-    line-height: 1.08;
-    font-weight: 700;
-
-    text-transform: uppercase;
 }
 
-.project-type {
+.project-subtitle {
     margin-top: 10px;
 
-    color: var(--grey);
-
-    font-size: 10px;
-    text-transform: uppercase;
-}
-
-.project-meta {
-    font-size: 10px;
-    line-height: 1.7;
+    font-size: 9px;
+    color: #555;
 }
 
 
-/* =========================================================
-   IMAGES
-========================================================= */
+/* =========================
+   PROJECT DESCRIPTION
+========================= */
 
-.project-image {
-    width: 100%;
+.project-intro {
+    border-top: 1px solid #111;
 
-    padding: 0 36px;
-
-    margin-bottom: 90px;
-}
-
-.project-image img {
-    display: block;
-
-    width: 100%;
-    height: auto;
-}
-
-
-/* HERO */
-
-.hero-image {
-    padding: 0;
-    margin-bottom: 100px;
-}
-
-.hero-image img {
-    width: 100%;
-    max-height: 90vh;
-
-    object-fit: cover;
-}
-
-
-/* =========================================================
-   CHAPTER / TEXT
-========================================================= */
-
-.project-section {
-    margin: 0 36px 100px;
-
-    padding-top: 16px;
-
-    border-top: 1px solid #000;
-}
-
-.section-info {
     display: grid;
+    grid-template-columns: 70px 1fr 1.35fr;
+    gap: 25px;
 
-    grid-template-columns:
-        60px
-        minmax(250px, 0.8fr)
-        minmax(300px, 1.2fr);
-
-    gap: 35px;
-
-    margin-bottom: 35px;
+    padding-top: 18px;
+    margin-bottom: 65px;
 }
 
-.section-number {
-    font-size: 10px;
+.intro-label {
+    grid-column: 2;
+
+    font-size: 9px;
+    font-weight: bold;
 }
 
-.section-title {
-    font-size: 14px;
-    font-weight: 700;
+.intro-text {
+    grid-column: 3;
 
-    text-transform: uppercase;
+    max-width: 520px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 1.55;
 }
 
-.section-text {
-    max-width: 650px;
-
-    font-size: 11px;
-    line-height: 1.6;
+.intro-text p {
+    margin: 0 0 14px;
 }
 
 
-/* DRAWINGS */
+/* =========================
+   IMAGES
+========================= */
 
-.drawing {
-    margin-bottom: 100px;
+.visual {
+    width: 100%;
+    margin: 0 auto 65px;
 }
 
-.drawing img {
+.visual img {
+    display: block;
+
     width: 100%;
     height: auto;
 
-    display: block;
+    max-height: 720px;
+    object-fit: contain;
 }
 
 
 /* RENDERS */
 
-.render {
-    margin-bottom: 100px;
-}
-
-.render img {
-    width: 100%;
-    height: auto;
-
-    display: block;
+.visual.render {
+    max-width: 1000px;
 }
 
 
-/* IMAGE CAPTION */
+/* DRAWINGS / BOARDS */
+
+.visual.drawing {
+    max-width: 920px;
+}
+
+
+/* CAPTIONS */
 
 .caption {
+    display: flex;
+    justify-content: space-between;
+
+    border-top: 1px solid #ccc;
+
     margin-top: 8px;
+    padding-top: 7px;
 
-    color: var(--grey);
-
-    font-size: 9px;
+    font-size: 8px;
     text-transform: uppercase;
 }
 
 
-/* =========================================================
-   BACK
-========================================================= */
+/* =========================
+   SECTION TITLES
+========================= */
 
-.project-end {
-    margin: 0 36px 80px;
+.section-title {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 25px;
 
-    padding-top: 18px;
+    border-top: 1px solid #111;
 
-    border-top: 1px solid #000;
+    padding-top: 10px;
+    margin: 95px 0 35px;
 }
 
-.project-end a {
+.section-title .number {
+    font-size: 9px;
+}
+
+.section-title .name {
     font-size: 10px;
-    font-weight: 700;
+    font-weight: bold;
 }
 
 
-/* =========================================================
+/* =========================
+   SMALL TEXT BETWEEN IMAGES
+========================= */
+
+.project-text {
+    width: 47%;
+    margin-left: auto;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 1.55;
+
+    margin-bottom: 55px;
+}
+
+.project-text p {
+    margin: 0;
+}
+
+
+/* =========================
    FOOTER
-========================================================= */
+========================= */
 
 footer {
-    padding: 28px 36px 24px;
+    border-top: 1px solid #111;
 
-    background: #000;
-    color: #fff;
-}
+    padding-top: 18px;
+    margin-top: 110px;
 
-.footer-grid {
-    display: grid;
-
-    grid-template-columns:
-        1.2fr
-        0.8fr
-        1fr
-        0.9fr
-        0.8fr;
-
-    gap: 40px;
-}
-
-.footer-title {
-    margin-bottom: 8px;
-
-    font-size: 13px;
-    font-weight: 700;
-}
-
-.footer-heading {
-    margin-bottom: 7px;
-
-    font-size: 10px;
-    font-weight: 700;
-}
-
-.footer-line {
-    margin-bottom: 3px;
-}
-
-.social-link {
-    display: block;
-    margin-bottom: 4px;
-}
-
-.languages {
     display: flex;
-    gap: 8px;
+    justify-content: space-between;
 
-    justify-content: flex-end;
-
-    font-weight: 700;
+    font-size: 8px;
 }
 
 footer a {
-    color: #fff;
+    color: #111;
+    text-decoration: none;
 }
 
 footer a:hover {
-    color: var(--green);
-}
-
-.copyright {
-    margin-top: 28px;
-
-    text-align: right;
-
-    font-size: 10px;
+    text-decoration: underline;
 }
 
 
-/* =========================================================
+/* =========================
    MOBILE
-========================================================= */
+========================= */
 
-@media (max-width: 900px) {
+@media (max-width: 800px) {
 
     header {
-        display: block;
-
         height: auto;
-
-        padding: 18px;
+        padding: 20px;
+        align-items: flex-start;
+        gap: 25px;
     }
 
-    .logo {
-        margin-bottom: 18px;
+    nav {
+        flex-wrap: wrap;
+        justify-content: flex-end;
     }
 
-    .navigation {
-        justify-content: flex-start;
-
-        line-height: 2;
+    main {
+        padding: 35px 20px 80px;
     }
 
-    .project-header {
-        padding: 35px 18px 25px;
-    }
-
-    .project-info {
-        grid-template-columns: 35px 1fr;
-    }
-
-    .project-meta {
-        grid-column: 2;
+    .project-heading {
+        grid-template-columns: 40px 1fr;
     }
 
     .project-title h1 {
-        font-size: 21px;
+        font-size: 18px;
     }
 
-    .project-image {
-        padding: 0 18px;
-        margin-bottom: 55px;
+    .project-intro {
+        display: block;
     }
 
-    .hero-image {
-        padding: 0;
-        margin-bottom: 60px;
+    .intro-label {
+        margin-bottom: 20px;
     }
 
-    .project-section {
-        margin: 0 18px 60px;
+    .project-text {
+        width: 100%;
     }
 
-    .section-info {
-        grid-template-columns: 35px 1fr;
-    }
-
-    .section-text {
-        grid-column: 2;
-    }
-
-    .drawing,
-    .render {
-        margin-bottom: 60px;
-    }
-
-    .project-end {
-        margin: 0 18px 60px;
-    }
-
-    footer {
-        padding: 28px 18px 24px;
-    }
-
-    .footer-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .languages,
-    .copyright {
-        justify-content: flex-start;
-        text-align: left;
+    .section-title {
+        grid-template-columns: 40px 1fr;
     }
 
 }
@@ -531,709 +364,463 @@ footer a:hover {
 <body>
 
 
-<!-- ======================================================
-     HEADER
-====================================================== -->
-
 <header>
 
-    <div class="logo">
-
-        <a href="/" class="logo-name">
-            ŠĆEPAN POPOVIĆ
-        </a>
-
-        <a href="about.html" class="logo-about">
-            ABOUT
-        </a>
-
-    </div>
+    <a class="logo" href="index.html">
+        <span class="logo-name">ŠĆEPAN POPOVIĆ</span>
+        <span class="logo-home">HOME</span>
+    </a>
 
 
-    <nav class="navigation">
+    <nav>
 
-        <div class="nav-item">
-            <a class="nav-link" href="architecture.html">
-                ARCHITECTURE
-            </a>
-        </div>
+        <a href="architecture.html">ARCHITECTURE</a>
+        <span class="separator">/</span>
 
+        <a href="urbanism.html" class="active">URBANISM</a>
+        <span class="separator">/</span>
 
-        <div class="nav-item">
-            <a class="nav-link" href="urbanism.html">
-                URBANISM
-            </a>
-        </div>
+        <a href="research.html">RESEARCH</a>
+        <span class="separator">/</span>
 
+        <a href="#">ARTWORKS</a>
+        <span class="separator">/</span>
 
-        <div class="nav-item">
-            <a class="nav-link" href="research.html">
-                RESEARCH
-            </a>
-        </div>
+        <a href="film.html">FILM</a>
+        <span class="separator">/</span>
 
+        <a href="#">WRITINGS</a>
+        <span class="separator">/</span>
 
-        <div class="nav-item">
-
-            <span class="nav-link">
-                ARTWORKS
-            </span>
-
-            <div class="dropdown">
-                <a href="spatial-art.html">SPATIAL ART</a>
-                <a href="paintings.html">PAINTINGS</a>
-                <a href="observations.html">OBSERVATIONS</a>
-            </div>
-
-        </div>
-
-
-        <div class="nav-item">
-            <a class="nav-link" href="film.html">
-                FILM
-            </a>
-        </div>
-
-
-        <div class="nav-item">
-
-            <span class="nav-link">
-                WRITINGS
-            </span>
-
-            <div class="dropdown">
-                <a href="texts.html">TEXTS</a>
-                <a href="poetry.html">POETRY</a>
-            </div>
-
-        </div>
-
-
-        <div class="nav-item">
-            <a class="nav-link" href="news.html">
-                NEWS
-            </a>
-        </div>
+        <a href="news.html">NEWS</a>
 
     </nav>
 
 </header>
 
 
-
-<!-- ======================================================
-     PROJECT
-====================================================== -->
-
-<main class="project-page">
+<main>
 
 
-    <!-- PROJECT INFORMATION -->
-
-    <section class="project-header">
-
-        <a class="back-link" href="urbanism.html">
-            ← BACK TO URBANISM
-        </a>
+<a href="urbanism.html" class="back">
+    ← BACK TO URBANISM
+</a>
 
 
-        <div class="project-info">
 
-            <div class="project-number">
-                01
-            </div>
+<!-- =========================
+     PROJECT HEADER
+========================= -->
 
+<section class="project-heading">
 
-            <div class="project-title">
+    <div class="project-number">
+        01
+    </div>
 
-                <h1>
-                    URBAN REGENERATION OF THE SQUARE IN BERANE
-                </h1>
+    <div class="project-title">
 
-                <div class="project-type">
-                    Urbanism / Public Space
-                </div>
+        <h1>
+            URBAN REGENERATION OF<br>
+            21 JULY SQUARE
+        </h1>
 
-            </div>
-
-
-            <div class="project-meta">
-                Location: Berane, Montenegro<br>
-                Typology: Urban Regeneration<br>
-                Public Space
-            </div>
-
+        <div class="project-subtitle">
+            BERANE, MONTENEGRO / URBAN DESIGN / 2025
         </div>
-
-    </section>
-
-
-
-    <!-- ==================================================
-         HERO — R1
-    =================================================== -->
-
-    <div class="project-image hero-image">
-
-        <img
-            src="images/r1.jpg"
-            alt="Urban Regeneration of the Square in Berane"
-        >
 
     </div>
 
-
-
-    <!-- ==================================================
-         01 — URBAN CONTEXT
-    =================================================== -->
-
-    <section class="project-section">
-
-        <div class="section-info">
-
-            <div class="section-number">
-                01
-            </div>
-
-            <div class="section-title">
-                URBAN CONTEXT
-            </div>
-
-            <div class="section-text">
-                The project approaches the central square as part of a wider
-                urban system, connecting the existing public spaces,
-                pedestrian routes and surrounding urban fabric.
-            </div>
-
-        </div>
-
-
-        <div class="drawing">
-
-            <img
-                src="images/t0.jpg"
-                alt="Wider Site Plan"
-            >
-
-            <div class="caption">
-                Wider Site Plan
-            </div>
-
-        </div>
-
-
-        <div class="drawing">
-
-            <img
-                src="images/t01.jpg"
-                alt="Overview of the Urban Passage Network"
-            >
-
-            <div class="caption">
-                Overview of the Urban Passage Network
-            </div>
-
-        </div>
-
-    </section>
+</section>
 
 
 
-    <!-- RENDER 02 -->
+<!-- =========================
+     DESCRIPTION
+========================= -->
 
-    <div class="project-image render">
+<section class="project-intro">
 
-        <img
-            src="images/r2.jpg"
-            alt="Urban Regeneration of the Square in Berane"
-        >
+    <div class="intro-label">
+        PROJECT
+    </div>
+
+    <div class="intro-text">
+
+        <p>
+            The project proposes the regeneration of Berane’s central
+            public space through the integration of 21 July Square and
+            its surrounding zones into a continuous urban system.
+            The intervention connects the municipal building, city park,
+            the Church of St. Simeon the Myrrh-streaming and the existing
+            promenade, transforming a series of fragmented spaces into
+            a coherent network of public routes and places.
+        </p>
+
+        <p>
+            The square becomes a flexible civic plateau for everyday use,
+            gathering and public events, while the park retains its existing
+            natural character through minimal intervention. Together, the
+            square, park, church plateau and promenade establish a continuous
+            sequence of public spaces that strengthens pedestrian movement
+            and reconnects key points within the city centre.
+        </p>
 
     </div>
 
-
-
-    <!-- ==================================================
-         02 — URBAN STRATEGY
-    =================================================== -->
-
-    <section class="project-section">
-
-        <div class="section-info">
-
-            <div class="section-number">
-                02
-            </div>
-
-            <div class="section-title">
-                URBAN STRATEGY
-            </div>
-
-            <div class="section-text">
-                The intervention establishes a continuous system of public
-                spaces rather than treating the square as an isolated urban
-                object. Existing pedestrian flows, edges and programmes are
-                used to structure a new sequence of urban spaces.
-            </div>
-
-        </div>
-
-
-        <div class="drawing">
-
-            <img
-                src="images/t1.jpg"
-                alt="Urban Frequency — Conceptual Conclusions"
-            >
-
-            <div class="caption">
-                Conceptual Conclusions
-            </div>
-
-        </div>
-
-    </section>
+</section>
 
 
 
-    <!-- RENDER 03 -->
+<!-- =========================
+     R1
+========================= -->
 
-    <div class="project-image render">
+<div class="visual render">
 
-        <img
-            src="images/r3.jpg"
-            alt="Urban Regeneration of the Square in Berane"
-        >
+    <img src="images/r1.jpg" alt="Urban regeneration of Berane">
 
+    <div class="caption">
+        <span>Overall proposal</span>
+        <span>Berane / Montenegro</span>
     </div>
 
-
-
-    <!-- ==================================================
-         03 — THE SQUARE
-    =================================================== -->
-
-    <section class="project-section">
-
-        <div class="section-info">
-
-            <div class="section-number">
-                03
-            </div>
-
-            <div class="section-title">
-                THE SQUARE
-            </div>
-
-            <div class="section-text">
-                The central plateau is conceived as an open and flexible
-                public surface capable of accommodating everyday use,
-                gatherings and larger public events. Smaller programmed
-                zones are positioned along its perimeter while the centre
-                remains deliberately open.
-            </div>
-
-        </div>
-
-
-        <div class="drawing">
-
-            <img
-                src="images/t2.jpg"
-                alt="Architectural Design of the Square"
-            >
-
-            <div class="caption">
-                Architectural Design of the Square
-            </div>
-
-        </div>
-
-    </section>
+</div>
 
 
 
-    <!-- RENDER 04 -->
+<!-- =========================
+     01 CONTEXT
+========================= -->
 
-    <div class="project-image render">
+<div class="section-title">
 
-        <img
-            src="images/r4.jpg"
-            alt="Square in Berane"
-        >
+    <span class="number">01</span>
 
+    <span class="name">
+        URBAN CONTEXT
+    </span>
+
+</div>
+
+
+<div class="visual drawing">
+    <img src="images/t0.jpg" alt="Wider site plan">
+</div>
+
+
+<div class="visual drawing">
+    <img src="images/t01.jpg" alt="Urban passage network">
+</div>
+
+
+
+<!-- R2 -->
+
+<div class="visual render">
+
+    <img src="images/r2.jpg" alt="Project view">
+
+    <div class="caption">
+        <span>Urban context</span>
+        <span>01</span>
     </div>
 
-
-
-    <!-- ==================================================
-         04 — PROMENADE
-    =================================================== -->
-
-    <section class="project-section">
-
-        <div class="section-info">
-
-            <div class="section-number">
-                04
-            </div>
-
-            <div class="section-title">
-                PROMENADE
-            </div>
-
-            <div class="section-text">
-                The promenade extends the logic of the square into the
-                surrounding urban fabric, creating a continuous pedestrian
-                sequence and strengthening the relationship between the
-                central public spaces.
-            </div>
-
-        </div>
-
-
-        <div class="drawing">
-
-            <img
-                src="images/t3.jpg"
-                alt="Detailed Site Plan of the Promenade"
-            >
-
-            <div class="caption">
-                Detailed Site Plan / Promenade
-            </div>
-
-        </div>
-
-    </section>
+</div>
 
 
 
-    <!-- RENDER 05 -->
+<!-- =========================
+     02 URBAN STRATEGY
+========================= -->
 
-    <div class="project-image render">
+<div class="section-title">
 
-        <img
-            src="images/r5.jpg"
-            alt="Promenade in Berane"
-        >
+    <span class="number">02</span>
 
+    <span class="name">
+        URBAN STRATEGY
+    </span>
+
+</div>
+
+
+<div class="project-text">
+
+    <p>
+        The proposal develops a continuous pedestrian network in which
+        existing passages, active ground floors and public spaces operate
+        as parts of a single urban system. The intervention reinforces
+        existing movement patterns while introducing new spatial connections
+        between the main civic areas.
+    </p>
+
+</div>
+
+
+<div class="visual drawing">
+    <img src="images/t1.jpg" alt="Urban frequency">
+</div>
+
+
+
+<!-- R3 -->
+
+<div class="visual render">
+
+    <img src="images/r3.jpg" alt="Project render">
+
+    <div class="caption">
+        <span>Public space</span>
+        <span>02</span>
     </div>
 
-
-
-    <!-- ==================================================
-         05 — PARK + TEMPLE
-    =================================================== -->
-
-    <section class="project-section">
-
-        <div class="section-info">
-
-            <div class="section-number">
-                05
-            </div>
-
-            <div class="section-title">
-                PARK + TEMPLE
-            </div>
-
-            <div class="section-text">
-                Landscape interventions reinforce the existing spatial
-                character while creating a transition between the central
-                urban spaces, the park and the temple.
-            </div>
-
-        </div>
-
-
-        <div class="drawing">
-
-            <img
-                src="images/t4.jpg"
-                alt="Detailed Site Plan of the Park and Temple"
-            >
-
-            <div class="caption">
-                Detailed Site Plan / Park + Temple
-            </div>
-
-        </div>
-
-    </section>
+</div>
 
 
 
-    <!-- RENDER 06 -->
+<!-- =========================
+     03 SQUARE
+========================= -->
 
-    <div class="project-image render">
+<div class="section-title">
 
-        <img
-            src="images/r6.jpg"
-            alt="Park and public space in Berane"
-        >
+    <span class="number">03</span>
 
+    <span class="name">
+        21 JULY SQUARE
+    </span>
+
+</div>
+
+
+<div class="project-text">
+
+    <p>
+        The central square is conceived as a large, open civic surface.
+        Smaller programmed zones are positioned along its edges, allowing
+        different forms of everyday occupation while preserving the central
+        plateau for gatherings, events and collective use.
+    </p>
+
+</div>
+
+
+<div class="visual drawing">
+    <img src="images/t2.jpg" alt="Square plan">
+</div>
+
+
+
+<!-- R4 -->
+
+<div class="visual render">
+
+    <img src="images/r4.jpg" alt="Square render">
+
+    <div class="caption">
+        <span>21 July Square</span>
+        <span>03</span>
     </div>
 
-
-
-    <!-- ==================================================
-         06 — PUBLIC SPACE SYSTEM
-    =================================================== -->
-
-    <section class="project-section">
-
-        <div class="section-info">
-
-            <div class="section-number">
-                06
-            </div>
-
-            <div class="section-title">
-                PUBLIC SPACE SYSTEM
-            </div>
-
-            <div class="section-text">
-                The detailed design develops a coherent material and spatial
-                language across the different zones while allowing each part
-                of the intervention to respond to its immediate context.
-            </div>
-
-        </div>
-
-
-        <div class="drawing">
-
-            <img
-                src="images/t5.jpg"
-                alt="Detailed Site Plan"
-            >
-
-            <div class="caption">
-                Detailed Site Plan
-            </div>
-
-        </div>
-
-    </section>
+</div>
 
 
 
-    <!-- RENDER 07 -->
+<!-- =========================
+     04 PROMENADE
+========================= -->
 
-    <div class="project-image render">
+<div class="section-title">
 
-        <img
-            src="images/r7.jpg"
-            alt="Public Space in Berane"
-        >
+    <span class="number">04</span>
 
+    <span class="name">
+        PROMENADE
+    </span>
+
+</div>
+
+
+<div class="project-text">
+
+    <p>
+        The existing promenade is retained as the main linear public
+        connection. Existing trees and movement axes are preserved while
+        passages through the surrounding urban fabric are opened and
+        integrated into the pedestrian network.
+    </p>
+
+</div>
+
+
+<div class="visual drawing">
+    <img src="images/t3.jpg" alt="Promenade plan">
+</div>
+
+
+
+<!-- R5 -->
+
+<div class="visual render">
+
+    <img src="images/r5.jpg" alt="Promenade render">
+
+    <div class="caption">
+        <span>Promenade</span>
+        <span>04</span>
     </div>
 
-
-
-    <!-- ==================================================
-         07 — GROUND FLOORS
-    =================================================== -->
-
-    <section class="project-section">
-
-        <div class="section-info">
-
-            <div class="section-number">
-                07
-            </div>
-
-            <div class="section-title">
-                GROUND FLOORS + URBAN ACTIVITY
-            </div>
-
-            <div class="section-text">
-                Ground-floor programmes are analysed through their zones of
-                influence on public space. The proposal uses these existing
-                activities to reinforce active edges and different
-                intensities of use throughout the square.
-            </div>
-
-        </div>
-
-
-        <div class="drawing">
-
-            <img
-                src="images/t6.jpg"
-                alt="Analysis of Ground Floors and Their Zones of Influence"
-            >
-
-            <div class="caption">
-                Analysis of Ground Floors and Their Zones of Influence
-            </div>
-
-        </div>
-
-    </section>
+</div>
 
 
 
-    <!-- FINAL RENDER -->
+<!-- =========================
+     05 PARK + TEMPLE
+========================= -->
 
-    <div class="project-image render">
+<div class="section-title">
 
-        <img
-            src="images/r8.jpg"
-            alt="Urban Regeneration of the Square in Berane"
-        >
+    <span class="number">05</span>
 
+    <span class="name">
+        PARK + TEMPLE
+    </span>
+
+</div>
+
+
+<div class="project-text">
+
+    <p>
+        The park retains its existing landscape character through minimal
+        intervention. Around the church, the public realm is reorganised
+        as a calm civic and ceremonial space connected directly to the
+        surrounding pedestrian system.
+    </p>
+
+</div>
+
+
+<div class="visual drawing">
+    <img src="images/t4.jpg" alt="Park and temple">
+</div>
+
+
+
+<!-- R6 -->
+
+<div class="visual render">
+
+    <img src="images/r6.jpg" alt="Park render">
+
+    <div class="caption">
+        <span>Park + Temple</span>
+        <span>05</span>
     </div>
 
+</div>
 
 
-    <!-- BACK -->
 
-    <div class="project-end">
+<!-- =========================
+     06 MASTERPLAN
+========================= -->
 
-        <a href="urbanism.html">
-            ← BACK TO URBANISM
-        </a>
+<div class="section-title">
 
+    <span class="number">06</span>
+
+    <span class="name">
+        MASTERPLAN
+    </span>
+
+</div>
+
+
+<div class="visual drawing">
+    <img src="images/t5.jpg" alt="Detailed site plan">
+</div>
+
+
+
+<!-- R7 -->
+
+<div class="visual render">
+
+    <img src="images/r7.jpg" alt="Urban regeneration render">
+
+    <div class="caption">
+        <span>Urban regeneration</span>
+        <span>06</span>
     </div>
 
-
-</main>
-
+</div>
 
 
-<!-- ======================================================
-     FOOTER
-====================================================== -->
+
+<!-- =========================
+     07 GROUND FLOOR
+========================= -->
+
+<div class="section-title">
+
+    <span class="number">07</span>
+
+    <span class="name">
+        ACTIVE GROUND FLOOR
+    </span>
+
+</div>
+
+
+<div class="project-text">
+
+    <p>
+        Active frontages, entrances, passages and public programmes are
+        understood as generators of urban activity. Their relationship
+        with the redesigned public realm establishes a sequence of smaller
+        environments operating throughout the day.
+    </p>
+
+</div>
+
+
+<div class="visual drawing">
+    <img src="images/t6.jpg" alt="Ground floor analysis">
+</div>
+
+
+
+<!-- R8 -->
+
+<div class="visual render">
+
+    <img src="images/r8.jpg" alt="Final project view">
+
+    <div class="caption">
+        <span>Urban Regeneration of 21 July Square</span>
+        <span>Berane / 2025</span>
+    </div>
+
+</div>
+
+
 
 <footer>
 
-    <div class="footer-grid">
+    <a href="urbanism.html">
+        ← URBANISM
+    </a>
 
-
-        <div>
-
-            <div class="footer-title">
-                ŠĆEPAN POPOVIĆ
-            </div>
-
-            <div>
-                Architecture / Urbanism / Research / Art
-            </div>
-
-        </div>
-
-
-        <div>
-
-            <div class="footer-heading">
-                LOCATION
-            </div>
-
-            <div class="footer-line">
-                Montenegro
-            </div>
-
-            <div class="footer-line">
-                Berlin
-            </div>
-
-            <div class="footer-line">
-                Remote
-            </div>
-
-        </div>
-
-
-        <div>
-
-            <div class="footer-heading">
-                CONTACT
-            </div>
-
-            <div class="footer-line">
-                <a href="mailto:scepanpopovic99@gmail.com">
-                    scepanpopovic99@gmail.com
-                </a>
-            </div>
-
-            <div class="footer-line">
-                <a href="mailto:numeruslinkin@gmail.com">
-                    numeruslinkin@gmail.com
-                </a>
-            </div>
-
-            <div class="footer-line">
-                <a href="tel:+38269650667">
-                    +382 69 650 667
-                </a>
-            </div>
-
-        </div>
-
-
-        <div>
-
-            <div class="footer-heading">
-                SOCIALS
-            </div>
-
-            <a
-                class="social-link"
-                href="https://www.instagram.com/landscapes.of.memory_prague/"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Instagram ↗
-            </a>
-
-            <a
-                class="social-link"
-                href="https://www.linkedin.com/in/%C5%A1%C4%87epan-popovi%C4%87-384896328/"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                LinkedIn ↗
-            </a>
-
-            <a
-                class="social-link"
-                href="https://www.youtube.com/@scepanpopovic2201"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                YouTube ↗
-            </a>
-
-        </div>
-
-
-        <div class="languages">
-
-            <a href="#">EN</a>
-            <span>/</span>
-
-            <a href="#">MNE</a>
-            <span>/</span>
-
-            <a href="#">IT</a>
-            <span>/</span>
-
-            <a href="#">DE</a>
-
-        </div>
-
-
-    </div>
-
-
-    <div class="copyright">
-        © 2026 Šćepan Popović
-    </div>
+    <span>
+        ŠĆEPAN POPOVIĆ © 2026
+    </span>
 
 </footer>
 
+
+</main>
 
 </body>
 
