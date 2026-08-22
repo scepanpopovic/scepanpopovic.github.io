@@ -45,22 +45,29 @@ header {
 }
 
 .logo {
-    text-decoration: none;
-    color: white;
-
     display: flex;
     flex-direction: column;
 }
 
 .logo-name {
+    color: white;
+    text-decoration: none;
+
     font-size: 15px;
     font-weight: bold;
 }
 
 .logo-home {
     color: #bfff00;
+    text-decoration: none;
+
     font-size: 7px;
     margin-top: 5px;
+}
+
+.logo-name:hover,
+.logo-home:hover {
+    color: #bfff00;
 }
 
 nav {
@@ -72,6 +79,7 @@ nav {
 nav a {
     color: white;
     text-decoration: none;
+
     font-size: 10px;
     font-weight: bold;
 }
@@ -87,13 +95,23 @@ nav a.active {
 
 
 /* =========================
-   MAIN CONTAINER
+   MAIN
 ========================= */
 
 main {
+    width: 100%;
+    padding: 45px 30px 120px;
+}
+
+
+/* =========================
+   CONTENT WIDTH
+========================= */
+
+.content-width {
     max-width: 1180px;
-    margin: 0 auto;
-    padding: 45px 40px 120px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
@@ -103,7 +121,8 @@ main {
 
 .back {
     display: inline-block;
-    margin-bottom: 65px;
+
+    margin-bottom: 60px;
 
     color: #111;
     text-decoration: none;
@@ -112,12 +131,12 @@ main {
 }
 
 .back:hover {
-    text-decoration: underline;
+    color: #bfff00;
 }
 
 
 /* =========================
-   PROJECT HEADER
+   PROJECT HEADING
 ========================= */
 
 .project-heading {
@@ -135,11 +154,11 @@ main {
 .project-title h1 {
     margin: 0;
 
+    max-width: 650px;
+
     font-size: 22px;
     line-height: 1.15;
     font-weight: normal;
-
-    max-width: 650px;
 }
 
 .project-subtitle {
@@ -151,18 +170,18 @@ main {
 
 
 /* =========================
-   PROJECT DESCRIPTION
+   DESCRIPTION
 ========================= */
 
 .project-intro {
     border-top: 1px solid #111;
 
     display: grid;
-    grid-template-columns: 70px 1fr 1.35fr;
+    grid-template-columns: 70px 1fr 1.25fr;
     gap: 25px;
 
     padding-top: 18px;
-    margin-bottom: 65px;
+    margin-bottom: 70px;
 }
 
 .intro-label {
@@ -175,7 +194,7 @@ main {
 .intro-text {
     grid-column: 3;
 
-    max-width: 520px;
+    max-width: 500px;
 
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
@@ -188,13 +207,32 @@ main {
 
 
 /* =========================
-   IMAGES
+   VISUALS
 ========================= */
 
 .visual {
-    width: 100%;
-    margin: 0 auto 65px;
+    margin-left: auto;
+    margin-right: auto;
+
+    margin-bottom: 70px;
 }
+
+
+/* RENDERS */
+
+.visual.render {
+    max-width: 920px;
+}
+
+
+/* DRAWINGS / BOARDS */
+
+.visual.drawing {
+    max-width: 980px;
+}
+
+
+/* IMAGE */
 
 .visual img {
     display: block;
@@ -202,26 +240,13 @@ main {
     width: 100%;
     height: auto;
 
-    max-height: 720px;
+    max-height: 680px;
+
     object-fit: contain;
 }
 
 
-/* RENDERS */
-
-.visual.render {
-    max-width: 1000px;
-}
-
-
-/* DRAWINGS / BOARDS */
-
-.visual.drawing {
-    max-width: 920px;
-}
-
-
-/* CAPTIONS */
+/* CAPTION */
 
 .caption {
     display: flex;
@@ -238,10 +263,14 @@ main {
 
 
 /* =========================
-   SECTION TITLES
+   SECTION TITLE
 ========================= */
 
 .section-title {
+    max-width: 1180px;
+
+    margin: 90px auto 35px;
+
     display: grid;
     grid-template-columns: 70px 1fr;
     gap: 25px;
@@ -249,7 +278,6 @@ main {
     border-top: 1px solid #111;
 
     padding-top: 10px;
-    margin: 95px 0 35px;
 }
 
 .section-title .number {
@@ -263,18 +291,21 @@ main {
 
 
 /* =========================
-   SMALL TEXT BETWEEN IMAGES
+   TEXT BETWEEN IMAGES
 ========================= */
 
 .project-text {
-    width: 47%;
+    width: 44%;
+    max-width: 500px;
+
     margin-left: auto;
+    margin-right: calc((100% - 1180px) / 2);
+
+    margin-bottom: 50px;
 
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
     line-height: 1.55;
-
-    margin-bottom: 55px;
 }
 
 .project-text p {
@@ -286,11 +317,14 @@ main {
    FOOTER
 ========================= */
 
-footer {
+.project-footer {
+    max-width: 1180px;
+
+    margin: 110px auto 0;
+
     border-top: 1px solid #111;
 
     padding-top: 18px;
-    margin-top: 110px;
 
     display: flex;
     justify-content: space-between;
@@ -298,13 +332,13 @@ footer {
     font-size: 8px;
 }
 
-footer a {
+.project-footer a {
     color: #111;
     text-decoration: none;
 }
 
-footer a:hover {
-    text-decoration: underline;
+.project-footer a:hover {
+    color: #bfff00;
 }
 
 
@@ -312,11 +346,21 @@ footer a:hover {
    MOBILE
 ========================= */
 
+@media (max-width: 1250px) {
+
+    .project-text {
+        margin-right: 0;
+    }
+
+}
+
 @media (max-width: 800px) {
 
     header {
         height: auto;
+
         padding: 20px;
+
         align-items: flex-start;
         gap: 25px;
     }
@@ -346,8 +390,21 @@ footer a:hover {
         margin-bottom: 20px;
     }
 
+    .intro-text {
+        max-width: none;
+    }
+
+    .visual.render,
+    .visual.drawing {
+        max-width: 100%;
+    }
+
     .project-text {
         width: 100%;
+        max-width: none;
+
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .section-title {
@@ -366,40 +423,71 @@ footer a:hover {
 
 <header>
 
-    <a class="logo" href="index.html">
-        <span class="logo-name">ŠĆEPAN POPOVIĆ</span>
-        <span class="logo-home">HOME</span>
-    </a>
+    <div class="logo">
+
+        <a href="/" class="logo-name">
+            ŠĆEPAN POPOVIĆ
+        </a>
+
+        <a href="/" class="logo-home">
+            HOME
+        </a>
+
+    </div>
 
 
     <nav>
 
-        <a href="architecture.html">ARCHITECTURE</a>
+        <a href="architecture.html">
+            ARCHITECTURE
+        </a>
+
         <span class="separator">/</span>
 
-        <a href="urbanism.html" class="active">URBANISM</a>
+        <a href="urbanism.html" class="active">
+            URBANISM
+        </a>
+
         <span class="separator">/</span>
 
-        <a href="research.html">RESEARCH</a>
+        <a href="research.html">
+            RESEARCH
+        </a>
+
         <span class="separator">/</span>
 
-        <a href="#">ARTWORKS</a>
+        <a href="#">
+            ARTWORKS
+        </a>
+
         <span class="separator">/</span>
 
-        <a href="film.html">FILM</a>
+        <a href="film.html">
+            FILM
+        </a>
+
         <span class="separator">/</span>
 
-        <a href="#">WRITINGS</a>
+        <a href="#">
+            WRITINGS
+        </a>
+
         <span class="separator">/</span>
 
-        <a href="news.html">NEWS</a>
+        <a href="news.html">
+            NEWS
+        </a>
 
     </nav>
 
 </header>
 
 
+
 <main>
+
+
+<div class="content-width">
 
 
 <a href="urbanism.html" class="back">
@@ -409,7 +497,7 @@ footer a:hover {
 
 
 <!-- =========================
-     PROJECT HEADER
+     HEADING
 ========================= -->
 
 <section class="project-heading">
@@ -417,6 +505,7 @@ footer a:hover {
     <div class="project-number">
         01
     </div>
+
 
     <div class="project-title">
 
@@ -445,6 +534,7 @@ footer a:hover {
         PROJECT
     </div>
 
+
     <div class="intro-text">
 
         <p>
@@ -471,6 +561,9 @@ footer a:hover {
 </section>
 
 
+</div>
+
+
 
 <!-- =========================
      R1
@@ -478,10 +571,13 @@ footer a:hover {
 
 <div class="visual render">
 
-    <img src="images/r1.jpg" alt="Urban regeneration of Berane">
+    <img
+        src="images/r1.jpg"
+        alt="Urban Regeneration of 21 July Square"
+    >
 
     <div class="caption">
-        <span>Overall proposal</span>
+        <span>Overall Proposal</span>
         <span>Berane / Montenegro</span>
     </div>
 
@@ -495,7 +591,9 @@ footer a:hover {
 
 <div class="section-title">
 
-    <span class="number">01</span>
+    <span class="number">
+        01
+    </span>
 
     <span class="name">
         URBAN CONTEXT
@@ -505,12 +603,22 @@ footer a:hover {
 
 
 <div class="visual drawing">
-    <img src="images/t0.jpg" alt="Wider site plan">
+
+    <img
+        src="images/t0.jpg"
+        alt="Wider Site Plan"
+    >
+
 </div>
 
 
 <div class="visual drawing">
-    <img src="images/t01.jpg" alt="Urban passage network">
+
+    <img
+        src="images/t01.jpg"
+        alt="Urban Passage Network"
+    >
+
 </div>
 
 
@@ -519,24 +627,24 @@ footer a:hover {
 
 <div class="visual render">
 
-    <img src="images/r2.jpg" alt="Project view">
-
-    <div class="caption">
-        <span>Urban context</span>
-        <span>01</span>
-    </div>
+    <img
+        src="images/r2.jpg"
+        alt="Urban Context"
+    >
 
 </div>
 
 
 
 <!-- =========================
-     02 URBAN STRATEGY
+     02 STRATEGY
 ========================= -->
 
 <div class="section-title">
 
-    <span class="number">02</span>
+    <span class="number">
+        02
+    </span>
 
     <span class="name">
         URBAN STRATEGY
@@ -559,7 +667,12 @@ footer a:hover {
 
 
 <div class="visual drawing">
-    <img src="images/t1.jpg" alt="Urban frequency">
+
+    <img
+        src="images/t1.jpg"
+        alt="Urban Strategy"
+    >
+
 </div>
 
 
@@ -568,12 +681,10 @@ footer a:hover {
 
 <div class="visual render">
 
-    <img src="images/r3.jpg" alt="Project render">
-
-    <div class="caption">
-        <span>Public space</span>
-        <span>02</span>
-    </div>
+    <img
+        src="images/r3.jpg"
+        alt="Public Space"
+    >
 
 </div>
 
@@ -585,7 +696,9 @@ footer a:hover {
 
 <div class="section-title">
 
-    <span class="number">03</span>
+    <span class="number">
+        03
+    </span>
 
     <span class="name">
         21 JULY SQUARE
@@ -607,7 +720,12 @@ footer a:hover {
 
 
 <div class="visual drawing">
-    <img src="images/t2.jpg" alt="Square plan">
+
+    <img
+        src="images/t2.jpg"
+        alt="21 July Square Plan"
+    >
+
 </div>
 
 
@@ -616,12 +734,10 @@ footer a:hover {
 
 <div class="visual render">
 
-    <img src="images/r4.jpg" alt="Square render">
-
-    <div class="caption">
-        <span>21 July Square</span>
-        <span>03</span>
-    </div>
+    <img
+        src="images/r4.jpg"
+        alt="21 July Square"
+    >
 
 </div>
 
@@ -633,7 +749,9 @@ footer a:hover {
 
 <div class="section-title">
 
-    <span class="number">04</span>
+    <span class="number">
+        04
+    </span>
 
     <span class="name">
         PROMENADE
@@ -655,7 +773,12 @@ footer a:hover {
 
 
 <div class="visual drawing">
-    <img src="images/t3.jpg" alt="Promenade plan">
+
+    <img
+        src="images/t3.jpg"
+        alt="Promenade Plan"
+    >
+
 </div>
 
 
@@ -664,24 +787,24 @@ footer a:hover {
 
 <div class="visual render">
 
-    <img src="images/r5.jpg" alt="Promenade render">
-
-    <div class="caption">
-        <span>Promenade</span>
-        <span>04</span>
-    </div>
+    <img
+        src="images/r5.jpg"
+        alt="Promenade"
+    >
 
 </div>
 
 
 
 <!-- =========================
-     05 PARK + TEMPLE
+     05 PARK
 ========================= -->
 
 <div class="section-title">
 
-    <span class="number">05</span>
+    <span class="number">
+        05
+    </span>
 
     <span class="name">
         PARK + TEMPLE
@@ -703,7 +826,12 @@ footer a:hover {
 
 
 <div class="visual drawing">
-    <img src="images/t4.jpg" alt="Park and temple">
+
+    <img
+        src="images/t4.jpg"
+        alt="Park and Temple"
+    >
+
 </div>
 
 
@@ -712,12 +840,10 @@ footer a:hover {
 
 <div class="visual render">
 
-    <img src="images/r6.jpg" alt="Park render">
-
-    <div class="caption">
-        <span>Park + Temple</span>
-        <span>05</span>
-    </div>
+    <img
+        src="images/r6.jpg"
+        alt="Park and Temple"
+    >
 
 </div>
 
@@ -729,7 +855,9 @@ footer a:hover {
 
 <div class="section-title">
 
-    <span class="number">06</span>
+    <span class="number">
+        06
+    </span>
 
     <span class="name">
         MASTERPLAN
@@ -739,7 +867,12 @@ footer a:hover {
 
 
 <div class="visual drawing">
-    <img src="images/t5.jpg" alt="Detailed site plan">
+
+    <img
+        src="images/t5.jpg"
+        alt="Detailed Site Plan"
+    >
+
 </div>
 
 
@@ -748,12 +881,10 @@ footer a:hover {
 
 <div class="visual render">
 
-    <img src="images/r7.jpg" alt="Urban regeneration render">
-
-    <div class="caption">
-        <span>Urban regeneration</span>
-        <span>06</span>
-    </div>
+    <img
+        src="images/r7.jpg"
+        alt="Urban Regeneration"
+    >
 
 </div>
 
@@ -765,7 +896,9 @@ footer a:hover {
 
 <div class="section-title">
 
-    <span class="number">07</span>
+    <span class="number">
+        07
+    </span>
 
     <span class="name">
         ACTIVE GROUND FLOOR
@@ -787,7 +920,12 @@ footer a:hover {
 
 
 <div class="visual drawing">
-    <img src="images/t6.jpg" alt="Ground floor analysis">
+
+    <img
+        src="images/t6.jpg"
+        alt="Ground Floor Analysis"
+    >
+
 </div>
 
 
@@ -796,18 +934,16 @@ footer a:hover {
 
 <div class="visual render">
 
-    <img src="images/r8.jpg" alt="Final project view">
-
-    <div class="caption">
-        <span>Urban Regeneration of 21 July Square</span>
-        <span>Berane / 2025</span>
-    </div>
+    <img
+        src="images/r8.jpg"
+        alt="Urban Regeneration of 21 July Square"
+    >
 
 </div>
 
 
 
-<footer>
+<div class="project-footer">
 
     <a href="urbanism.html">
         ← URBANISM
@@ -817,10 +953,11 @@ footer a:hover {
         ŠĆEPAN POPOVIĆ © 2026
     </span>
 
-</footer>
+</div>
 
 
 </main>
+
 
 </body>
 
