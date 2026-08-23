@@ -84,6 +84,46 @@ nav a.active {
 }
 
 
+/* DROPDOWNS */
+
+.nav-item {
+    position: relative;
+    white-space: nowrap;
+}
+
+.dropdown {
+    display: none;
+
+    position: absolute;
+    top: 18px;
+    left: -10px;
+
+    min-width: 165px;
+
+    padding: 10px;
+
+    background: #fff;
+    border: 1px solid #111;
+
+    z-index: 100;
+}
+
+.dropdown a {
+    display: block;
+    padding: 4px 0;
+
+    color: #111;
+    text-decoration: none;
+}
+
+.dropdown a:hover {
+    color: #BDFF00;
+}
+
+.nav-item:hover .dropdown {
+    display: block;
+}
+    
 /* =========================
    PAGE
 ========================= */
