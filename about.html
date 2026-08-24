@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+<link rel="stylesheet" href="header.css">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -462,99 +462,15 @@ footer {
      HEADER
 ====================================================== -->
 
-<header>
+<div id="site-header"></div>
 
-    <div class="logo">
-
-    <a href="/" class="logo-name">
-        ŠĆEPAN POPOVIĆ
-    </a>
-
-    <a href="about.html" class="logo-about">
-        ABOUT
-    </a>
-
-</div>
-
-
-    <nav class="navigation">
-
-
-        <div class="nav-item">
-            <a class="nav-link" href="architecture.html">
-                ARCHITECTURE
-            </a>
-        </div>
-
-
-        <div class="nav-item">
-            <a class="nav-link" href="urbanism.html">
-                URBANISM
-            </a>
-        </div>
-
-
-        <div class="nav-item">
-            <a class="nav-link" href="research.html">
-                RESEARCH
-            </a>
-        </div>
-
-
-        <div class="nav-item">
-
-            <span class="nav-link">
-                ARTWORKS
-            </span>
-
-            <div class="dropdown">
-                <a href="spatial-art.html">SPATIAL ART</a>
-                <a href="paintings.html">PAINTINGS</a>
-                <a href="observations.html">OBSERVATIONS</a>
-            </div>
-
-        </div>
-
-
-        <div class="nav-item">
-            <a class="nav-link" href="film.html">
-                FILM
-            </a>
-        </div>
-
-
-        <div class="nav-item">
-
-            <span class="nav-link">
-                WRITINGS
-            </span>
-
-            <div class="dropdown">
-                <a href="texts.html">TEXTS</a>
-                <a href="poetry.html">POETRY</a>
-            </div>
-
-        </div>
-
-
-        <div class="nav-item">
-            <a class="nav-link" href="exhibitions.html">
-                EXHIBITIONS
-            </a>
-        </div>
-
-
-        <div class="nav-item">
-            <a class="nav-link" href="news.html">
-                NEWS
-            </a>
-        </div>
-
-
-    </nav>
-
-</header>
-
+<script>
+fetch("header.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("site-header").innerHTML = data;
+  });
+</script>
 
 <!-- ======================================================
      ABOUT
