@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+<link rel="stylesheet" href="header.css">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -342,49 +342,15 @@ footer a:hover {
      HEADER
 ========================================= -->
 
-<header>
+<div id="site-header"></div>
 
-    <div>
-
-        <a href="index.html" class="site-name">
-            ŠĆEPAN POPOVIĆ
-        </a>
-
-        <a href="about.html" class="about-link">
-            ABOUT
-        </a>
-
-    </div>
-
-
-    <nav>
-
-        <a href="#">ARCHITECTURE</a>
-        <span class="separator">/</span>
-
-        <a href="#">URBANISM</a>
-        <span class="separator">/</span>
-
-        <a href="research.html">RESEARCH</a>
-        <span class="separator">/</span>
-
-        <a href="#">ARTWORKS</a>
-        <span class="separator">/</span>
-
-        <a href="film.html">FILM</a>
-        <span class="separator">/</span>
-
-        <a href="#">WRITINGS</a>
-        <span class="separator">/</span>
-
-        <a href="#">EXHIBITIONS</a>
-        <span class="separator">/</span>
-
-        <a href="#">NEWS</a>
-
-    </nav>
-
-</header>
+<script>
+fetch("header.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("site-header").innerHTML = data;
+  });
+</script>
 
 
 
