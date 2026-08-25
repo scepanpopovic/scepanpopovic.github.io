@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<link rel="stylesheet" href="header.css">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Obelisk is Dead — Šćepan Popović</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Courier New", Courier, monospace;
+    background: #fff;
+    color: #111;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+main {
+    padding: 55px 30px 100px;
+}
+
+
+/* =========================
+   PROJECT HEADER
+========================= */
+
+.project-header {
+    max-width: 1250px;
+    margin-bottom: 55px;
+}
+
+.project-number {
+    font-size: 9px;
+    margin-bottom: 12px;
+    color: #555;
+}
+
+.project-title {
+    font-size: 18px;
+    font-weight: bold;
+
+    text-transform: uppercase;
+
+    margin-bottom: 8px;
+}
+
+.project-category {
+    font-size: 10px;
+    color: #555;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   INFORMATION
+========================= */
+
+.project-information {
+    max-width: 1250px;
+
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+
+    gap: 80px;
+
+    padding-top: 20px;
+    margin-bottom: 65px;
+
+    border-top: 1px solid #111;
+}
+
+.project-description {
+    max-width: 650px;
+    line-height: 1.7;
+}
+
+.project-description p {
+    margin: 0 0 16px;
+}
+
+.project-details {
+    display: grid;
+    grid-template-columns: auto 1fr;
+
+    gap: 5px 25px;
+
+    align-content: start;
+}
+
+.detail-label {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   IMAGES
+========================= */
+
+.project-images {
+    max-width: 750px;
+}
+
+.visual {
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.visual img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+}
+
+
+/* =========================
+   BACK
+========================= */
+
+.back-link {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    font-size: 10px;
+    font-weight: bold;
+
+    text-transform: uppercase;
+}
+
+.back-link:hover {
+    color: #BDFF00;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    main {
+        padding: 40px 20px 70px;
+    }
+
+    .project-title {
+        font-size: 15px;
+    }
+
+    .project-information {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        margin-bottom: 45px;
+    }
+
+    .project-images {
+        max-width: 100%;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- SHARED HEADER -->
+
+<div id="site-header"></div>
+
+<script>
+fetch("header.html")
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("site-header").innerHTML = data;
+    });
+</script>
+
+
+<main>
+
+
+    <!-- PROJECT HEADER -->
+
+    <div class="project-header">
+
+        <div class="project-number">
+            01 / SPATIAL ART
+        </div>
+
+        <div class="project-title">
+            OBELISK IS DEAD
+        </div>
+
+        <div class="project-category">
+            INSTALLATION / MIXED MEDIA / 2021
+        </div>
+
+    </div>
+
+
+    <!-- PROJECT INFORMATION -->
+
+    <div class="project-information">
+
+
+        <div class="project-description">
+
+            <p>
+                <em>Obelisk is Dead</em> is a spatial installation
+                conceived as a monument to the disappearance of light
+                and the cyclical nature of transformation. The work
+                explores the intersection of architecture, poetry and
+                metaphysics through the symbolic dismantling of the
+                obelisk — a recurring architectural archetype associated
+                with permanence, power and transcendence.
+            </p>
+
+            <p>
+                Materially reduced to glass, stone and steel, the
+                installation reflects on fragility and rebirth. Its
+                conceptual framework draws on the alchemical stages of
+                Nigredo, Albedo and Rubedo, transforming material change
+                into a spatial narrative of disappearance and renewal.
+            </p>
+
+        </div>
+
+
+        <div class="project-details">
+
+
+            <div class="detail-label">
+                LOCATION
+            </div>
+
+            <div>
+                Cetinje, Montenegro
+            </div>
+
+
+            <div class="detail-label">
+                YEAR
+            </div>
+
+            <div>
+                2021
+            </div>
+
+
+            <div class="detail-label">
+                TYPE
+            </div>
+
+            <div>
+                Installation / Mixed Media
+            </div>
+
+
+            <div class="detail-label">
+                DESIGN TEAM
+            </div>
+
+            <div>
+                Šćepan Popović<br>
+                Vuk Peković
+            </div>
+
+
+            <div class="detail-label">
+                EXHIBITED AT
+            </div>
+
+            <div>
+                Re/Shaping The City<br>
+                Interactive Multidisciplinary Festival of Contemporary Art
+                and Spatial Practices<br>
+                Atelje 22, Cetinje, Montenegro
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- PROJECT IMAGES -->
+
+    <div class="project-images">
+
+
+        <!-- S1 -->
+
+        <div class="visual">
+
+            <img
+                src="images/S1.jpg"
+                alt="Obelisk is Dead — spatial installation"
+            >
+
+        </div>
+
+
+        <!-- S2 -->
+
+        <div class="visual">
+
+            <img
+                src="images/S2.jpg"
+                alt="Obelisk is Dead — spatial installation"
+            >
+
+        </div>
+
+
+    </div>
+
+
+    <!-- BACK -->
+
+    <a
+        class="back-link"
+        href="spatial-art.html"
+    >
+        ← BACK TO SPATIAL ART
+    </a>
+
+
+</main>
+
+
+</body>
+</html>
