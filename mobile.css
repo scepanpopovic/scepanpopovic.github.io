@@ -1,0 +1,362 @@
+/* =========================================================
+   GLOBAL MOBILE SYSTEM
+   compact / desktop-like / landscape feel
+========================================================= */
+
+@media (max-width: 800px) {
+
+    /* =========================
+       GLOBAL
+    ========================= */
+
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    body {
+        font-size: 10px;
+    }
+
+
+    /* =========================
+       GENERAL PAGE WIDTH
+    ========================= */
+
+    main,
+    .film-page,
+    .about-page,
+    .home-content {
+        width: 88%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    /* =========================
+       CATEGORY PAGES
+       Architecture / Urbanism /
+       Paintings / Spatial Art / Film
+    ========================= */
+
+    .projects,
+    .film-grid,
+    .categories {
+        width: 100%;
+        max-width: none;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 28px 12px;
+    }
+
+    .project-image,
+    .film-image,
+    .category-image {
+        aspect-ratio: 16 / 9;
+    }
+
+    .project-title,
+    .film-title,
+    .category-title {
+        font-size: 8px;
+        line-height: 1.25;
+    }
+
+    .project-meta,
+    .film-type,
+    .category-meta,
+    .project-location,
+    .film-location {
+        font-size: 7px;
+        line-height: 1.25;
+    }
+
+    .project-number,
+    .film-number,
+    .category-number {
+        font-size: 7px;
+        padding: 3px 5px;
+    }
+
+
+    /* =========================
+       INDIVIDUAL PROJECT PAGES
+    ========================= */
+
+    .project-header,
+    .project-information,
+    .project-info,
+    .project-intro {
+        width: 88%;
+        max-width: none;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .project-information {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .project-heading {
+        grid-template-columns: 35px 1fr;
+        gap: 14px;
+    }
+
+    .project-title h1 {
+        font-size: 15px;
+    }
+
+    .project-description,
+    .intro-text,
+    .info-meta,
+    .project-details {
+        font-size: 9px;
+        line-height: 1.5;
+    }
+
+
+    /* =========================
+       PROJECT IMAGES
+    ========================= */
+
+    .project-images {
+        width: 76%;
+        max-width: 760px;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .visual {
+        width: 76%;
+        max-width: 760px;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        margin-bottom: 34px;
+    }
+
+    .visual img {
+        width: 100%;
+        height: auto;
+    }
+
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about-page {
+        width: 88%;
+
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .about-intro {
+        display: grid;
+
+        grid-template-columns: 1.5fr 0.65fr;
+
+        gap: 28px;
+
+        width: 100%;
+        max-width: none;
+
+        margin: 0;
+    }
+
+    .about-text {
+        max-width: none;
+
+        font-size: 9px;
+        line-height: 1.5;
+    }
+
+    .about-text p {
+        margin-bottom: 18px;
+    }
+
+    .about-video-column {
+        width: 100%;
+        max-width: 150px;
+
+        margin-left: auto;
+    }
+
+    .about-video {
+        aspect-ratio: 2 / 3;
+    }
+
+    .video-caption {
+        font-size: 7px;
+    }
+
+    .cv-link {
+        font-size: 8px;
+    }
+
+
+    /* =========================
+       HOME / INDEX
+    ========================= */
+
+    .hero {
+        width: 88%;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        height: auto;
+        min-height: 0;
+
+        aspect-ratio: 16 / 9;
+    }
+
+    .home-content {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .home-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 22px 10px;
+    }
+
+    .section-title {
+        font-size: 10px;
+        padding: 4px 6px;
+    }
+
+    .section-link {
+        font-size: 7px;
+    }
+
+    .section-line {
+        height: 1px;
+    }
+
+    .news-item {
+        grid-template-columns: 70px 1fr;
+
+        gap: 8px;
+
+        font-size: 8px;
+
+        padding: 8px 0;
+    }
+
+    .news-date,
+    .news-title {
+        font-size: 8px;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+        width: 100%;
+
+        margin-top: 30px;
+
+        padding: 22px 6% 20px;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 20px 16px;
+    }
+
+    .footer-title {
+        font-size: 9px;
+    }
+
+    .footer-heading {
+        font-size: 7px;
+    }
+
+    .footer-line,
+    .footer-link,
+    .social-link,
+    .language-link,
+    .languages {
+        font-size: 7px;
+    }
+
+    .languages {
+        justify-content: flex-start;
+    }
+
+    .copyright {
+        margin-top: 18px;
+
+        text-align: left;
+
+        font-size: 7px;
+    }
+
+
+    /* =========================
+       BACK LINKS
+    ========================= */
+
+    .back,
+    .back-link {
+        font-size: 8px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 480px) {
+
+    main,
+    .film-page,
+    .about-page,
+    .home-content {
+        width: 86%;
+    }
+
+    .projects,
+    .film-grid,
+    .categories {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .project-images,
+    .visual {
+        width: 72%;
+    }
+
+    .about-intro {
+        grid-template-columns: 1.45fr 0.55fr;
+
+        gap: 18px;
+    }
+
+    .about-video-column {
+        max-width: 115px;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
