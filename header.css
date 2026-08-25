@@ -113,14 +113,44 @@
 
     .site-header {
         height: auto;
-        padding: 20px;
+        padding: 14px 16px;
 
         align-items: flex-start;
-        gap: 25px;
+        gap: 18px;
+    }
+
+    .site-header .logo-name {
+        font-size: 13px;
+    }
+
+    .site-header .logo-home {
+        font-size: 6px;
+        margin-top: 3px;
     }
 
     .site-header nav {
         flex-wrap: wrap;
         justify-content: flex-end;
+        gap: 8px;
+        max-width: 68%;
+    }
+
+    .site-header nav a,
+    .site-header .nav-link {
+        font-size: 8px;
+    }
+
+    .site-header .separator {
+        font-size: 8px;
+    }
+
+    .site-header .dropdown {
+        min-width: 125px;
+        padding: 7px 8px;
+    }
+
+    .site-header .dropdown a {
+        font-size: 8px;
+        padding: 3px 0;
     }
 }
