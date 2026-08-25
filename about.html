@@ -2,7 +2,9 @@
 <html lang="en">
 
 <head>
+
 <link rel="stylesheet" href="header.css">
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -42,121 +44,6 @@ a {
 
 
 /* =========================================================
-   HEADER
-========================================================= */
-
-header {
-    min-height: 86px;
-
-    padding: 18px 36px;
-
-    background: #000;
-    color: #fff;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-.logo {
-    color: #fff;
-    font-weight: 700;
-}
-
-.logo-name {
-    display: block;
-    font-size: 20px;
-}
-
-.logo-about {
-    display: block;
-
-    margin-top: 3px;
-
-    font-size: 8px;
-    font-weight: normal;
-    letter-spacing: 0.5px;
-}
-
-.logo:hover .logo-name,
-.logo:hover .logo-about {
-    color: var(--green);
-}
-
-
-/* NAVIGATION */
-
-.navigation {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-}
-
-.nav-item {
-    position: relative;
-    white-space: nowrap;
-}
-
-.nav-item::after {
-    content: "/";
-    margin: 0 10px;
-    color: #fff;
-}
-
-.nav-item:last-child::after {
-    content: "";
-    margin: 0;
-}
-
-.nav-link {
-    color: #fff;
-    font-weight: 700;
-}
-
-.nav-link:hover {
-    color: var(--green);
-}
-
-
-/* DROPDOWNS */
-
-.dropdown {
-    display: none;
-
-    position: absolute;
-
-    top: 20px;
-    left: -10px;
-
-    z-index: 100;
-
-    min-width: 150px;
-
-    padding: 8px 10px;
-
-    background: #000;
-}
-
-.dropdown a {
-    display: block;
-
-    padding: 4px 0;
-
-    color: #fff;
-
-    font-size: 10px;
-}
-
-.dropdown a:hover {
-    color: var(--green);
-}
-
-.nav-item:hover .dropdown {
-    display: block;
-}
-
-
-/* =========================================================
    ABOUT
 ========================================================= */
 
@@ -170,12 +57,14 @@ header {
 .about-intro {
     display: grid;
 
-    grid-template-columns: 760px 300px;
+    grid-template-columns: minmax(0, 720px) 300px;
 
-    gap: 40px;
+    gap: 60px;
 
     max-width: 1100px;
-    min-height: 520px;
+    margin: 0 auto;
+
+    align-items: start;
 }
 
 
@@ -201,11 +90,30 @@ header {
 }
 
 
+/* CV LINK */
+
+.cv-link {
+    display: inline-block;
+
+    margin-top: 18px;
+
+    color: #000;
+    text-decoration: none;
+
+    font-size: 10px;
+    font-weight: bold;
+
+    transition: color 0.2s ease;
+}
+
+.cv-link:hover {
+    color: var(--green);
+}
+
+
 /* VIDEO */
 
 .about-video-column {
-    position: absolute;
-    left: 63%;
     width: 300px;
 }
 
@@ -250,45 +158,8 @@ header {
 
     font-size: 9px;
     line-height: 1.4;
+
     text-transform: uppercase;
-}
-
-
-/* INFORMATION */
-
-.about-info {
-    display: grid;
-
-    grid-template-columns:
-        1fr
-        1fr
-        1fr;
-
-    gap: 60px;
-
-    max-width: 900px;
-
-    margin-top: 90px;
-
-    padding-top: 18px;
-
-    border-top: 1px solid #000;
-}
-
-.info-heading {
-    margin-bottom: 10px;
-
-    font-size: 10px;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-.info-line {
-    margin-bottom: 3px;
-}
-
-.about-link:hover {
-    color: var(--green);
 }
 
 
@@ -383,44 +254,13 @@ footer {
 
     font-size: 10px;
 }
-/* CV LINK */
 
-.cv-link {
-    display: inline-block;
-    margin-top: 18px;
-
-    color: #000;
-    text-decoration: none;
-
-    font-size: 10px;
-    font-weight: bold;
-
-    transition: color 0.2s ease;
-}
-
-.cv-link:hover {
-    color: #BDFF00;
-}
 
 /* =========================================================
    MOBILE
 ========================================================= */
 
 @media (max-width: 900px) {
-
-    header {
-        display: block;
-
-        padding: 18px;
-    }
-
-    .navigation {
-        margin-top: 18px;
-
-        justify-content: flex-start;
-
-        line-height: 2;
-    }
 
     .about-page {
         padding: 45px 18px 70px;
@@ -430,22 +270,16 @@ footer {
         grid-template-columns: 1fr;
 
         gap: 45px;
+
+        margin: 0;
     }
 
     .about-text {
-        font-size: 20px;
+        font-size: 12px;
     }
 
     .about-video-column {
         width: min(100%, 400px);
-    }
-
-    .about-info {
-        grid-template-columns: 1fr;
-
-        gap: 25px;
-
-        margin-top: 60px;
     }
 
     footer {
@@ -465,6 +299,7 @@ footer {
     .copyright {
         text-align: left;
     }
+
 }
 
 </style>
@@ -476,18 +311,19 @@ footer {
 
 
 <!-- ======================================================
-     HEADER
+     SHARED HEADER
 ====================================================== -->
 
 <div id="site-header"></div>
 
 <script>
 fetch("header.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("site-header").innerHTML = data;
-  });
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("site-header").innerHTML = data;
+    });
 </script>
+
 
 <!-- ======================================================
      ABOUT
@@ -499,7 +335,7 @@ fetch("header.html")
     <div class="about-intro">
 
 
-        <!-- TEXT -->
+        <!-- TEXT COLUMN -->
 
         <div>
 
@@ -514,36 +350,29 @@ fetch("header.html")
                     Šćepan Popović is an architect, poet, researcher and multidisciplinary artist whose practice moves between architecture, urbanism, film, photography, spatial art and writing.
                 </p>
 
-               <p>
-    His work explores memory, territory, unfinished landscapes, social transformation and the relationship between built space and collective experience.
-</p>
+                <p>
+                    His work explores memory, territory, unfinished landscapes, social transformation and the relationship between built space and collective experience.
+                </p>
 
-<a class="cv-link"
-   href="publications/CV_Scepan_Popovic.pdf"
-   target="_blank"
-   rel="noopener noreferrer">
-    CV ↗
-</a>
-
-</div>
+                <a
+                    class="cv-link"
+                    href="publications/CV_Scepan_Popovic.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    CV ↗
+                </a>
 
             </div>
 
         </div>
 
 
-        <!-- PORTRAIT VIDEO -->
+        <!-- PORTRAIT VIDEO COLUMN -->
 
         <div class="about-video-column">
 
             <div class="about-video">
-
-                <!--
-                TOMORROW:
-                When about.mp4 is uploaded,
-                replace the placeholder below
-                with the video.
-                -->
 
                 <div class="video-placeholder">
                     PORTRAIT VIDEO<br>
@@ -554,8 +383,8 @@ fetch("header.html")
 
 
             <div class="video-caption">
-    VIDEO: MILICA BURIĆ
-</div>
+                VIDEO: MILICA BURIĆ
+            </div>
 
         </div>
 
@@ -563,7 +392,7 @@ fetch("header.html")
     </div>
 
 
-   
+</main>
 
 
 <!-- ======================================================
@@ -633,7 +462,6 @@ fetch("header.html")
 
             </div>
 
-
             <div class="footer-line">
 
                 <a
@@ -644,7 +472,6 @@ fetch("header.html")
                 </a>
 
             </div>
-
 
             <div class="footer-line">
 
@@ -668,7 +495,6 @@ fetch("header.html")
                 SOCIALS
             </div>
 
-
             <a
                 class="social-link"
                 href="https://www.instagram.com/landscapes.of.memory_prague/"
@@ -678,7 +504,6 @@ fetch("header.html")
                 Instagram <span>↗</span>
             </a>
 
-
             <a
                 class="social-link"
                 href="https://www.linkedin.com/in/%C5%A1%C4%87epan-popovi%C4%87-384896328/"
@@ -687,7 +512,6 @@ fetch("header.html")
             >
                 LinkedIn <span>↗</span>
             </a>
-
 
             <a
                 class="social-link"
@@ -746,4 +570,5 @@ fetch("header.html")
 
 
 </body>
+
 </html>
