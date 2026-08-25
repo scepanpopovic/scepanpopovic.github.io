@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<link rel="stylesheet" href="header.css">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Public Garage + Administration Center — Šćepan Popović</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    background: #fff;
+    color: #111;
+
+    font-family: "Courier New", Courier, monospace;
+    font-size: 11px;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+    width: 100%;
+    padding: 45px 30px 120px;
+}
+
+.content-width {
+    max-width: 1180px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =========================
+   BACK
+========================= */
+
+.back {
+    display: inline-block;
+
+    margin-bottom: 60px;
+
+    color: #111;
+    text-decoration: none;
+
+    font-size: 9px;
+}
+
+.back:hover {
+    color: #BDFF00;
+}
+
+
+/* =========================
+   PROJECT HEADING
+========================= */
+
+.project-heading {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+
+    gap: 25px;
+
+    margin-bottom: 45px;
+}
+
+.project-number {
+    font-size: 11px;
+}
+
+.project-title h1 {
+    margin: 0;
+
+    max-width: 700px;
+
+    font-size: 22px;
+    line-height: 1.15;
+    font-weight: normal;
+}
+
+.project-subtitle {
+    margin-top: 10px;
+
+    font-size: 9px;
+    color: #555;
+}
+
+
+/* =========================
+   PROJECT INFO
+========================= */
+
+.project-info {
+    border-top: 1px solid #111;
+
+    display: grid;
+    grid-template-columns: 70px 1fr 1.25fr;
+
+    gap: 25px;
+
+    padding-top: 18px;
+    margin-bottom: 65px;
+}
+
+.info-label {
+    grid-column: 2;
+
+    font-size: 9px;
+    font-weight: bold;
+}
+
+.info-meta {
+    grid-column: 3;
+
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+.info-heading {
+    margin-top: 14px;
+
+    font-weight: bold;
+}
+
+.info-heading:first-child {
+    margin-top: 0;
+}
+
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.project-intro {
+    border-top: 1px solid #111;
+
+    display: grid;
+    grid-template-columns: 70px 1fr 1.25fr;
+
+    gap: 25px;
+
+    padding-top: 18px;
+    margin-bottom: 70px;
+}
+
+.intro-label {
+    grid-column: 2;
+
+    font-size: 9px;
+    font-weight: bold;
+}
+
+.intro-text {
+    grid-column: 3;
+
+    max-width: 500px;
+
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.intro-text p {
+    margin: 0;
+}
+
+
+/* =========================
+   IMAGES
+========================= */
+
+.visual {
+    margin-left: auto;
+    margin-right: auto;
+
+    margin-bottom: 80px;
+
+    max-width: 980px;
+}
+
+.visual img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    max-height: 680px;
+
+    object-fit: contain;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.project-footer {
+    max-width: 1180px;
+
+    margin: 110px auto 0;
+
+    border-top: 1px solid #111;
+
+    padding-top: 18px;
+
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 8px;
+}
+
+.project-footer a {
+    color: #111;
+    text-decoration: none;
+}
+
+.project-footer a:hover {
+    color: #BDFF00;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    main {
+        padding: 35px 20px 80px;
+    }
+
+    .project-heading {
+        grid-template-columns: 40px 1fr;
+    }
+
+    .project-title h1 {
+        font-size: 18px;
+    }
+
+    .project-info,
+    .project-intro {
+        display: block;
+    }
+
+    .info-label,
+    .intro-label {
+        margin-bottom: 20px;
+    }
+
+    .info-meta,
+    .intro-text {
+        max-width: none;
+    }
+
+    .visual {
+        max-width: 100%;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- SHARED HEADER -->
+
+<div id="site-header"></div>
+
+<script>
+fetch("header.html")
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("site-header").innerHTML = data;
+    });
+</script>
+
+
+<main>
+
+
+<div class="content-width">
+
+
+    <a href="architecture.html" class="back">
+        ← BACK TO ARCHITECTURE
+    </a>
+
+
+    <!-- HEADING -->
+
+    <section class="project-heading">
+
+        <div class="project-number">
+            01
+        </div>
+
+
+        <div class="project-title">
+
+            <h1>
+                PUBLIC GARAGE +<br>
+                ADMINISTRATION CENTER
+            </h1>
+
+            <div class="project-subtitle">
+                BAR, MONTENEGRO / COMPETITION PROJECT / 2026
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECT INFO -->
+
+    <section class="project-info">
+
+        <div class="info-label">
+            PROJECT INFO
+        </div>
+
+
+        <div class="info-meta">
+
+            <div class="info-heading">
+                TEAM
+            </div>
+
+            Šćepan Popović<br>
+            Sofija Poleksić
+
+
+            <div class="info-heading">
+                LOCATION
+            </div>
+
+            Bar, Montenegro
+
+
+            <div class="info-heading">
+                SITE AREA
+            </div>
+
+            3,358 m²
+
+        </div>
+
+    </section>
+
+
+    <!-- DESCRIPTION -->
+
+    <section class="project-intro">
+
+        <div class="intro-label">
+            PROJECT
+        </div>
+
+
+        <div class="intro-text">
+
+            <p>
+                The proposal combines a public parking structure with
+                administration and coworking spaces while integrating
+                public landscape, bicycle infrastructure and supporting
+                civic functions at ground level. Conceived through a
+                flexible structural system, the building is designed not
+                only for its immediate use, but also for future adaptation
+                and transformation as mobility patterns change.
+            </p>
+
+        </div>
+
+    </section>
+
+
+</div>
+
+
+<!-- G1 -->
+
+<div class="visual">
+    <img
+        src="images/G1.jpg"
+        alt="Public Garage and Administration Center"
+    >
+</div>
+
+
+<!-- G2 -->
+
+<div class="visual">
+    <img
+        src="images/G2.jpg"
+        alt="Public Garage and Administration Center"
+    >
+</div>
+
+
+<!-- G3 -->
+
+<div class="visual">
+    <img
+        src="images/G3.jpg"
+        alt="Public Garage and Administration Center"
+    >
+</div>
+
+
+<div class="project-footer">
+
+    <a href="architecture.html">
+        ← ARCHITECTURE
+    </a>
+
+    <span>
+        ŠĆEPAN POPOVIĆ © 2026
+    </span>
+
+</div>
+
+
+</main>
+
+
+</body>
+
+</html>
