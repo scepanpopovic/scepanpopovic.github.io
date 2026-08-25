@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<link rel="stylesheet" href="header.css">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Trading and Commercial Center — Šćepan Popović</title>
+
+<style>
+
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Courier New", Courier, monospace;
+    background: #ffffff;
+    color: #111;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================
+   PROJECT PAGE
+========================= */
+
+main {
+    padding: 55px 30px 100px;
+}
+
+.project-header {
+    max-width: 1250px;
+    margin-bottom: 55px;
+}
+
+.project-number {
+    font-size: 9px;
+    margin-bottom: 12px;
+    color: #555;
+}
+
+.project-title {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.project-category {
+    font-size: 10px;
+    color: #555;
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   PROJECT INFORMATION
+========================= */
+
+.project-information {
+    max-width: 1250px;
+
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+
+    gap: 80px;
+
+    padding-top: 20px;
+    margin-bottom: 65px;
+
+    border-top: 1px solid #111;
+}
+
+.project-description {
+    max-width: 650px;
+    line-height: 1.7;
+}
+
+.project-details {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 5px 25px;
+
+    align-content: start;
+}
+
+.detail-label {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   IMAGES
+========================= */
+
+.project-images {
+    max-width: 1250px;
+}
+
+.visual {
+    width: 100%;
+    margin-bottom: 45px;
+}
+
+.visual img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+}
+
+
+/* =========================
+   BACK
+========================= */
+
+.back-link {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    font-size: 10px;
+    font-weight: bold;
+
+    text-transform: uppercase;
+}
+
+.back-link:hover {
+    color: #BDFF00;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    main {
+        padding: 40px 20px 70px;
+    }
+
+    .project-title {
+        font-size: 15px;
+    }
+
+    .project-information {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        margin-bottom: 45px;
+    }
+
+    .visual {
+        margin-bottom: 25px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<div id="site-header"></div>
+
+<script>
+
+fetch("header.html")
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("site-header").innerHTML = data;
+    });
+
+</script>
+
+
+<!-- =========================
+     PROJECT
+========================= -->
+
+<main>
+
+
+    <!-- PROJECT HEADER -->
+
+    <div class="project-header">
+
+        <div class="project-number">
+            02 / ARCHITECTURE
+        </div>
+
+        <div class="project-title">
+            TRADING AND COMMERCIAL CENTER
+        </div>
+
+        <div class="project-category">
+            ACADEMIC PROJECT / STUDENT WORK
+        </div>
+
+    </div>
+
+
+    <!-- PROJECT INFORMATION -->
+
+    <div class="project-information">
+
+
+        <div class="project-description">
+
+            A mixed-use academic project exploring the integration
+            of commercial and public functions within a dense urban
+            context. The proposal is organized around an inner atrium,
+            creating a clear relationship between the building,
+            surrounding pedestrian flows and the existing public space.
+
+        </div>
+
+
+        <div class="project-details">
+
+            <div class="detail-label">
+                LOCATION
+            </div>
+
+            <div>
+                Podgorica, Montenegro
+            </div>
+
+
+            <div class="detail-label">
+                TYPE
+            </div>
+
+            <div>
+                Academic Project
+            </div>
+
+
+            <div class="detail-label">
+                STATUS
+            </div>
+
+            <div>
+                Student Work
+            </div>
+
+
+            <div class="detail-label">
+                EXHIBITION
+            </div>
+
+            <div>
+                University Final Exhibition
+            </div>
+
+
+            <div class="detail-label">
+                DESIGN TEAM
+            </div>
+
+            <div>
+                Šćepan Popović<br>
+                Iva Marković
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =========================
+         PROJECT IMAGES
+    ========================= -->
+
+
+    <div class="project-images">
+
+
+        <!-- C1 -->
+
+        <div class="visual">
+
+            <img
+                src="images/C1.jpg"
+                alt="Trading and Commercial Center — project presentation"
+            >
+
+        </div>
+
+
+        <!-- C2 -->
+
+        <div class="visual">
+
+            <img
+                src="images/C2.jpg"
+                alt="Trading and Commercial Center — project presentation"
+            >
+
+        </div>
+
+
+    </div>
+
+
+    <!-- BACK -->
+
+    <a
+        class="back-link"
+        href="architecture.html"
+    >
+        ← BACK TO ARCHITECTURE
+    </a>
+
+
+</main>
+
+
+</body>
+
+</html>
