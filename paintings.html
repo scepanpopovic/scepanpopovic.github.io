@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<link rel="stylesheet" href="header.css">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Paintings — Šćepan Popović</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Courier New", Courier, monospace;
+    background: #ffffff;
+    color: #111;
+    font-size: 11px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+main {
+    padding: 55px 30px 100px;
+}
+
+.page-title {
+    font-size: 11px;
+    font-weight: bold;
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   PROJECT GRID
+========================= */
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 70px 28px;
+
+    max-width: 1250px;
+}
+
+.project {
+    text-decoration: none;
+    color: #111;
+    display: block;
+}
+
+.project-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #eee;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+
+    transition:
+        opacity .2s ease,
+        filter .3s ease;
+
+    filter: grayscale(100%);
+}
+
+.project:hover img {
+    opacity: .85;
+    filter: grayscale(0%);
+}
+
+.project-number {
+    position: absolute;
+    left: 8px;
+    top: 8px;
+
+    background: #000;
+    color: #fff;
+
+    padding: 5px 7px;
+    font-size: 9px;
+}
+
+.project:hover .project-number {
+    color: #BDFF00;
+}
+
+.project-info {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+
+    margin-top: 9px;
+}
+
+.project-title {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.project:hover .project-title {
+    color: #BDFF00;
+}
+
+.project-location {
+    text-align: right;
+}
+
+.project-meta {
+    margin-top: 4px;
+    font-size: 9px;
+    color: #555;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    main {
+        padding: 40px 20px 80px;
+    }
+
+    .projects {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- SHARED HEADER -->
+
+<div id="site-header"></div>
+
+<script>
+
+fetch("header.html")
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("site-header").innerHTML = data;
+    });
+
+</script>
+
+
+<main>
+
+    <div class="page-title">
+        ARTWORKS / PAINTINGS
+    </div>
+
+
+    <div class="projects">
+
+
+        <!-- PROJECT 01 -->
+
+        <a class="project"
+           href="beethovenfries.html">
+
+            <div class="project-image">
+
+                <img src="images/P1.jpg"
+                     alt="Beethovenfries — Development of POARCH Forms">
+
+                <span class="project-number">
+                    01
+                </span>
+
+            </div>
+
+
+            <div class="project-info">
+
+                <div>
+
+                    <div class="project-title">
+                        BEETHOVENFRIES — DEVELOPMENT OF POARCH FORMS
+                    </div>
+
+                    <div class="project-meta">
+                        PAINTING / MIXED MEDIA / 2021
+                    </div>
+
+                </div>
+
+
+                <div class="project-location">
+                    PODGORICA<br>
+                    MONTENEGRO
+                </div>
+
+            </div>
+
+        </a>
+
+
+        <!-- PROJECT 02 IDE OVDJE KASNIJE -->
+
+
+    </div>
+
+</main>
+
+
+</body>
+
+</html>
