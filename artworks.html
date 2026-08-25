@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<link rel="stylesheet" href="header.css">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Artworks — Šćepan Popović</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Courier New", Courier, monospace;
+    background: #fff;
+    color: #111;
+    font-size: 11px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+main {
+    padding: 55px 30px 100px;
+}
+
+.page-title {
+    font-size: 11px;
+    font-weight: bold;
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   CATEGORY GRID
+========================= */
+
+.categories {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 28px;
+
+    max-width: 1250px;
+}
+
+.category {
+    display: block;
+}
+
+.category-image {
+    position: relative;
+
+    width: 100%;
+    aspect-ratio: 16 / 9;
+
+    overflow: hidden;
+    background: #eee;
+}
+
+.category-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    filter: grayscale(100%);
+
+    transition:
+        filter .3s ease,
+        opacity .2s ease;
+}
+
+.category:hover .category-image img {
+    filter: grayscale(0%);
+    opacity: .85;
+}
+
+.category-number {
+    position: absolute;
+
+    left: 8px;
+    top: 8px;
+
+    background: #000;
+    color: #fff;
+
+    padding: 5px 7px;
+
+    font-size: 9px;
+}
+
+.category:hover .category-number {
+    color: #BDFF00;
+}
+
+.category-info {
+    margin-top: 9px;
+}
+
+.category-title {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.category:hover .category-title {
+    color: #BDFF00;
+}
+
+.category-meta {
+    margin-top: 4px;
+
+    font-size: 9px;
+    color: #555;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    main {
+        padding: 40px 20px 80px;
+    }
+
+    .categories {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div id="site-header"></div>
+
+<script>
+
+fetch("header.html")
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("site-header").innerHTML = data;
+    });
+
+</script>
+
+
+<main>
+
+    <div class="page-title">
+        ARTWORKS
+    </div>
+
+
+    <div class="categories">
+
+
+        <!-- 01 SPATIAL ART -->
+
+        <a class="category"
+           href="spatial-art.html">
+
+            <div class="category-image">
+
+                <div style="
+                    width:100%;
+                    height:100%;
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                    color:#777;
+                    font-size:10px;
+                ">
+                    IMAGE
+                </div>
+
+                <span class="category-number">
+                    01
+                </span>
+
+            </div>
+
+            <div class="category-info">
+
+                <div class="category-title">
+                    SPATIAL ART
+                </div>
+
+                <div class="category-meta">
+                    INSTALLATIONS / SPATIAL WORKS
+                </div>
+
+            </div>
+
+        </a>
+
+
+        <!-- 02 PAINTINGS -->
+
+        <a class="category"
+           href="paintings.html">
+
+            <div class="category-image">
+
+                <img
+                    src="images/P1.jpg"
+                    alt="Paintings"
+                >
+
+                <span class="category-number">
+                    02
+                </span>
+
+            </div>
+
+            <div class="category-info">
+
+                <div class="category-title">
+                    PAINTINGS
+                </div>
+
+                <div class="category-meta">
+                    PAINTING / MIXED MEDIA
+                </div>
+
+            </div>
+
+        </a>
+
+
+        <!-- 03 OBSERVATIONS -->
+
+        <a class="category"
+           href="observations.html">
+
+            <div class="category-image">
+
+                <div style="
+                    width:100%;
+                    height:100%;
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                    color:#777;
+                    font-size:10px;
+                ">
+                    IMAGE
+                </div>
+
+                <span class="category-number">
+                    03
+                </span>
+
+            </div>
+
+            <div class="category-info">
+
+                <div class="category-title">
+                    OBSERVATIONS
+                </div>
+
+                <div class="category-meta">
+                    VISUAL STUDIES / OBSERVATIONS
+                </div>
+
+            </div>
+
+        </a>
+
+
+    </div>
+
+</main>
+
+
+</body>
+
+</html>
