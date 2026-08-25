@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -55,17 +56,21 @@ a:hover {
 header {
     height: 86px;
     padding: 0 36px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     background: #000;
 }
 
 .logo {
     color: #fff;
+
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 0.02em;
+
     white-space: nowrap;
 }
 
@@ -75,10 +80,13 @@ header {
 
 .logo-about {
     display: block;
+
     margin-top: 3px;
+
     font-size: 8px;
     font-weight: normal;
     letter-spacing: 0.5px;
+
     color: #fff;
 }
 
@@ -86,7 +94,7 @@ header {
 .logo:hover .logo-about {
     color: var(--green);
 }
-   
+
 .navigation {
     display: flex;
     align-items: center;
@@ -117,7 +125,7 @@ header {
 }
 
 .nav-link:hover {
-    color: #BDFF00;
+    color: var(--green);
 }
 
 
@@ -129,6 +137,7 @@ header {
     display: none;
 
     position: absolute;
+
     top: 18px;
     left: -10px;
 
@@ -136,7 +145,7 @@ header {
 
     padding: 10px;
 
-    background: white;
+    background: #fff;
     border: 1px solid var(--black);
 
     z-index: 100;
@@ -158,20 +167,28 @@ header {
 
 .hero {
     margin: 0 36px;
+
     height: calc(100vh - 130px);
     min-height: 580px;
+
     position: relative;
+
     overflow: hidden;
+
     background: #000;
 }
 
 .hero-media {
     position: absolute;
     inset: 0;
+
     width: 100%;
     height: 100%;
+
     object-fit: cover;
+
     opacity: 0;
+
     transition: opacity 0.8s ease;
 }
 
@@ -182,7 +199,9 @@ header {
 #heroVideoIntro,
 #heroVideoMain {
     z-index: 1;
+
     object-fit: contain;
+
     background: #000;
 }
 
@@ -192,16 +211,23 @@ header {
 
 .sound-toggle {
     position: absolute;
+
     right: 18px;
     bottom: 18px;
+
     z-index: 10;
+
     background: #000;
     color: #fff;
+
     border: 0;
+
     padding: 8px 10px;
+
     font-family: "Courier New", Courier, monospace;
     font-size: 10px;
     font-weight: 700;
+
     cursor: pointer;
 }
 
@@ -210,7 +236,10 @@ header {
     color: #000;
 }
 
-/* POETRY */
+
+/* =========================================================
+   POETRY
+========================================================= */
 
 .poetry {
     position: absolute;
@@ -241,6 +270,7 @@ header {
     content: "";
 
     position: absolute;
+
     top: 0;
     left: 0;
 
@@ -270,7 +300,11 @@ header {
 
 .home-grid {
     display: grid;
-    grid-template-columns: minmax(0, 2.3fr) minmax(300px, 0.9fr);
+
+    grid-template-columns:
+        minmax(0, 2.3fr)
+        minmax(300px, 0.9fr);
+
     gap: 50px;
 }
 
@@ -282,29 +316,38 @@ header {
 .section-header {
     display: flex;
     align-items: center;
+
     margin-bottom: 18px;
 }
 
 .section-title {
     background: #000;
     color: #fff;
+
     font-size: 17px;
     font-weight: 700;
+
     white-space: nowrap;
+
     padding: 7px 10px;
 }
 
 .section-line {
     height: 2px;
+
     background: #000;
+
     flex: 1;
+
     margin: 0 10px;
 }
 
 .section-link {
     color: #000;
+
     font-size: 10px;
     font-weight: 700;
+
     white-space: nowrap;
 }
 
@@ -312,13 +355,16 @@ header {
     color: var(--green);
 }
 
+
 /* =========================================================
    SELECTED PROJECTS
 ========================================================= */
 
 .projects-grid {
     display: grid;
+
     grid-template-columns: repeat(4, 1fr);
+
     gap: 12px;
 }
 
@@ -331,6 +377,7 @@ header {
     aspect-ratio: 1.45 / 1;
 
     overflow: hidden;
+
     background: #e5e5e5;
 
     position: relative;
@@ -361,6 +408,7 @@ header {
     left: 7px;
 
     color: var(--green);
+
     font-size: 11px;
 }
 
@@ -368,6 +416,7 @@ header {
     margin-top: 8px;
 
     font-size: 12px;
+
     text-transform: uppercase;
 }
 
@@ -375,26 +424,32 @@ header {
     margin-top: 2px;
 
     color: var(--grey);
+
     font-size: 10px;
+
     text-transform: uppercase;
 }
 
-
 .project:active .project-title {
+    display: inline-block;
+
     background: #000;
     color: var(--green);
-    display: inline-block;
+
     padding: 2px 4px;
 }
 
 .project:active .project-category {
+    display: inline-block;
+
     background: #000;
     color: var(--green);
-    display: inline-block;
+
     padding: 2px 4px;
 }
-   
-/* PLACEHOLDERS */
+
+
+/* PLACEHOLDER */
 
 .placeholder {
     width: 100%;
@@ -414,9 +469,13 @@ header {
 
 .news-item {
     display: grid;
+
     grid-template-columns: 115px 1fr;
+
     gap: 15px;
+
     padding: 13px 0;
+
     border-bottom: 1px solid #d0d0d0;
 }
 
@@ -441,19 +500,23 @@ header {
 .news-title:active {
     background: #000;
     color: var(--green);
+
     padding: 2px 4px;
 }
 
-   
+
 /* =========================================================
    FOOTER
 ========================================================= */
 
 footer {
     margin: 42px 0 0;
+
     padding: 28px 36px 24px;
+
     background: #000;
     color: #fff;
+
     border-top: none;
 }
 
@@ -472,67 +535,35 @@ footer {
 
 .footer-title {
     color: #fff;
+
     margin-bottom: 8px;
+
     font-size: 13px;
     font-weight: 700;
 }
 
 .footer-heading {
     color: #fff;
+
     margin-bottom: 7px;
+
     font-size: 10px;
     font-weight: 700;
+
     text-transform: uppercase;
 }
 
 .footer-line {
     color: #fff;
+
     margin-bottom: 3px;
 }
-
-.social-link {
-    display: block;
-    margin-bottom: 4px;
-    color: #fff;
-}
-
-.social-link:hover {
-    color: #aaa;
-}
-
-.social-link span {
-    margin-left: 5px;
-}
-
-.languages {
-    color: #fff;
-    display: flex;
-    gap: 8px;
-    justify-content: flex-end;
-    font-weight: 700;
-}
-
-.languages a {
-    color: #fff;
-}
-
-.languages a:hover {
-    color: #aaa;
-}
-
-.copyright {
-    margin-top: 28px;
-    text-align: right;
-    font-size: 10px;
-    color: #fff;
-}
-
-/* FOOTER INTERACTIVE LINKS */
 
 .footer-link,
 .social-link,
 .language-link {
     color: #fff;
+
     transition: color 0.2s ease;
 }
 
@@ -542,11 +573,49 @@ footer {
     color: var(--green);
 }
 
-.social-link span {
-    color: inherit;
+.social-link {
+    display: block;
+
+    margin-bottom: 4px;
 }
 
-   
+.social-link span {
+    color: inherit;
+
+    margin-left: 5px;
+}
+
+.languages {
+    display: flex;
+
+    gap: 8px;
+
+    justify-content: flex-end;
+
+    color: #fff;
+
+    font-weight: 700;
+}
+
+.languages a {
+    color: #fff;
+}
+
+.languages a:hover {
+    color: var(--green);
+}
+
+.copyright {
+    margin-top: 28px;
+
+    text-align: right;
+
+    font-size: 10px;
+
+    color: #fff;
+}
+
+
 /* =========================================================
    MOBILE
 ========================================================= */
@@ -555,8 +624,11 @@ footer {
 
     header {
         height: auto;
+
         padding: 22px 24px;
+
         align-items: flex-start;
+
         gap: 25px;
     }
 
@@ -570,6 +642,7 @@ footer {
 
     .hero {
         margin: 0 24px;
+
         height: 72vh;
     }
 
@@ -587,6 +660,7 @@ footer {
 
     footer {
         margin: 42px 0 0;
+
         padding: 28px 24px 24px;
     }
 
@@ -600,6 +674,7 @@ footer {
 
     header {
         display: block;
+
         padding: 18px;
     }
 
@@ -613,6 +688,7 @@ footer {
 
     .hero {
         margin: 0 18px;
+
         height: 75vh;
         min-height: 520px;
     }
@@ -636,11 +712,13 @@ footer {
 
     footer {
         margin: 42px 0 0;
+
         padding: 28px 18px 24px;
     }
 
     .footer-grid {
         grid-template-columns: 1fr 1fr;
+
         gap: 30px 20px;
     }
 
@@ -651,11 +729,13 @@ footer {
     .copyright {
         text-align: left;
     }
+
 }
 
 </style>
 
 </head>
+
 
 <body>
 
@@ -666,64 +746,87 @@ footer {
 
 <header>
 
-   <div class="logo">
 
-    <a href="/" class="logo-name">
-        ŠĆEPAN POPOVIĆ
-    </a>
+    <div class="logo">
 
-    <a href="about.html" class="logo-about">
-        ABOUT
-    </a>
+        <a href="index.htm" class="logo-name">
+            ŠĆEPAN POPOVIĆ
+        </a>
 
-</div>
+        <a href="about.html" class="logo-about">
+            ABOUT
+        </a>
+
+    </div>
 
 
     <nav class="navigation">
 
 
         <div class="nav-item">
+
             <a class="nav-link" href="architecture.html">
                 ARCHITECTURE
             </a>
+
         </div>
 
 
         <div class="nav-item">
+
             <a class="nav-link" href="urbanism.html">
                 URBANISM
             </a>
+
         </div>
 
 
         <div class="nav-item">
+
             <a class="nav-link" href="research.html">
                 RESEARCH
             </a>
+
         </div>
 
 
+        <!-- ARTWORKS -->
+
         <div class="nav-item">
 
-            <span class="nav-link">
+            <a class="nav-link" href="artworks.html">
                 ARTWORKS
-            </span>
+            </a>
 
             <div class="dropdown">
-                <a href="spatial-art.html">SPATIAL ART</a>
-                <a href="paintings.html">PAINTINGS</a>
-                <a href="observations.html">OBSERVATIONS</a>
+
+                <a href="spatial-art.html">
+                    SPATIAL ART
+                </a>
+
+                <a href="paintings.html">
+                    PAINTINGS
+                </a>
+
+                <a href="observations.html">
+                    OBSERVATIONS
+                </a>
+
             </div>
 
         </div>
 
 
         <div class="nav-item">
+
             <a class="nav-link" href="film.html">
                 FILM
             </a>
+
         </div>
 
+
+        <!-- WRITINGS -->
 
         <div class="nav-item">
 
@@ -732,26 +835,33 @@ footer {
             </span>
 
             <div class="dropdown">
-                <a href="texts.html">TEXTS</a>
-                <a href="poetry.html">POETRY</a>
+
+                <a href="texts.html">
+                    TEXTS
+                </a>
+
+                <a href="poetry.html">
+                    POETRY
+                </a>
+
             </div>
 
         </div>
 
 
-
-
         <div class="nav-item">
+
             <a class="nav-link" href="news.html">
                 NEWS
             </a>
+
         </div>
 
 
     </nav>
 
-</header>
 
+</header>
 
 
 <!-- ======================================================
@@ -760,6 +870,7 @@ footer {
 
 <section class="hero">
 
+
     <video
         id="heroVideoIntro"
         class="hero-media active"
@@ -767,8 +878,12 @@ footer {
         muted
         playsinline
     >
-        <source src="videos/homepage-intro.mp4" type="video/mp4">
+        <source
+            src="videos/homepage-intro.mp4"
+            type="video/mp4"
+        >
     </video>
+
 
     <video
         id="heroVideoMain"
@@ -776,8 +891,12 @@ footer {
         muted
         playsinline
     >
-        <source src="videos/homepage.mp4" type="video/mp4">
+        <source
+            src="videos/homepage.mp4"
+            type="video/mp4"
+        >
     </video>
+
 
     <img
         id="heroImage"
@@ -786,11 +905,17 @@ footer {
         alt="Montenegro on Film — Šćepan Popović"
     >
 
-    <button id="soundToggle" class="sound-toggle">
+
+    <button
+        id="soundToggle"
+        class="sound-toggle"
+    >
         SOUND ON ↗
     </button>
 
+
 </section>
+
 
 <!-- ======================================================
      SELECTED PROJECTS + NEWS
@@ -798,12 +923,16 @@ footer {
 
 <div class="home-content">
 
+
     <div class="home-grid">
 
 
-        <!-- SELECTED PROJECTS -->
+        <!-- =================================================
+             SELECTED PROJECTS
+        ================================================== -->
 
         <section>
+
 
             <div class="section-header">
 
@@ -813,7 +942,10 @@ footer {
 
                 <div class="section-line"></div>
 
-                <a class="section-link" href="architecture.html">
+                <a
+                    class="section-link"
+                    href="architecture.html"
+                >
                     VIEW ALL PROJECTS →
                 </a>
 
@@ -823,94 +955,108 @@ footer {
             <div class="projects-grid">
 
 
-                <!-- PROJECT 01 — LANDSCAPES OF MEMORY -->
+                <!-- PROJECT 01 -->
 
-<a class="project" href="landscapes-of-memory.html">
+                <a
+                    class="project"
+                    href="landscapes-of-memory.html"
+                >
 
-    <div class="project-image">
+                    <div class="project-image">
 
-        <img
-            src="images/landscapes-of-memory.jpg"
-            alt="Landscapes of Memory"
-        >
+                        <img
+                            src="images/landscapes-of-memory.jpg"
+                            alt="Landscapes of Memory"
+                        >
 
-        <span class="project-number">
-            01
-        </span>
+                        <span class="project-number">
+                            01
+                        </span>
 
-    </div>
-
-
-    <div class="project-title">
-        LANDSCAPES OF MEMORY
-    </div>
+                    </div>
 
 
-    <div class="project-category">
-        FILM / PRAGUE / 2026
-    </div>
+                    <div class="project-title">
+                        LANDSCAPES OF MEMORY
+                    </div>
 
-</a>
+                    <div class="project-category">
+                        FILM / PRAGUE / 2026
+                    </div>
 
+                </a>
 
 
                 <!-- PROJECT 02 -->
 
-<a class="project" href="landscapes-of-memory-research.html">
+                <a
+                    class="project"
+                    href="landscapes-of-memory-research.html"
+                >
 
-    <div class="project-image">
+                    <div class="project-image">
 
-        <img src="images/landscapes-of-memory-research.jpg"
-             alt="Landscapes of Memory Research">
+                        <img
+                            src="images/landscapes-of-memory-research.jpg"
+                            alt="Landscapes of Memory Research"
+                        >
 
-        <span class="project-number">
-            02
-        </span>
+                        <span class="project-number">
+                            02
+                        </span>
 
-    </div>
+                    </div>
 
-    <div class="project-title">
-        LANDSCAPES OF MEMORY
-    </div>
 
-    <div class="project-category">
-        Research / Publication, Prague, 2026
-    </div>
+                    <div class="project-title">
+                        LANDSCAPES OF MEMORY
+                    </div>
 
-</a>
+                    <div class="project-category">
+                        RESEARCH / PUBLICATION / PRAGUE / 2026
+                    </div>
 
+                </a>
 
 
                 <!-- PROJECT 03 -->
 
-<a class="project" href="urban-regeneration-berane.html">
+                <a
+                    class="project"
+                    href="urban-regeneration-berane.html"
+                >
 
-    <div class="project-image">
+                    <div class="project-image">
 
-        <img src="images/L1.jpg"
-             alt="Urban Regeneration of 21 July Square">
+                        <img
+                            src="images/L1.jpg"
+                            alt="Urban Regeneration of 21 July Square"
+                        >
 
-        <span class="project-number">
-            03
-        </span>
+                        <span class="project-number">
+                            03
+                        </span>
 
-    </div>
+                    </div>
 
-    <div class="project-title">
-        URBAN REGENERATION OF 21 JULY SQUARE
-    </div>
 
-    <div class="project-category">
-        URBAN DESIGN / BERANE / 2025
-    </div>
+                    <div class="project-title">
+                        URBAN REGENERATION OF 21 JULY SQUARE
+                    </div>
 
-</a>>
+                    <div class="project-category">
+                        URBAN DESIGN / BERANE / 2025
+                    </div>
 
+                </a>
 
 
                 <!-- PROJECT 04 -->
 
-                <a class="project" href="#">
+                <a
+                    class="project"
+                    href="#"
+                >
 
                     <div class="project-image">
 
@@ -924,12 +1070,13 @@ footer {
 
                     </div>
 
+
                     <div class="project-title">
                         PROJECT TITLE
                     </div>
 
                     <div class="project-category">
-                        Spatial Art, 2025
+                        SPATIAL ART / 2025
                     </div>
 
                 </a>
@@ -937,13 +1084,16 @@ footer {
 
             </div>
 
+
         </section>
 
 
-
-        <!-- NEWS -->
+        <!-- =================================================
+             NEWS
+        ================================================== -->
 
         <section>
+
 
             <div class="section-header">
 
@@ -953,73 +1103,74 @@ footer {
 
                 <div class="section-line"></div>
 
-                <a class="section-link" href="news.html">
+                <a
+                    class="section-link"
+                    href="news.html"
+                >
                     VIEW ALL NEWS →
                 </a>
 
             </div>
 
 
-            <!-- NEWS 01 — MIKSER FESTIVAL -->
+            <!-- NEWS 01 -->
 
-<div class="news-item">
+            <div class="news-item">
 
-    <div class="news-date">
-        27.05.2026
-    </div>
+                <div class="news-date">
+                    27.05.2026
+                </div>
 
-    <a
-        class="news-title"
-        href="https://festival.mikser.rs/news-en/mikser-festival-predstavlja-pobednike-medjunarodnog-umetnickog-konkursa-black-box-2026/?lang=en"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        LANDSCAPES OF MEMORY SELECTED FOR BLACK BOX 2026 ↗
-    </a>
+                <a
+                    class="news-title"
+                    href="https://festival.mikser.rs/news-en/mikser-festival-predstavlja-pobednike-medjunarodnog-umetnickog-konkursa-black-box-2026/?lang=en"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    LANDSCAPES OF MEMORY SELECTED FOR BLACK BOX 2026 ↗
+                </a>
 
-</div>
-
-
-
-<!-- NEWS 02 — RTNK -->
-
-<div class="news-item">
-
-    <div class="news-date">
-        31.10.2025
-    </div>
-
-    <a
-        class="news-title"
-        href="https://rtnk.me/kultura/video-u-niksicu-promovisana-zbirka-poezije-scepana-popovica/"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        ZEMLJA KURTALISANA PRESENTED IN NIKŠIĆ ↗
-    </a>
-
-</div>
+            </div>
 
 
+            <!-- NEWS 02 -->
 
-<!-- NEWS 03 — MNE MAGAZIN -->
+            <div class="news-item">
 
-<div class="news-item">
+                <div class="news-date">
+                    31.10.2025
+                </div>
 
-    <div class="news-date">
-        01.02.2025
-    </div>
+                <a
+                    class="news-title"
+                    href="https://rtnk.me/kultura/video-u-niksicu-promovisana-zbirka-poezije-scepana-popovica/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    ZEMLJA KURTALISANA PRESENTED IN NIKŠIĆ ↗
+                </a>
 
-    <a
-        class="news-title"
-        href="https://mnemagazin.me/2025/02/01/student-arhitekture-i-poeta-scepan-popovic-poezija-je-onome-koji-se-naucio-radovati-ili-tugovati-uvijek-inspirativna/"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        INTERVIEW — ARCHITECTURE, POETRY AND SPACE ↗
-    </a>
+            </div>
 
-</div>
+
+            <!-- NEWS 03 -->
+
+            <div class="news-item">
+
+                <div class="news-date">
+                    01.02.2025
+                </div>
+
+                <a
+                    class="news-title"
+                    href="https://mnemagazin.me/2025/02/01/student-arhitekture-i-poeta-scepan-popovic-poezija-je-onome-koji-se-naucio-radovati-ili-tugovati-uvijek-inspirativna/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    INTERVIEW — ARCHITECTURE, POETRY AND SPACE ↗
+                </a>
+
+            </div>
 
 
         </section>
@@ -1027,8 +1178,8 @@ footer {
 
     </div>
 
-</div>
 
+</div>
 
 
 <!-- ======================================================
@@ -1037,11 +1188,14 @@ footer {
 
 <footer id="socials">
 
+
     <div class="footer-grid">
+
 
         <!-- NAME -->
 
         <div>
+
             <div class="footer-title">
                 ŠĆEPAN POPOVIĆ
             </div>
@@ -1049,12 +1203,14 @@ footer {
             <div>
                 Architecture / Urbanism / Research / Art
             </div>
+
         </div>
 
 
         <!-- LOCATION -->
 
         <div>
+
             <div class="footer-heading">
                 LOCATION
             </div>
@@ -1070,39 +1226,58 @@ footer {
             <div class="footer-line">
                 Remote
             </div>
+
         </div>
 
 
         <!-- CONTACT -->
 
         <div>
+
             <div class="footer-heading">
                 CONTACT
             </div>
 
             <div class="footer-line">
-                <a class="footer-link" href="mailto:scepanpopovic99@gmail.com">
+
+                <a
+                    class="footer-link"
+                    href="mailto:scepanpopovic99@gmail.com"
+                >
                     scepanpopovic99@gmail.com
                 </a>
+
             </div>
 
             <div class="footer-line">
-                <a class="footer-link" href="mailto:numeruslinkin@gmail.com">
+
+                <a
+                    class="footer-link"
+                    href="mailto:numeruslinkin@gmail.com"
+                >
                     numeruslinkin@gmail.com
                 </a>
+
             </div>
 
             <div class="footer-line">
-                <a class="footer-link" href="tel:+38269650667">
+
+                <a
+                    class="footer-link"
+                    href="tel:+38269650667"
+                >
                     +382 69 650 667
                 </a>
+
             </div>
+
         </div>
 
 
         <!-- SOCIALS -->
 
         <div>
+
             <div class="footer-heading">
                 SOCIALS
             </div>
@@ -1133,38 +1308,54 @@ footer {
             >
                 YouTube <span>↗</span>
             </a>
+
         </div>
 
 
         <!-- LANGUAGES -->
 
         <div>
+
             <div class="languages">
 
-                <a class="language-link" href="#">
+                <a
+                    class="language-link"
+                    href="#"
+                >
                     EN
                 </a>
 
                 <span>/</span>
 
-                <a class="language-link" href="#">
+                <a
+                    class="language-link"
+                    href="#"
+                >
                     MNE
                 </a>
 
                 <span>/</span>
 
-                <a class="language-link" href="#">
+                <a
+                    class="language-link"
+                    href="#"
+                >
                     IT
                 </a>
 
                 <span>/</span>
 
-                <a class="language-link" href="#">
+                <a
+                    class="language-link"
+                    href="#"
+                >
                     DE
                 </a>
 
             </div>
+
         </div>
+
 
     </div>
 
@@ -1173,17 +1364,32 @@ footer {
         © 2026 Šćepan Popović
     </div>
 
+
 </footer>
 
 
+<!-- ======================================================
+     HERO SCRIPT
+====================================================== -->
+
 <script>
 
-const introVideo = document.getElementById("heroVideoIntro");
-const mainVideo = document.getElementById("heroVideoMain");
-const image = document.getElementById("heroImage");
-const soundButton = document.getElementById("soundToggle");
+const introVideo =
+    document.getElementById("heroVideoIntro");
+
+const mainVideo =
+    document.getElementById("heroVideoMain");
+
+const image =
+    document.getElementById("heroImage");
+
+const soundButton =
+    document.getElementById("soundToggle");
 
 let soundOn = false;
+
+
+/* SOUND */
 
 soundButton.addEventListener("click", function () {
 
@@ -1192,73 +1398,63 @@ soundButton.addEventListener("click", function () {
     introVideo.muted = !soundOn;
     mainVideo.muted = !soundOn;
 
-    soundButton.textContent = soundOn
-        ? "SOUND OFF ↗"
-        : "SOUND ON ↗";
+    soundButton.textContent =
+        soundOn
+            ? "SOUND OFF ↗"
+            : "SOUND ON ↗";
 
 });
+
+
+/* INTRO VIDEO → MAIN VIDEO */
 
 introVideo.addEventListener("ended", function () {
 
     introVideo.classList.remove("active");
+
     mainVideo.classList.add("active");
 
     mainVideo.currentTime = 0;
+
     mainVideo.play();
 
 });
 
+
+/* MAIN VIDEO → PHOTO */
+
 mainVideo.addEventListener("ended", function () {
 
     mainVideo.classList.remove("active");
+
     image.classList.add("active");
+
+
+    /* PHOTO STAYS FOR 3 SECONDS */
 
     setTimeout(function () {
 
         image.classList.remove("active");
+
         introVideo.classList.add("active");
 
         introVideo.currentTime = 0;
+
         introVideo.play();
 
     }, 3000);
 
 });
 
+
+/* START */
+
 introVideo.play();
 
+
 </script>
 
-/* VIDEO → PHOTO → VIDEO */
 
-function showImage() {
-
-    video.classList.remove("active");
-    image.classList.add("active");
-
-    video.pause();
-
-    setTimeout(function () {
-
-        image.classList.remove("active");
-        video.classList.add("active");
-
-        video.currentTime = 0;
-        video.play();
-
-    }, 3000);
-}
-
-
-/* WHEN VIDEO ENDS, SHOW PHOTO */
-
-video.addEventListener("ended", showImage);
-
-
-/* START VIDEO */
-
-video.play();
-</script>
-   
 </body>
+
 </html>
