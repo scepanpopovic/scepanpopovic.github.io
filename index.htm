@@ -674,23 +674,28 @@ footer {
 
     header {
         display: block;
-
-        padding: 18px;
+        padding: 14px 16px;
     }
 
     .logo {
-        margin-bottom: 18px;
+        margin-bottom: 12px;
     }
 
     .navigation {
         justify-content: flex-start;
     }
 
-    .hero {
-        margin: 0 18px;
 
-        height: 75vh;
-        min-height: 520px;
+    /* HERO */
+
+    .hero {
+        width: 88%;
+        margin: 0 auto;
+
+        height: auto;
+        min-height: 0;
+
+        aspect-ratio: 16 / 9;
     }
 
     .hero img,
@@ -698,28 +703,131 @@ footer {
         object-position: center;
     }
 
-    .home-content {
-        padding: 28px 18px 0;
+    .sound-toggle {
+        right: 8px;
+        bottom: 8px;
+
+        padding: 5px 7px;
+
+        font-size: 7px;
     }
+
+
+    /* CONTENT */
+
+    .home-content {
+        width: 88%;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        padding: 24px 0 0;
+    }
+
+    .home-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+
+    /* SECTION TITLES */
+
+    .section-title {
+        font-size: 11px;
+        padding: 5px 7px;
+    }
+
+    .section-link {
+        font-size: 7px;
+    }
+
+    .section-line {
+        height: 1px;
+    }
+
+
+    /* PROJECTS */
 
     .projects-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 24px 10px;
     }
+
+    .project-image {
+        aspect-ratio: 1.45 / 1;
+    }
+
+    .project-number {
+        top: 5px;
+        left: 5px;
+
+        font-size: 8px;
+    }
+
+    .project-title {
+        margin-top: 5px;
+
+        font-size: 8px;
+        line-height: 1.25;
+    }
+
+    .project-category {
+        margin-top: 2px;
+
+        font-size: 7px;
+        line-height: 1.25;
+    }
+
+
+    /* NEWS */
 
     .news-item {
-        grid-template-columns: 95px 1fr;
+        grid-template-columns: 75px 1fr;
+
+        gap: 8px;
+
+        padding: 9px 0;
+
+        font-size: 8px;
     }
 
-    footer {
-        margin: 42px 0 0;
+    .news-date {
+        font-size: 8px;
+    }
 
-        padding: 28px 18px 24px;
+    .news-title {
+        font-size: 8px;
+        line-height: 1.35;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        margin-top: 32px;
+
+        padding: 22px 6% 20px;
     }
 
     .footer-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
 
-        gap: 30px 20px;
+        gap: 22px 14px;
+    }
+
+    .footer-title {
+        font-size: 9px;
+    }
+
+    .footer-heading {
+        font-size: 7px;
+    }
+
+    .footer-line,
+    .social-link,
+    .languages {
+        font-size: 7px;
     }
 
     .languages {
@@ -727,9 +835,12 @@ footer {
     }
 
     .copyright {
-        text-align: left;
-    }
+        margin-top: 18px;
 
+        text-align: left;
+
+        font-size: 7px;
+    }
 }
 
 </style>
