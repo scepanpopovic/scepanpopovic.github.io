@@ -27,8 +27,19 @@
     --grey: #777;
 }
 
+html,
 body {
     margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
     background: #fff;
     color: #000;
 
@@ -48,33 +59,46 @@ a {
 ========================================================= */
 
 .about-page {
-    padding: 70px 36px 100px;
+    flex: 1;
+
+    width: 100%;
+
+    padding: 60px 36px 80px;
 }
 
 
-/* INTRO GRID */
+/* =========================================================
+   INTRO GRID
+========================================================= */
 
 .about-intro {
     display: grid;
 
-    grid-template-columns: minmax(0, 720px) 300px;
+    grid-template-columns:
+        minmax(0, 720px)
+        220px;
 
-    gap: 60px;
+    gap: 160px;
 
+    width: 100%;
     max-width: 1100px;
+
     margin: 0 auto;
 
     align-items: start;
 }
 
 
-/* TEXT */
+/* =========================================================
+   TEXT
+========================================================= */
 
 .about-label {
     margin-bottom: 28px;
 
     font-size: 11px;
     font-weight: 700;
+
     text-transform: uppercase;
 }
 
@@ -90,7 +114,9 @@ a {
 }
 
 
-/* CV LINK */
+/* =========================================================
+   CV
+========================================================= */
 
 .cv-link {
     display: inline-block;
@@ -98,7 +124,6 @@ a {
     margin-top: 18px;
 
     color: #000;
-    text-decoration: none;
 
     font-size: 10px;
     font-weight: bold;
@@ -111,17 +136,20 @@ a {
 }
 
 
-/* VIDEO */
+/* =========================================================
+   VIDEO
+========================================================= */
 
 .about-video-column {
-    width: 300px;
+    width: 220px;
 }
 
 .about-video {
     position: relative;
 
     width: 100%;
-    aspect-ratio: 3 / 4;
+
+    aspect-ratio: 2 / 3;
 
     overflow: hidden;
 
@@ -129,10 +157,10 @@ a {
 }
 
 .about-video video {
+    display: block;
+
     width: 100%;
     height: 100%;
-
-    display: block;
 
     object-fit: cover;
 }
@@ -142,6 +170,7 @@ a {
     inset: 0;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -149,6 +178,7 @@ a {
 
     font-size: 9px;
     letter-spacing: 0.05em;
+    line-height: 1.4;
 
     text-align: center;
 }
@@ -168,7 +198,9 @@ a {
 ========================================================= */
 
 footer {
-    margin: 0;
+    width: 100%;
+
+    margin-top: auto;
 
     padding: 28px 36px 24px;
 
@@ -271,15 +303,13 @@ footer {
 
         gap: 45px;
 
+        max-width: none;
+
         margin: 0;
     }
 
-    .about-text {
-        font-size: 12px;
-    }
-
     .about-video-column {
-        width: min(100%, 400px);
+        width: min(220px, 100%);
     }
 
     footer {
@@ -317,11 +347,13 @@ footer {
 <div id="site-header"></div>
 
 <script>
+
 fetch("header.html")
     .then(response => response.text())
     .then(data => {
         document.getElementById("site-header").innerHTML = data;
     });
+
 </script>
 
 
@@ -335,9 +367,12 @@ fetch("header.html")
     <div class="about-intro">
 
 
-        <!-- TEXT COLUMN -->
+        <!-- =================================================
+             TEXT
+        ================================================== -->
 
-        <div>
+        <div class="about-text-column">
+
 
             <div class="about-label">
                 ABOUT
@@ -354,6 +389,7 @@ fetch("header.html")
                     His work explores memory, territory, unfinished landscapes, social transformation and the relationship between built space and collective experience.
                 </p>
 
+
                 <a
                     class="cv-link"
                     href="publications/CV_Scepan_Popovic.pdf"
@@ -363,21 +399,39 @@ fetch("header.html")
                     CV ↗
                 </a>
 
+
             </div>
+
 
         </div>
 
 
-        <!-- PORTRAIT VIDEO COLUMN -->
+        <!-- =================================================
+             PORTRAIT VIDEO
+        ================================================== -->
 
         <div class="about-video-column">
 
+
             <div class="about-video">
+
+
+                <!--
+                KADA UBACIŠ VIDEO:
+
+                <video autoplay muted loop playsinline>
+                    <source src="videos/about.mp4" type="video/mp4">
+                </video>
+
+                OBRIŠI video-placeholder ispod.
+                -->
+
 
                 <div class="video-placeholder">
                     PORTRAIT VIDEO<br>
                     COMING SOON
                 </div>
+
 
             </div>
 
@@ -385,6 +439,7 @@ fetch("header.html")
             <div class="video-caption">
                 VIDEO: MILICA BURIĆ
             </div>
+
 
         </div>
 
@@ -451,6 +506,7 @@ fetch("header.html")
                 CONTACT
             </div>
 
+
             <div class="footer-line">
 
                 <a
@@ -461,6 +517,7 @@ fetch("header.html")
                 </a>
 
             </div>
+
 
             <div class="footer-line">
 
@@ -473,6 +530,7 @@ fetch("header.html")
 
             </div>
 
+
             <div class="footer-line">
 
                 <a
@@ -483,6 +541,7 @@ fetch("header.html")
                 </a>
 
             </div>
+
 
         </div>
 
@@ -495,6 +554,7 @@ fetch("header.html")
                 SOCIALS
             </div>
 
+
             <a
                 class="social-link"
                 href="https://www.instagram.com/landscapes.of.memory_prague/"
@@ -503,6 +563,7 @@ fetch("header.html")
             >
                 Instagram <span>↗</span>
             </a>
+
 
             <a
                 class="social-link"
@@ -513,6 +574,7 @@ fetch("header.html")
                 LinkedIn <span>↗</span>
             </a>
 
+
             <a
                 class="social-link"
                 href="https://www.youtube.com/@scepanpopovic2201"
@@ -522,12 +584,14 @@ fetch("header.html")
                 YouTube <span>↗</span>
             </a>
 
+
         </div>
 
 
         <!-- LANGUAGES -->
 
         <div>
+
 
             <div class="languages">
 
@@ -554,6 +618,7 @@ fetch("header.html")
                 </a>
 
             </div>
+
 
         </div>
 
