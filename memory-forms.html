@@ -1,0 +1,452 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<link rel="stylesheet" href="header.css">
+<link rel="stylesheet" href="mobile.css">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Memory Forms: The paths we walk — Šćepan Popović</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Courier New", Courier, monospace;
+    background: #fff;
+    color: #111;
+    font-size: 11px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #BDFF00;
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+main {
+    padding: 55px 30px 100px;
+    max-width: 1310px;
+}
+
+.page-title {
+    font-size: 11px;
+    font-weight: bold;
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   PROJECT INTRODUCTION
+========================= */
+
+.project-heading {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.project-title {
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0 0 8px;
+}
+
+.project-type {
+    font-size: 10px;
+    color: #555;
+}
+
+.project-location {
+    text-align: right;
+    line-height: 1.6;
+}
+
+.project-description {
+    max-width: 680px;
+    line-height: 1.8;
+    margin-bottom: 45px;
+}
+
+.project-description p {
+    margin: 0 0 16px;
+}
+
+
+/* =========================
+   IMAGES
+========================= */
+
+.image-full {
+    margin-bottom: 28px;
+}
+
+.image-full img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    margin-bottom: 28px;
+    align-items: start;
+}
+
+.image-grid img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+
+/* =========================
+   STOPS
+========================= */
+
+.stop {
+    margin-top: 65px;
+    margin-bottom: 28px;
+}
+
+.stop-title {
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0 0 12px;
+}
+
+.stop-credits {
+    font-size: 10px;
+    line-height: 1.8;
+    color: #555;
+}
+
+
+/* =========================
+   BACK LINK
+========================= */
+
+.back-link {
+    display: inline-block;
+    margin-top: 60px;
+    font-weight: bold;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    main {
+        padding: 40px 20px 80px;
+    }
+
+    .project-heading {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .project-location {
+        text-align: left;
+    }
+
+    .image-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+
+    .image-full {
+        margin-bottom: 15px;
+    }
+
+    .stop {
+        margin-top: 45px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- SHARED HEADER -->
+
+<div id="site-header"></div>
+
+<script>
+fetch("header.html")
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("site-header").innerHTML = data;
+    });
+</script>
+
+
+<main>
+
+
+    <!-- BREADCRUMB -->
+
+    <div class="page-title">
+
+        <a href="artworks.html">ARTWORKS</a> /
+
+        <a href="spatial-art.html">SPATIAL ART</a> /
+
+        MEMORY FORMS
+
+    </div>
+
+
+    <!-- PROJECT TITLE -->
+
+    <div class="project-heading">
+
+        <div>
+
+            <h1 class="project-title">
+                Memory Forms: The paths we walk
+            </h1>
+
+            <div class="project-type">
+                Participatory procession and
+                site-specific installation
+            </div>
+
+        </div>
+
+        <div class="project-location">
+            LARNACA, CYPRUS<br>
+            2026
+        </div>
+
+    </div>
+
+
+    <!-- GENERAL DESCRIPTION -->
+
+    <div class="project-description">
+
+        <p>
+            Memory Forms: The paths we walk is a
+            participatory procession through the
+            Agioi Anargyroi refugee neighbourhood
+            in Larnaca, temporarily reimagining
+            selected locations as villages from
+            the Famagusta region, from which
+            residents and their families were
+            displaced in 1974.
+        </p>
+
+        <p>
+            Illuminated frames mark these locations,
+            where residents share personal stories.
+            Moving from one location to the other,
+            visitors encounter a living archive
+            of places, voices and memories embedded
+            within the neighbourhood.
+        </p>
+
+        <p>
+            Through collective movement, storytelling
+            and temporary spatial interventions,
+            the procession creates an alternative
+            map of the neighbourhood, connecting
+            the geography of the former villages
+            with the everyday spaces of the present.
+        </p>
+
+    </div>
+
+
+    <!-- MAIN PHOTOGRAPH -->
+
+    <div class="image-full">
+
+        <img
+            src="images/MF0.jpg"
+            alt="Memory Forms: The paths we walk"
+        >
+
+    </div>
+
+
+    <!-- INTRODUCTORY PHOTOGRAPHS -->
+
+    <div class="image-grid">
+
+        <img
+            src="images/MF1.jpg"
+            alt="Memory Forms — project documentation"
+            loading="lazy"
+        >
+
+        <img
+            src="images/MF2.jpg"
+            alt="Memory Forms — project documentation"
+            loading="lazy"
+        >
+
+    </div>
+
+
+    <!-- STOP 01 -->
+
+    <section class="stop">
+
+        <h2 class="stop-title">
+            Stop 01 — Vadili
+        </h2>
+
+        <div class="stop-credits">
+
+            Participant: Giorgoulla Spyrou<br>
+
+            Frame construction:
+            A. G Efthymiades Electrical Installations LTD
+
+        </div>
+
+    </section>
+
+
+    <div class="image-full">
+
+        <img
+            src="images/MF3.jpg"
+            alt="Stop 01 — Vadili"
+            loading="lazy"
+        >
+
+    </div>
+
+
+    <div class="image-grid">
+
+        <img
+            src="images/MF4.jpg"
+            alt="Stop 01 — Vadili"
+            loading="lazy"
+        >
+
+        <img
+            src="images/MF5.jpg"
+            alt="Stop 01 — Vadili"
+            loading="lazy"
+        >
+
+    </div>
+
+
+    <!-- PROCESSION BETWEEN STOPS -->
+
+    <div class="image-grid">
+
+        <img
+            src="images/MF6.jpg"
+            alt="Procession through the neighbourhood"
+            loading="lazy"
+        >
+
+        <img
+            src="images/MF7.jpg"
+            alt="Procession between stops"
+            loading="lazy"
+        >
+
+    </div>
+
+
+    <!-- STOP 02 -->
+
+    <section class="stop">
+
+        <h2 class="stop-title">
+            Stop 02 — Kóma tou Gialoú
+        </h2>
+
+        <div class="stop-credits">
+
+            Participants:
+            Despo Christou and Akis Papanikolaou<br>
+
+            Moderator: Nayia T. Karacosta
+
+        </div>
+
+    </section>
+
+
+    <div class="image-full">
+
+        <img
+            src="images/MF8.jpg"
+            alt="Stop 02 — Kóma tou Gialoú"
+            loading="lazy"
+        >
+
+    </div>
+
+
+    <div class="image-grid">
+
+        <img
+            src="images/MF9.jpg"
+            alt="Stop 02 — Kóma tou Gialoú"
+            loading="lazy"
+        >
+
+        <img
+            src="images/MF10.jpg"
+            alt="Stop 02 — Kóma tou Gialoú"
+            loading="lazy"
+        >
+
+    </div>
+
+
+    <!-- RETURN TO SPATIAL ART -->
+
+    <a class="back-link" href="spatial-art.html">
+        &larr; BACK TO SPATIAL ART
+    </a>
+
+
+</main>
+
+</body>
+
+</html>
