@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -115,29 +116,7 @@ a {
 
 
 /* =========================================================
-   CV
-========================================================= */
-
-.cv-link {
-    display: inline-block;
-
-    margin-top: 18px;
-
-    color: #000;
-
-    font-size: 10px;
-    font-weight: bold;
-
-    transition: color 0.2s ease;
-}
-
-.cv-link:hover {
-    color: var(--green);
-}
-
-
-/* =========================================================
-   VIDEO
+   PORTRAIT PHOTOGRAPH
 ========================================================= */
 
 .about-video-column {
@@ -156,40 +135,13 @@ a {
     background: #000;
 }
 
-.about-video video {
+.about-video img {
     display: block;
 
     width: 100%;
     height: 100%;
 
     object-fit: cover;
-}
-
-.video-placeholder {
-    position: absolute;
-    inset: 0;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    color: #fff;
-
-    font-size: 9px;
-    letter-spacing: 0.05em;
-    line-height: 1.4;
-
-    text-align: center;
-}
-
-.video-caption {
-    margin-top: 8px;
-
-    font-size: 9px;
-    line-height: 1.4;
-
-    text-transform: uppercase;
 }
 
 
@@ -389,17 +341,6 @@ fetch("header.html")
                     His work explores memory, territory, unfinished landscapes, social transformation and the relationship between built space and collective experience.
                 </p>
 
-
-                <a
-                    class="cv-link"
-                    href="publications/CV_Scepan_Popovic.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    CV ↗
-                </a>
-
-
             </div>
 
 
@@ -407,39 +348,19 @@ fetch("header.html")
 
 
         <!-- =================================================
-             PORTRAIT VIDEO
+             PORTRAIT PHOTOGRAPH
         ================================================== -->
 
         <div class="about-video-column">
 
-
             <div class="about-video">
 
-
-                <!--
-                KADA UBACIŠ VIDEO:
-
-                <video autoplay muted loop playsinline>
-                    <source src="videos/about.mp4" type="video/mp4">
-                </video>
-
-                OBRIŠI video-placeholder ispod.
-                -->
-
-
-                <div class="video-placeholder">
-                    PORTRAIT VIDEO<br>
-                    COMING SOON
-                </div>
-
+                <img
+                    src="images/about-photo.jpg"
+                    alt="Šćepan Popović portrait"
+                >
 
             </div>
-
-
-            <div class="video-caption">
-                VIDEO: MILICA BURIĆ
-            </div>
-
 
         </div>
 
