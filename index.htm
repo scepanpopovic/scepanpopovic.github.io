@@ -1,7 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+
+<link rel="stylesheet" href="header.css">
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,9 +13,7 @@
 
 <style>
 
-/* =========================================================
-   BASIC SETTINGS
-========================================================= */
+/* BASIC SETTINGS */
 
 * {
     box-sizing: border-box;
@@ -50,145 +51,25 @@ a:hover {
 
 
 /* =========================================================
-   HEADER
-========================================================= */
-
-header {
-    height: 86px;
-    padding: 0 36px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    background: #000;
-}
-
-.logo {
-    color: #fff;
-
-    font-size: 20px;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-
-    white-space: nowrap;
-}
-
-.logo-name {
-    display: block;
-}
-
-.logo-about {
-    display: block;
-
-    margin-top: 3px;
-
-    font-size: 8px;
-    font-weight: normal;
-    letter-spacing: 0.5px;
-
-    color: #fff;
-}
-
-.logo:hover .logo-name,
-.logo:hover .logo-about {
-    color: var(--green);
-}
-
-.navigation {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-}
-
-.nav-item {
-    position: relative;
-    white-space: nowrap;
-}
-
-.nav-item::after {
-    content: "/";
-    margin: 0 12px;
-    color: #fff;
-}
-
-.nav-item:last-child::after {
-    content: "";
-    margin: 0;
-}
-
-.nav-link {
-    cursor: pointer;
-    color: #fff;
-    font-weight: 700;
-}
-
-.nav-link:hover {
-    color: var(--green);
-}
-
-
-/* =========================================================
-   DROPDOWNS
-========================================================= */
-
-.dropdown {
-    display: none;
-
-    position: absolute;
-
-    top: 18px;
-    left: -10px;
-
-    min-width: 165px;
-
-    padding: 10px;
-
-    background: #fff;
-    border: 1px solid var(--black);
-
-    z-index: 100;
-}
-
-.dropdown a {
-    display: block;
-    padding: 4px 0;
-}
-
-.nav-item:hover .dropdown {
-    display: block;
-}
-
-
-/* =========================================================
    HERO
 ========================================================= */
 
 .hero {
     margin: 0 36px;
-
     height: calc(100vh - 130px);
     min-height: 580px;
-
     position: relative;
-
     overflow: hidden;
-
     background: #000;
 }
 
 .hero-media {
     position: absolute;
     inset: 0;
-
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
     opacity: 0;
-
     transition: opacity 0.8s ease;
 }
 
@@ -199,9 +80,7 @@ header {
 #heroVideoIntro,
 #heroVideoMain {
     z-index: 1;
-
     object-fit: contain;
-
     background: #000;
 }
 
@@ -211,23 +90,16 @@ header {
 
 .sound-toggle {
     position: absolute;
-
     right: 18px;
     bottom: 18px;
-
     z-index: 10;
-
     background: #000;
     color: #fff;
-
     border: 0;
-
     padding: 8px 10px;
-
     font-family: "Courier New", Courier, monospace;
     font-size: 10px;
     font-weight: 700;
-
     cursor: pointer;
 }
 
@@ -243,15 +115,11 @@ header {
 
 .poetry {
     position: absolute;
-
     top: 18%;
     right: 9%;
-
     width: 260px;
-
     font-size: 10px;
     line-height: 1.65;
-
     color: var(--black);
 }
 
@@ -262,21 +130,16 @@ header {
 .poem-credit {
     margin-top: 22px;
     padding-top: 14px;
-
     position: relative;
 }
 
 .poem-credit::before {
     content: "";
-
     position: absolute;
-
     top: 0;
     left: 0;
-
     width: 20px;
     height: 1px;
-
     background: var(--green);
 }
 
@@ -300,11 +163,9 @@ header {
 
 .home-grid {
     display: grid;
-
     grid-template-columns:
         minmax(0, 2.3fr)
         minmax(300px, 0.9fr);
-
     gap: 50px;
 }
 
@@ -316,38 +177,29 @@ header {
 .section-header {
     display: flex;
     align-items: center;
-
     margin-bottom: 18px;
 }
 
 .section-title {
     background: #000;
     color: #fff;
-
     font-size: 17px;
     font-weight: 700;
-
     white-space: nowrap;
-
     padding: 7px 10px;
 }
 
 .section-line {
     height: 2px;
-
     background: #000;
-
     flex: 1;
-
     margin: 0 10px;
 }
 
 .section-link {
     color: #000;
-
     font-size: 10px;
     font-weight: 700;
-
     white-space: nowrap;
 }
 
@@ -362,9 +214,7 @@ header {
 
 .projects-grid {
     display: grid;
-
     grid-template-columns: repeat(4, 1fr);
-
     gap: 12px;
 }
 
@@ -375,20 +225,15 @@ header {
 .project-image {
     width: 100%;
     aspect-ratio: 1.45 / 1;
-
     overflow: hidden;
-
     background: #e5e5e5;
-
     position: relative;
 }
 
 .project-image img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
     filter: grayscale(100%);
 
     transition:
@@ -403,48 +248,36 @@ header {
 
 .project-number {
     position: absolute;
-
     top: 7px;
     left: 7px;
-
     color: var(--green);
-
     font-size: 11px;
 }
 
 .project-title {
     margin-top: 8px;
-
     font-size: 12px;
-
     text-transform: uppercase;
 }
 
 .project-category {
     margin-top: 2px;
-
     color: var(--grey);
-
     font-size: 10px;
-
     text-transform: uppercase;
 }
 
 .project:active .project-title {
     display: inline-block;
-
     background: #000;
     color: var(--green);
-
     padding: 2px 4px;
 }
 
 .project:active .project-category {
     display: inline-block;
-
     background: #000;
     color: var(--green);
-
     padding: 2px 4px;
 }
 
@@ -454,11 +287,9 @@ header {
 .placeholder {
     width: 100%;
     height: 100%;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     color: #999;
 }
 
@@ -469,13 +300,9 @@ header {
 
 .news-item {
     display: grid;
-
     grid-template-columns: 115px 1fr;
-
     gap: 15px;
-
     padding: 13px 0;
-
     border-bottom: 1px solid #d0d0d0;
 }
 
@@ -500,7 +327,6 @@ header {
 .news-title:active {
     background: #000;
     color: var(--green);
-
     padding: 2px 4px;
 }
 
@@ -511,51 +337,40 @@ header {
 
 footer {
     margin: 42px 0 0;
-
     padding: 28px 36px 24px;
-
     background: #000;
     color: #fff;
-
     border-top: none;
 }
 
 .footer-grid {
     display: grid;
-
     grid-template-columns:
         1.2fr
         0.8fr
         1fr
         0.9fr
         0.8fr;
-
     gap: 40px;
 }
 
 .footer-title {
     color: #fff;
-
     margin-bottom: 8px;
-
     font-size: 13px;
     font-weight: 700;
 }
 
 .footer-heading {
     color: #fff;
-
     margin-bottom: 7px;
-
     font-size: 10px;
     font-weight: 700;
-
     text-transform: uppercase;
 }
 
 .footer-line {
     color: #fff;
-
     margin-bottom: 3px;
 }
 
@@ -563,7 +378,6 @@ footer {
 .social-link,
 .language-link {
     color: #fff;
-
     transition: color 0.2s ease;
 }
 
@@ -575,25 +389,19 @@ footer {
 
 .social-link {
     display: block;
-
     margin-bottom: 4px;
 }
 
 .social-link span {
     color: inherit;
-
     margin-left: 5px;
 }
 
 .languages {
     display: flex;
-
     gap: 8px;
-
     justify-content: flex-end;
-
     color: #fff;
-
     font-weight: 700;
 }
 
@@ -607,42 +415,20 @@ footer {
 
 .copyright {
     margin-top: 28px;
-
     text-align: right;
-
     font-size: 10px;
-
     color: #fff;
 }
 
 
 /* =========================================================
-   MOBILE
+   TABLET
 ========================================================= */
 
 @media (max-width: 1100px) {
 
-    header {
-        height: auto;
-
-        padding: 22px 24px;
-
-        align-items: flex-start;
-
-        gap: 25px;
-    }
-
-    .navigation {
-        line-height: 2;
-    }
-
-    .nav-item::after {
-        margin: 0 7px;
-    }
-
     .hero {
         margin: 0 24px;
-
         height: 72vh;
     }
 
@@ -660,7 +446,6 @@ footer {
 
     footer {
         margin: 42px 0 0;
-
         padding: 28px 24px 24px;
     }
 
@@ -670,31 +455,19 @@ footer {
 }
 
 
+/* =========================================================
+   MOBILE
+========================================================= */
+
 @media (max-width: 700px) {
-
-    header {
-        display: block;
-        padding: 14px 16px;
-    }
-
-    .logo {
-        margin-bottom: 12px;
-    }
-
-    .navigation {
-        justify-content: flex-start;
-    }
-
 
     /* HERO */
 
     .hero {
         width: 88%;
         margin: 0 auto;
-
         height: auto;
         min-height: 0;
-
         aspect-ratio: 16 / 9;
     }
 
@@ -706,9 +479,7 @@ footer {
     .sound-toggle {
         right: 8px;
         bottom: 8px;
-
         padding: 5px 7px;
-
         font-size: 7px;
     }
 
@@ -717,10 +488,8 @@ footer {
 
     .home-content {
         width: 88%;
-
         margin-left: auto;
         margin-right: auto;
-
         padding: 24px 0 0;
     }
 
@@ -750,7 +519,6 @@ footer {
 
     .projects-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-
         gap: 24px 10px;
     }
 
@@ -761,20 +529,17 @@ footer {
     .project-number {
         top: 5px;
         left: 5px;
-
         font-size: 8px;
     }
 
     .project-title {
         margin-top: 5px;
-
         font-size: 8px;
         line-height: 1.25;
     }
 
     .project-category {
         margin-top: 2px;
-
         font-size: 7px;
         line-height: 1.25;
     }
@@ -784,11 +549,8 @@ footer {
 
     .news-item {
         grid-template-columns: 75px 1fr;
-
         gap: 8px;
-
         padding: 9px 0;
-
         font-size: 8px;
     }
 
@@ -806,13 +568,11 @@ footer {
 
     footer {
         margin-top: 32px;
-
         padding: 22px 6% 20px;
     }
 
     .footer-grid {
         grid-template-columns: repeat(2, 1fr);
-
         gap: 22px 14px;
     }
 
@@ -836,9 +596,7 @@ footer {
 
     .copyright {
         margin-top: 18px;
-
         text-align: left;
-
         font-size: 7px;
     }
 }
@@ -852,127 +610,20 @@ footer {
 
 
 <!-- ======================================================
-     HEADER
+     SHARED HEADER
 ====================================================== -->
 
-<header>
+<div id="site-header"></div>
 
+<script>
 
-    <div class="logo">
+fetch("header.html")
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("site-header").innerHTML = data;
+    });
 
-        <a href="index.htm" class="logo-name">
-            ŠĆEPAN POPOVIĆ
-        </a>
-
-        <a href="about.html" class="logo-about">
-            ABOUT
-        </a>
-
-    </div>
-
-
-    <nav class="navigation">
-
-
-        <div class="nav-item">
-
-            <a class="nav-link" href="architecture.html">
-                ARCHITECTURE
-            </a>
-
-        </div>
-
-
-        <div class="nav-item">
-
-            <a class="nav-link" href="urbanism.html">
-                URBANISM
-            </a>
-
-        </div>
-
-
-        <div class="nav-item">
-
-            <a class="nav-link" href="research.html">
-                RESEARCH
-            </a>
-
-        </div>
-
-
-        <!-- ARTWORKS -->
-
-        <div class="nav-item">
-
-            <a class="nav-link" href="artworks.html">
-                ARTWORKS
-            </a>
-
-            <div class="dropdown">
-
-                <a href="spatial-art.html">
-                    SPATIAL ART
-                </a>
-
-                <a href="paintings.html">
-                    PAINTINGS
-                </a>
-
-                <a href="observations.html">
-                    OBSERVATIONS
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <div class="nav-item">
-
-            <a class="nav-link" href="film.html">
-                FILM
-            </a>
-
-        </div>
-
-
-        <!-- WRITINGS -->
-
-        <div class="nav-item">
-
-            <span class="nav-link">
-                WRITINGS
-            </span>
-
-            <div class="dropdown">
-
-                <a href="texts.html">
-                    TEXTS
-                </a>
-
-                <a href="poetry.html">
-                    POETRY
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <div class="nav-item">
-
-            <a class="nav-link" href="news.html">
-                NEWS
-            </a>
-
-        </div>
-
-
-    </nav>
-
-
-</header>
+</script>
 
 
 <!-- ======================================================
@@ -1038,9 +689,7 @@ footer {
     <div class="home-grid">
 
 
-        <!-- =================================================
-             SELECTED PROJECTS
-        ================================================== -->
+        <!-- SELECTED PROJECTS -->
 
         <section>
 
@@ -1063,142 +712,137 @@ footer {
             </div>
 
 
-           
-<div class="projects-grid">
+            <div class="projects-grid">
 
 
-    <!-- PROJECT 01 — MEMORY FORMS -->
+                <!-- PROJECT 01 — MEMORY FORMS -->
 
-    <a
-        class="project"
-        href="memory-forms.html"
-    >
+                <a
+                    class="project"
+                    href="memory-forms.html"
+                >
 
-        <div class="project-image">
+                    <div class="project-image">
 
-            <img
-                src="images/MF0.jpg"
-                alt="Memory Forms: The paths we walk"
-            >
+                        <img
+                            src="images/MF0.jpg"
+                            alt="Memory Forms: The paths we walk"
+                        >
 
-            <span class="project-number">
-                01
-            </span>
+                        <span class="project-number">
+                            01
+                        </span>
 
-        </div>
+                    </div>
 
+                    <div class="project-title">
+                        MEMORY FORMS: THE PATHS WE WALK
+                    </div>
 
-        <div class="project-title">
-            MEMORY FORMS: THE PATHS WE WALK
-        </div>
+                    <div class="project-category">
+                        SPATIAL ART / LARNACA / 2026
+                    </div>
 
-        <div class="project-category">
-            SPATIAL ART / LARNACA / 2026
-        </div>
-
-    </a>
-
-
-    <!-- PROJECT 02 -->
-
-    <a
-        class="project"
-        href="landscapes-of-memory.html"
-    >
-
-        <div class="project-image">
-
-            <img
-                src="images/landscapes-of-memory.jpg"
-                alt="Landscapes of Memory"
-            >
-
-            <span class="project-number">
-                02
-            </span>
-
-        </div>
+                </a>
 
 
-        <div class="project-title">
-            LANDSCAPES OF MEMORY
-        </div>
+                <!-- PROJECT 02 -->
 
-        <div class="project-category">
-            FILM / PRAGUE / 2026
-        </div>
+                <a
+                    class="project"
+                    href="landscapes-of-memory.html"
+                >
 
-    </a>
+                    <div class="project-image">
 
+                        <img
+                            src="images/landscapes-of-memory.jpg"
+                            alt="Landscapes of Memory"
+                        >
 
-    <!-- PROJECT 03 -->
+                        <span class="project-number">
+                            02
+                        </span>
 
-    <a
-        class="project"
-        href="landscapes-of-memory-research.html"
-    >
+                    </div>
 
-        <div class="project-image">
+                    <div class="project-title">
+                        LANDSCAPES OF MEMORY
+                    </div>
 
-            <img
-                src="images/landscapes-of-memory-research.jpg"
-                alt="Landscapes of Memory Research"
-            >
+                    <div class="project-category">
+                        FILM / PRAGUE / 2026
+                    </div>
 
-            <span class="project-number">
-                03
-            </span>
-
-        </div>
-
-
-        <div class="project-title">
-            LANDSCAPES OF MEMORY
-        </div>
-
-        <div class="project-category">
-            RESEARCH / PUBLICATION / PRAGUE / 2026
-        </div>
-
-    </a>
+                </a>
 
 
-    <!-- PROJECT 04 -->
+                <!-- PROJECT 03 -->
 
-    <a
-        class="project"
-        href="urban-regeneration-berane.html"
-    >
+                <a
+                    class="project"
+                    href="landscapes-of-memory-research.html"
+                >
 
-        <div class="project-image">
+                    <div class="project-image">
 
-            <img
-                src="images/L1.jpg"
-                alt="Urban Regeneration of 21 July Square"
-            >
+                        <img
+                            src="images/landscapes-of-memory-research.jpg"
+                            alt="Landscapes of Memory Research"
+                        >
 
-            <span class="project-number">
-                04
-            </span>
+                        <span class="project-number">
+                            03
+                        </span>
 
-        </div>
+                    </div>
 
+                    <div class="project-title">
+                        LANDSCAPES OF MEMORY
+                    </div>
 
-        <div class="project-title">
-            URBAN REGENERATION OF 21 JULY SQUARE
-        </div>
+                    <div class="project-category">
+                        RESEARCH / PUBLICATION / PRAGUE / 2026
+                    </div>
 
-        <div class="project-category">
-            URBAN DESIGN / BERANE / 2025
-        </div>
-
-    </a>
-
-
-</div>
+                </a>
 
 
-</section>
+                <!-- PROJECT 04 -->
+
+                <a
+                    class="project"
+                    href="urban-regeneration-berane.html"
+                >
+
+                    <div class="project-image">
+
+                        <img
+                            src="images/L1.jpg"
+                            alt="Urban Regeneration of 21 July Square"
+                        >
+
+                        <span class="project-number">
+                            04
+                        </span>
+
+                    </div>
+
+                    <div class="project-title">
+                        URBAN REGENERATION OF 21 JULY SQUARE
+                    </div>
+
+                    <div class="project-category">
+                        URBAN DESIGN / BERANE / 2025
+                    </div>
+
+                </a>
+
+
+            </div>
+
+
+        </section>
 
 
         <!-- =================================================
